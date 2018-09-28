@@ -16,7 +16,7 @@ var onGetPaymentScheduleClick = function() {
         amountRemaing -= payedTowardsPrincipal;
     }
     var payedTowardsInterest = Number(calculateInterest(amountRemaing, loanVars['interestRate']));
-    payments.push({"paymentAmount":paymentAmount.toFixed(2), "towardsPrincipal":Number(amountRemaing).toFixed(2), "towardsInterest":payedTowardsInterest.toFixed(2), "amountRemaing": Number(amountRemaing).toFixed(2)});
+    payments.push({"paymentAmount":amountRemaing.toFixed(2), "towardsPrincipal":Number(amountRemaing).toFixed(2), "towardsInterest":payedTowardsInterest.toFixed(2), "amountRemaing": Number(amountRemaing).toFixed(2)});
     
     populateTable(payments);
 }
