@@ -1,0 +1,10 @@
+New York            8,143,197
+Los Angeles	    3,844,829
+Chicago		    2,842,518
+Houston		    2,016,582
+Philadelphia	    1,463,281
+Phoenix		    1,461,575
+San Antonio	    1,256,509
+San Diego	    1,255,540
+Dallas		    1,213,825
+San Jose	      912,332

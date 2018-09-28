@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Week 11 : PHP</title>
+    <style type="text/css">
+	  form, pre {
+		  margin-left:20px; 
+		  font-family:Verdana, Geneva, sans-serif; 
+          padding:6px;
+          width: 300px;
+          font-size: 12;
+	      border: 1px solid rgb(0, 90, 136); 
+          border-radius: 4px;
+	  }
+	  h2 {
+		  border-bottom-style: solid;
+	  }
+	</style>
+    <script type="text/javascript" >
+/*********************************************
+ * VALIDATE 
+ * If the value is not between a certain range, take action!
+ **********************************************/
+function validate(itemParse, itemDisable, low, high)
+{
+   if (itemParse.value < low || itemParse.value > high)
+   {
+        itemDisable.disabled=true;
+		itemParse.style="color:red";
+   }
+   else
+   {
+        itemDisable.disabled=false;
+		itemParse.style="color:black";
+   }
+}
+	</script>
+  </head>
+
+  <body>
+    <h2>#1: Hello World</h2>
+    <p>Write a PHP program to generate an HTML page that will display the text "Hello World"</p>
+    <form action="problem1.php" id="form1" method="post" >
+      <input type="submit" value="Problem 1"/>
+    </form> 
+
+    <h2>#2: Date and Time</h2>
+    <p>Write a PHP program to generate an HTML page displaying today's date and time.</p>  
+    <form action="problem2.php" id="form2" method="post" >
+      <input type="submit" value="Problem 2"/>
+    </form> 
+     
+    <h2>#3: Reflect</h2>
+    <p>Write a PHP program to generate an HTML page that will put the user-provided text in a paragraph.</p>
+    <form action="problem3.php" id="form3" method="post" >
+      <input name="input3" type="text" size="30" value="Hello world!"/>
+      <input type="submit" value="Problem 3"/>
+    </form> 
+    
+    <h2>#4: Translate</h2>
+    <p>Write a PHP program that will translate English numbers into Spanish. The user will type in an English cardinal
+    	number from "one" to "twenty." The PHP program will then generate a HTML page with the corresponding Spanish
+        cardinal number.</p>
+    <form action="problem4.php" id="form4" method="post" >
+      <input name="input4" type="text" size="30" value="one"/>
+      <input type="submit" value="Problem 4"/>
+    </form> 
+
+    <h2>#5: Powers</h2>
+    <p>Write a PHP program that display the first n powers of x. The program will take two parameters: x and n. The 
+    	output will be an HTML document displaying the powers in a table.</p>
+    <form action="problem5.php" id="form5" method="post" >
+      x = <input onkeyup="validate(document.getElementById('x'), document.getElementById('problem5'), 2, 100)"
+                 id="x" name="x" type="text" size="7" value="2" />
+      n = <input onkeyup="validate(document.getElementById('n'), document.getElementById('problem5'), 1, 30)"
+                 id="n" name="n" type="text" size="7" value="10" />
+      <input id="problem5" type="submit" value="Problem 5"/>
+    </form> 
+
+    <h2>#6: Text Manipulation</h2>
+    <p>Write a PHP program to accept a comma-separated list of words and display the list in a table sorted.</p>
+    <form action="problem6.php" id="form6" method="post" >
+      <input name="input6" type="text" size="30" value="HTML, CSS, JavaScript, XML, DTD, XSL, AJAX, PHP, JQuery, JSON, CGI"/>
+      <input type="submit" value="Problem 6"/>
+    </form> 
+
+  </body>
+</html>

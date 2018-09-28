@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 10 - AJAX</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Week 10 - AJAX Requests</h1>
+        <div>
+            <h2>Part One - Cities</h2>
+            <p>Click One of the buttons to populate data for the 10 largest citys of the selected country</p>
+            <div style="clearfix">
+                <button type="button" class="btn btn-primary inline" onclick="submitRequest('usa.txt')">USA</button>
+                <button type="button" class="btn btn-primary inline"  onclick="submitRequest('canada.txt')">Canada</button>
+                <button type="button" class="btn btn-primary inline"  onclick="submitRequest('mexico.txt')">Mexico</button>
+                <button type="button" class="btn btn-primary inline"  onclick="submitRequest('russia.txt')">Russia</button>
+            </div>
+            <div class="clearfix"></div>
+            <div id="city-display">
+            </div>
+        </div>
+        <div>
+            <h2>Part Two: Students</h2>
+            <p>Enter in the filename or URL of the JSON file to Parse and Display. Then Submit the Request.</p>
+            <div>
+                <input type="text" class="inline" id="json-file-input"  value="../json.txt">
+                <button class="btn btn-primary inline" onclick="submitJSONRequest()">Submit</button>
+                <div class="clearfix"></div>
+                <div id="json-display">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

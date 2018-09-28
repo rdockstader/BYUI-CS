@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>eCommerce Site</title>
+        <link rel="stylesheet" type="text/css" href="css/grid.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <header>
+            <div>
+                <a class="nav-button" href="../index.html">Back</a>
+            </div>
+        </header>
+        <section>
+            <div class="half-width">
+                <form method="post" id="contact-form" name="contact-form" action="./review.php">
+                    <div class="row">
+                        <h2>Personal Information</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-5">
+                            <h4>Name</h4>
+                        </div>
+                        <div class="col span-3-of-5">
+                            <input type="text" id="name" name="name" placeholder="John Doe">
+                        </div>
+                    </div>
+                    <div class="vertical-spacer-25"></div>
+                    <div class="row address-div" name="address-div">
+                        <div class="col span-1-of-5">
+                            <h4>Address</h4>
+                        </div>
+                        <div class="col span-3-of-5 address-info" name="address-info">
+                            <input type="text" id="address1" name="address1" placeholder="555 W Logan St">
+                            <input type="text" id="address2" name="address2" placeholder="address 2">
+                            <input type="text" id="address-city" name="address-city" placeholder="Logan">
+                            <input type="text" id="address-state" name="address-state" placeholder="UT">
+                            <i class="ion-ios-close" id="state-valid-icon"></i>
+                            <input type="text" id="address-zip" name="address-zip" placeholder="zip">
+                            <i class="ion-ios-close" id="zip-valid-icon"></i>
+                        </div>
+                    </div>
+                    <div class="vertical-spacer-25"></div>
+                    <div class="row">
+                        <div class="col span-1-of-5">
+                            <h4>Phone Number</h4>
+                        </div>
+                        <div class="col span-3-of-5">
+                             <input type="text"  id="phone-number" name="phone" placeholder="(###) ###-####">  
+                             <i class="ion-ios-close" id="phone-valid-icon"></i>
+                        </div>
+                    </div>
+                    <div class="vertical-spacer-50"></div>
+                    <fieldset>
+                        <h2>Shopping Card</h2>
+                        <div class="row text-left centered-div">
+                            <table>
+                                <tr>
+                                    <th>
+                                    </th>
+                                    <th>
+                                        Item
+                                    </th>
+                                    <th>
+                                        price
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" onchange="updateTotal(this)" name="shopping-card[]" id="shopping-cart-1" value='{"type":"Mechanical Keyboard","cost":"99.99"}'></td>
+                                    <td>Mechanical Keyboard</td>
+                                    <td id="shopping-cart-1-price">$99.99</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" onchange="updateTotal(this)" name="shopping-card[]" id="shopping-cart-2" value='{"type":"Gaming Mouse","cost":"50.00"}'></td>
+                                    <td>Gaming Mouse</td>
+                                    <td id="shopping-cart-2-price">$50.00</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" onchange="updateTotal(this)" name="shopping-card[]" id="shopping-cart-3" value='{"type":"Mousepad","cost":"19.99"}'></td>
+                                    <td>XL Mousepad</td>
+                                    <td id="shopping-cart-3-price">$19.99</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </fieldset>
+                    <div class="vertical-spacer-50"></div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <h4>Total</h4>
+                        </div>
+                        <div>
+                            <p id="total-output">$0.00</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <h2>Payment Information</h2>
+                        </div>
+                        <div class="row">
+                            <div class="row">
+                                <div class="col span-1-of-5">
+                                    <h4>Card Type</h4>
+                                </div>
+                                <div class="col span-3-of-5">
+                                    <select name="credit-card">
+                                        <option value="visa">Visa</option>
+                                        <option value="mastercard">Mastercard</option>
+                                        <option value="discover">Discover</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-5">
+                                    <h4>Card Number</h4>
+                                </div>
+                                <div class="col span-3-of-5">
+                                    <input type="text" id="card-number" name="card-number" placeholder="5555 5555 5555 5555">
+                                    <i class="ion-ios-close" id="card-number-valid-icon"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-5">
+                                    <h4>Experation Date</h4>
+                                </div>
+                                <div class="col span-1-of-5">
+                                    <select name="card-exp-month">
+                                        <option value="January">January</option>
+                                        <option value="February">February</option>
+                                        <option value="March">March</option>
+                                        <option value="April">April</option>
+                                        <option value="May">May</option>
+                                        <option value="June">June</option>
+                                        <option value="July">July</option>
+                                        <option value="August">August</option>
+                                        <option value="September">September</option>
+                                        <option value="October">October</option>
+                                        <option value="November">November</option>
+                                        <option value="December">December</option>
+                                    </select>
+                                </div>
+                                <div class="col span-1-of-5">
+                                    <select name="card-exp-year">
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vertical-spacer-50"></div>
+                    <div class="vertical-spacer-50"></div>
+                    <div class="vertical-spacer-50"></div>
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <button type="reset" id="contact-reset" class="submit-button">Reset</button>
+                        </div>
+                        <div class="col span-1-of-2">
+                            <button type="submit" id="contact-submit" class="submit-button" disabled>Submit</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

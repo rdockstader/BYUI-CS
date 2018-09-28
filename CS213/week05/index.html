@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>CS 213 Week 05 Ponder and Prove</title>
+        <script type="text/javascript" src="213.05.PonderProblem.js"></script>
+        <style type="text/css">
+            form, pre {
+            margin-left:20px; 
+            font-family:Verdana, Geneva, sans-serif; 
+            padding:6px;
+            width: 550px;
+            font-size: 12;
+            border: 1px solid rgb(0, 90, 136); 
+            border-radius: 4px;
+            }
+            table {
+            border: 1px solid black;
+            margin-left: 20px;
+            }
+            td {
+            text-align: center;
+            }
+            h2 {
+            border-bottom-style: solid;
+            }
+        </style>
+    </head>
+        <body>
+        <!-- First problem: Hello world -->
+        <h2>#1: Hello world</h2>
+        <p>Write the necessary JavaScript to put "Hello World" in console.log with the
+        click of a button.</p>
+        <form action="" id="form1" style="" >
+            <button name="button1"  type="button"  onclick="problem1()">Problem 1</button>
+        </form>
+
+        <!-- Second problem: Form Letter -->
+        <h2>#2: Form Letter</h2>
+        <p>Write a function to perform a simple form letter substitution. Consider 
+        the following letter:</p>
+        <pre id="text2">
+            Dear <span class="form-name">RICH_GUY</span>:
+
+            We are glad to have you as a customer in our bank. Due to 
+            your prefered status, we offer you, <span class="form-name">RICH_GUY</span>, a special offer. 
+            The only thing you need to do to collect your prize is respond 
+            to this e-mail. Once again, <span class="form-name">RICH_GUY</span>, we appreciate your 
+            business.
+
+            Sincerely,
+
+            Bank President
+        </pre>
+        <p>Please write the necessary JavaScript to substitute RICH_GUY for the
+        customer's actual name. Display the resulting message in console.log.</p>
+        <form action="" id ="form2">
+            Name: <input name="name2" type="text" size="30" value="Mr. Willingsburg"/>
+            <button name="button2"  type="button"
+                    onclick="problem2(document.getElementById('form2').elements.namedItem('name2').value,
+                                      document.getElementById('text2').innerHTML)">Problem 2</button>
+        </form>
+
+        <!-- Third problem: Temperature Conversion -->
+        <h2>#3: Temperature Conversion</h2>
+        <p>Write the necessary JavaScript to convert Fahrenheit to Celsius.
+        Display the resulting Celsius temperature in console.log.</p>
+        <form action="" id ="form3">
+            Fahrenheit: <input name="text3" type="text" size="10" value="96.5"/>
+            <button name="button3"  type="button"
+                    onclick="problem3(document.getElementById('form3').elements.namedItem('text3').value)">Problem 3</button>
+        </form>
+
+        <!-- Fourth problem: Postage -->
+        <h2>#4: Postage</h2>
+        <p>Write the necessary JavaScript to find the cost of postage for a large envelope.
+        The rates are:</p>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Weight not over<br/>(ounces)</th>    
+                    <th>Rate<br/>(dollars)</th>          
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>$0.98</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>$1.19</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>$1.40</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>$1.61</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>$1.82</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>If an invalid weight is entered (a value other than 1 ... 5), then display an 
+        error message: "Invalid weight"</p>
+        <form action="" id ="form4">
+            Weight:
+            <input name="text4" type="text" size="3" value="3"/>
+            <button name="button4"   type="button"
+                    onclick="problem4(document.getElementById('form4').elements.namedItem('text4').value)">Problem 4</button>
+        </form>
+
+        <!-- Fifth problem: Loops -->
+        <h2>#5: Compound Interest</h2>
+        <p>Write the necessary JavaScript to compute compound interest using a FOR loop taking into account
+        the APR (Annual Percentage Rate), Term (time in years the loan will be in force), and Amount (the
+        amount of the loan in dollars).</p>
+        <form action="" id ="form5">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>APR:</td>
+                        <td><input name="apr5" type="text" size="10" value="7.1"/></td>
+                        <td>%</td>
+                    </tr>
+                    <tr>
+                        <td>Term:</td> 
+                        <td><input name="term5"type="text" size="10" value="5"/></td>
+                        <td>years</td>
+                    </tr>
+                    <tr>
+                        <td>Amount:</td>
+                        <td><input name="amount5" type="text" size="10" value="25000"/></td>
+                        <td>dollars</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button name="button5"  type="button"
+            onclick="problem5(document.getElementById('form5').elements.namedItem('apr5'   ).value,
+                              document.getElementById('form5').elements.namedItem('term5'  ).value,
+                              document.getElementById('form5').elements.namedItem('amount5').value)">Problem 5</button>
+        </form>
+        </body>
+</html>

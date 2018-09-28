@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <title>dTech Media</title>
+        <link rel="stylesheet" type="text/css" href="style03.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <style>
+            input[type=text],
+            input[type=email],
+            input[type=password]{
+                width: 100%;
+            }
+
+            fieldset {
+                border: none;
+            }
+
+            legend {
+                padding-bottom: 20px;
+                font-family: 'Oswald', sans-serif;
+            }
+
+            legend:after {
+                display: block;
+                height: 2px;
+                background-color: #e74c3c;
+                content: " ";
+                width: 80px;
+                margin: 0 auto;
+                margin-top: 15px;
+            }
+
+            textarea {
+                width: 90%;
+                height: 150px;
+                margin: 0 auto;
+                border-radius: 10px;
+                padding: 5px;
+            }
+
+            .form-item-title {
+                padding-bottom: 20px;
+            }
+
+            .form-item-title:after {
+                display: block;
+                height: 2px;
+                background-color: #e74c3c;
+                content: " ";
+                width: 80px;
+                margin: 0 auto;
+                margin-top: 15px;
+            }
+
+            .submit-button {
+                width: 170px;
+                height: 50px;
+                border-radius: 40px;
+                border: none;
+                box-shadow: none;
+                background-color: white;
+                border: 1px solid #e74c3c;
+                transition: background-color 0.2s;
+            }
+
+            .submit-button:hover {
+                background-color: #e7e7e7;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="nav">
+            <div>
+                <a href="index.html">Back to Main</a>
+            </div>
+        </section>
+        <section class="text-centered">
+            <h1>Contact dTech Media</h1>
+        </section>
+        <div class="half-width text-centered">
+            <form method="post" id="contact-form" action="/contact">
+                <div class="row">
+                    <div>
+                        <legend>Name</legend>
+                    </div>
+                    <div>
+                        <input type="text"id="name" name="name" placeholder="Enter Name">
+                    </div>
+                </div>
+                <div class="vertical-spacer-25"></div>
+                <div class="row">
+                    <div>
+                        <legend>Email</legend>
+                    </div>
+                    <div class="3">
+                        <input type="email" id="email" name="email" placeholder="Enter email">    
+                    </div>
+                </div>
+                <div class="vertical-spacer-25"></div>
+                <div class="row">
+                    <div>
+                        <legend>Phone Number</legend>
+                    </div>
+                    <div>
+                         <input type="text"  id="phone-number" name="phone" placeholder="(###) ###-####">   
+                    </div>
+                </div>
+                <div class="vertical-spacer-50"></div>
+                <fieldset>
+                    <legend>Prefered Method of Contact</legend>
+                    <div class="row text-left centered-div">
+                        <div>
+                            <label>
+                                <input type="radio"name="contactOptions" id="contact-option-1" value="phone-call" checked>
+                                Phone Call
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="contactOptions" id="contact-option-2" value="text-message">
+                                Text Message
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="contactOptions" id="contact-option-3" value="e-mail">
+                                E-Mail
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="vertical-spacer-50"></div>
+                <div class="row text-centered">
+                    <p class="form-item-title">Special Notes/Instructions</p>
+                    <textarea class="form-control" id="other-comments" name="otherComments" placeholder="Special notes/instructions here..."></textarea>
+                </div>
+                <div class="vertical-spacer-50"></div>
+                <button type="submit" id="contact-submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+        <div class="vertical-spacer-75"></div>
+        <div class="vertical-spacer-75"></div>
+    </body>
+</html>

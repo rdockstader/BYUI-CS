@@ -1,0 +1,10 @@
+Moscow              8,376,000
+Sanka Peterburg     4,619,800
+Novosibrisk         1,396,800
+Nizhniy Novgorod    1,346,400
+Yekaterinburg       1,260,000
+Samara              1,150,000
+Omsk                1,137,900
+Kazan               1,109,500
+Ufa                 1,094,900
+Chelyabinsk         1,081,200

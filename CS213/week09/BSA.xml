@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="BSA.xsl"?>
+<bsa>
+    <council name="trapper trails">
+        <troop number="515" name="Fairview 2nd">
+            <scout>
+                <firstname>
+                    Ryan
+                </firstname>
+                <lastname>
+                    Dockstader
+                </lastname>
+                <address>
+                    <street>
+                        123 Cloud St
+                    </street>
+                    <city>
+                        Preston
+                    </city>
+                    <state>
+                        Idaho
+                    </state>
+                </address>
+                <phone>
+                    (555) 555-5555
+                </phone>
+                <rank date-earned="01/01/2001">
+                    Eagle
+                </rank>
+                <rank date-earned="01/01/2001">
+                    Tenderfoot
+                </rank>
+                <meritbadge date-earned="01/01/2001">
+                    First Aid
+                </meritbadge>
+                <meritbadge date-earned="01/01/2001">
+                    Camping
+                </meritbadge>
+            </scout>
+            <scout>
+                <firstname>
+                    Devin
+                </firstname>
+                <lastname>
+                    Dockstader
+                </lastname>
+                <address>
+                    <street>
+                        123 Cloud St
+                    </street>
+                    <city>
+                        Preston
+                    </city>
+                    <state>
+                        Idaho
+                    </state>
+                </address>
+                <phone>
+                    (555) 555-5555
+                </phone>
+                <rank  date-earned="01/01/2001">
+                    Eagle
+                </rank>
+                <rank  date-earned="01/01/2001">
+                    Tenderfoot
+                </rank>
+                <meritbadge  date-earned="01/01/2001">
+                    First Aid
+                </meritbadge>
+                <meritbadge  date-earned="01/01/2001">
+                    Camping
+                </meritbadge>
+            </scout>
+        </troop>
+        <troop number="616" name="Fairview 1st">
+            <scout>
+                <firstname>
+                    John
+                </firstname>
+                <lastname>
+                    Doe
+                </lastname>
+                <address>
+                    <street>
+                        123 Sunny St
+                    </street>
+                    <city>
+                        Preston
+                    </city>
+                    <state>
+                        Idaho
+                    </state>
+                </address>
+                <phone>
+                    (777) 777-77777
+                </phone>
+                <rank  date-earned="01/01/2001">
+                    1stClass
+                </rank>
+                <rank  date-earned="01/01/2001">
+                    2stClass
+                </rank>
+                <meritbadge  date-earned="01/01/2001">
+                    Swimming
+                </meritbadge>
+                <meritbadge  date-earned="01/01/2001">
+                    Life Saving
+                </meritbadge>
+            </scout>
+            <scout>
+                <firstname>
+                    Jim
+                </firstname>
+                <lastname>
+                    Doe
+                </lastname>
+                <address>
+                    <street>
+                        123 Sunny St
+                    </street>
+                    <city>
+                        Preston
+                    </city>
+                    <state>
+                        Idaho
+                    </state>
+                </address>
+                <phone>
+                    (777) 777-77777
+                </phone>
+                <rank  date-earned="01/01/2001">
+                    1stClass
+                </rank>
+                <rank  date-earned="01/01/2001">
+                    2stClass
+                </rank>
+                <meritbadge  date-earned="01/01/2001">
+                    Swimming
+                </meritbadge>
+                <meritbadge  date-earned="01/01/2001">
+                    Life Saving
+                </meritbadge>
+            </scout>
+        </troop>
+    </council>
+    <council name="oaky ridge">
+        <troop number="789" name="Pinetop Village">
+            <scout>
+                <firstname>
+                    Dwayne
+                </firstname>
+                <lastname>
+                    Johnson
+                </lastname>
+                <address>
+                    <street>
+                        555 Furious Ln
+                    </street>
+                    <city>
+                        Pinetop
+                    </city>
+                    <state>
+                        Arizona
+                    </state>
+                </address>
+                <phone>
+                    (800) 888-1234
+                </phone>
+                <rank  date-earned="01/01/2001">
+                    Eagle
+                </rank>
+                <rank  date-earned="01/01/2001">
+                    Life
+                </rank>
+                <meritbadge  date-earned="01/01/2001">
+                    Life Saving
+                </meritbadge>
+                <meritbadge  date-earned="01/01/2001">
+                    Camping
+                </meritbadge>
+            </scout>
+            <scout>
+                <firstname>
+                    Douggie
+                </firstname>
+                <lastname>
+                    Johnson
+                </lastname>
+                <address>
+                    <street>
+                        555 Fast Ln
+                    </street>
+                    <city>
+                        Pinetop
+                    </city>
+                    <state>
+                        Arizona
+                    </state>
+                </address>
+                <phone>
+                    (800) 888-4567
+                </phone>
+                <rank  date-earned="01/01/2001">
+                    Eagle
+                </rank>
+                <rank  date-earned="01/01/2001">
+                    Life
+                </rank>
+                <meritbadge  date-earned="01/01/2001">
+                    Life Saving
+                </meritbadge>
+                <meritbadge  date-earned="01/01/2001">
+                    Camping
+                </meritbadge>
+            </scout>
+        </troop>
+        <troop number="182" name="Dude Ranch">
+            <scout>
+                <firstname>
+                    Mark
+                </firstname>
+                <lastname>
+                    Hoppus
+                </lastname>
+                <address>
+                    <street>
+                        182 Punk St
+                    </street>
+                    <city>
+                        Los Angeles
+                    </city>
+                    <state>
+                        California
+                    </state>
+                </address>
+                <phone>
+                    (123) 456-7890
+                </phone>
+                <rank  date-earned="01/01/2001">
+                    Tenderfoot
+                </rank>
+                <rank  date-earned="01/01/2001">
+                    2ndClass
+                </rank>
+                <meritbadge  date-earned="01/01/2001">
+                    Swimming
+                </meritbadge>
+                <meritbadge  date-earned="01/01/2001">
+                    Camping
+                </meritbadge>
+            </scout>
+            <scout>
+                <firstname>
+                    Travis
+                </firstname>
+                <lastname>
+                    Barker
+                </lastname>
+                <address>
+                    <street>
+                        182 Punk St
+                    </street>
+                    <city>
+                        Los Angeles
+                    </city>
+                    <state>
+                        California
+                    </state>
+                </address>
+                <phone>
+                    (182) 182-1234
+                </phone>
+                <rank  date-earned="01/01/2001">
+                    Tenderfoot
+                </rank>
+                <rank  date-earned="01/01/2001">
+                    2ndClass
+                </rank>
+                <meritbadge  date-earned="01/01/2001">
+                    Swimming
+                </meritbadge>
+                <meritbadge  date-earned="01/01/2001">
+                    Camping
+                </meritbadge>
+            </scout>
+        </troop>
+    </council>
+</bsa>

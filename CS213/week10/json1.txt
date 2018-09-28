@@ -1,0 +1,48 @@
+{ "students" :
+  [
+    { "first" : "Taylor",
+      "last"  : "Swift",
+      "address" : { "city" : "Nashville", "state" : "TN", "zip" : "80134" },
+      "major" : "Music",
+      "gpa"   : "4.0"
+    },
+    { "first" : "Del",
+      "last"  : "Parson",
+      "address" : { "city" : "Idaho Falls", "state" : "ID", "zip" : "83234" },
+      "major" : "Art",
+      "gpa"   : "3.85"
+    },
+
+    { "first" : "John",
+      "last"  : "Doe",
+      "address" : { "city" : "Chicago", "state" : "IL", "zip" : "80134" },
+      "major" : "Computer Science",
+      "gpa"   : "3.5"
+    },
+    { "first" : "Susan",
+      "last"  : "Smith",
+      "address" : { "city" : "Idaho Falls", "state" : "ID", "zip" : "83234" },
+      "major" : "Computer Engineering",
+      "gpa"   : "3.2"
+    },
+    { "first" : "Steve",
+      "last"  : "Anderson",
+      "address" : { "city" : "Rexburg", "state" : "ID", "zip" : "83460" },
+      "major" : "Electrical Engineering",
+      "gpa"   : "3.0"
+    },
+    { "first" : "Kelly",
+      "last"  : "Jones",
+      "address" : { "city" : "Idaho Falls", "state" : "ID", "zip" : "83234" },
+      "major" : "Computer Engineering",
+      "gpa"   : "3.4"
+    },
+    { "first" : "Jane",
+      "last"  : "Doe",
+      "address" : { "city" : "Rexburg", "state" : "ID", "zip" : "83460" },
+      "major" : "Electrical Engineering",
+      "gpa"   : "3.1"
+    }    
+
+  ]
+}

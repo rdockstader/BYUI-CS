@@ -1,0 +1,31 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    width: 75px;
+    height: 25px;
+}
+
+.btn-primary {
+    background-color: #006cff;
+    color: white;
+}
+
+.inline {
+    float:left;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.clearfix {
+    float:none;
+    display: block;
+    clear: both;
+}
+
+#city-display {
+    margin: 20px;
+}
