@@ -1,0 +1,50 @@
+# 01 Ponder : Weekly Reflection
+
+1. Describe one challenge your team experienced working on the Hello World activity.
+
+The biggest challenge of the hello world activity was getting familiar with java and intelij. It's interesting how the JDK is needed to even begin coding. It makes sense, now that I know more about SDK's, but in the beginning that was a bit confusing for me.
+
+
+2. For the NSA Cryptography assignment, what did you learn about how Java parameter passing differs from C++?
+
+It passes them a lot more simply then c++ did in my opinion. That being said there is a lot less configurability of it, and I can imagine that you get a lot more null pointer exceptions since you have the oportunity to mostly ignore the fact that you're working mostly with pointers.
+
+3. Did you complete the Stretch Challenge for the NSA Cryptography? If so, briefly describe what you did, and how you structured your code.
+
+I did. I added two new if statements to the hashpassword function. I also added a new java file that contained the decleration for the new exeption type. I made a constructor that would accept an error message string, and then just passed that to super, since it was extending exception. 
+
+Thinking back after looking at the instructors code, using a regular expression would have made my code a little cleaner but would have required a comment, I think. I also should ahve put the two validators into it's own function, in case i needed to call it anywhere else in the code at a later date, or needed to add additional checks.
+
+4. What did you learn from comparing your code to the teacher's solution?
+
+Using a regular expression would have made my code a little cleaner.
+
+5. After completing the assignments this week, what questions do you still have?
+
+No questions, I'm excited to learn more about Java.
+
+6. If you were getting paid to work on this week's Prove assignment and you had another month to work on it, what would you add?
+
+A more complex encryption algorithm, a database to store the users passwords in, a better response then just yeah it worked or no it didnt, such as a signed token if the password was valid. It'd also be good to have the ability to lock accounts after a certain number of failed login attempts, as well as a user access level (admin, general user, etc) that could reset passwords or unlock accounts for other users.
+
+7. A common Java interview question is "What are javadocs and when should they be used?". How would you answer that question?
+
+Javadocs come with different java classes, and the explain what is contained in the class and how it should be used. They are a great reference for when you're working with a new class that you haven't worked with before.
+
+8. Of all of the resources in this week's Preparation assignment, which was the _most_ helpful to you and why?
+
+The walkthroughs for getting up and running with intelij and java, since that was a little different from VS and C++
+
+9. Of all of the resources in this week's Preparation assignment, which was the _least_ helpful to you and why?
+
+The recomendation to find a group. I found I was able to accomplish this pretty easily on my own.
+
+10. How many hours did you spend on this class this week?
+
+01 Prepare - 2 h 30 m
+01 Teach - 30 m
+01 Prove 1st Attempt - 3 h
+01 Prove 2nd Attempt - 0 h
+01 Ponder - 1 h
+----------------------------
+Total Hours - 7 h

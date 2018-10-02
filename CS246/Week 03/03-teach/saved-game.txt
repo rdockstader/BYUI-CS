@@ -1,0 +1,1 @@
+{"player":{"name":"Gandolf","health":100,"mana":150,"gold":100000,"equipment":["Sword","shield"]}}

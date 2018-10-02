@@ -1,0 +1,47 @@
+# 02 Ponder : Weekly Reflection
+
+1. Describe one challenge your team experienced working on the Vacation Calendar activity.
+
+A Challenge that I ran into this week with the Vacation Calendar activity was getting used to the extends and impliments keywords. I had to go back several times during the assignmetn to remind myself of the syntax.
+
+2. For the Game of Life assignment, what advantages do you see in using interfaces to define creature behaviors, rather than subclasses?
+
+I really like interfaces, and before this week they seemed a little scary! I really like that it just allows you to define what methods a class is supposed to have, not really how they are implimented. I especially like how you're then able to call the class by the interface and put multiple class types into an array of the interface.
+
+3. Did you complete the Stretch Challenge for the Game of Life Assignment? If so, briefly describe what you did, and how you structured your code.
+
+I did. I added a Yeti class, and a Teleporter interface. The Game class only generated a couple Yeti's, but they were able to attack anything they came across, except another Yeti. They also had the same spawn functionality as the wolf. The interface I added allowed the Yeti to randomly teleport (1/50 chance using random) to a completely different location. I also modified the Paint function to draw upside down triangles to show the Yeti. 
+
+4. What did you learn from comparing your code to the teacher's solution?
+
+My code and the instructors code was very similiar. Other then I forgot to put _ in front of all my class variables.
+
+5. After completing the assignments this week, what questions do you still have?
+
+No questions at this point, I'm just excited to see what's coming next! So far Java has been a lot of fun.
+
+6. If you were getting paid to work on this week's Prove assignment and you had another month to work on it, what would you add?
+
+I'd want to add a few more creature classes, perhaps add a point system, and add a player class that a user would be able to control the move and attack aspects. It'd also be cool to add a Hunger aspect where the creatures got hungry and lost health every few turns after they hadn't eaten for a while.
+
+7. A common Java interview question is "describe the difference between an interface and an abstract class". How would you answer that question?
+
+An interface only allows you to create a sort of contract that the class will provide certain methods, where as an abstract class can contain abstract methods that will need to be coded in the the sub class, but it also has the ability to code the method inside the parent class.
+
+8. Of all of the resources in this week's Preparation assignment, which was the _most_ helpful to you and why?
+
+The most helpful this week was the first video and the first guide.
+
+9. Of all of the resources in this week's Preparation assignment, which was the _least_ helpful to you and why?
+
+To me the Oracle docs were the least helpful.
+
+10. How many hours did you spend on this class this week?
+
+02 Prepare - 30 min
+02 Teach - 2 hours (including cordinating w/ my team)
+02 Prove 1st Attempt - 4 hours
+02 Prove 2nd Attempt -
+02 Ponder - 30 min
+----------------------------
+Total Hours - 7 hours
