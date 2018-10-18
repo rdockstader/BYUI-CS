@@ -1,0 +1,46 @@
+# 04 Ponder : Weekly Reflection
+
+1. Describe one challenge your team experienced working on the GitHub activity.
+
+All of us work with git in our daily job/activities, so there weren't very many issues we ran into.
+
+2. What are the advantages to using a version control system like git?
+
+Being able to more effectively work with a team, to share only the files that need to be shared (not compile files, etc), and being able to keep track of various changes that have been made to the code base.
+
+3. What is the difference between git and GitHub?
+
+git is the language/method, GitHub is a cloud storage provider for your code that uses git.
+
+4. What is the purpose of branching in git?
+
+So you can make changes to the code base without making a change to the master branch. Then if you have multiple people working on a project they can each make a branch and push to that branch and then all merge together when the project is complete.
+
+5. Imagine you're working as a software developer for someone who doesn't have any experience with programming. How would you describe version control and git to your employer?
+
+Version control allows you to keep better track of the changes made to your program. Git is the method used to keep track of those changes.
+
+6. After completing the assignments this week, what questions do you still have?
+
+I don't ahve any additional questions
+
+7. A common git-related interview question is "How do you revert a commit that has already been pushed and made public?". How would you answer that question?
+
+There are a couple of ways to do that, but I feel the best way is to rebase or cherry pick the commit that happened before the commit you want. 
+
+8. Of all of the resources and tutorials in this week's assignments, which was the _most_ helpful to you and why?
+
+My team was a great resource this week. They all have quite a bit of experience and any questions that I had were quickly answered with a slack message.
+
+9. Of all of the resources and tutorials in this week's assignments, which was the _least_ helpful to you and why?
+
+I felt like the tutorials were a bit long, but I have had previous experience with git.
+
+10. How many hours did you spend on this class this week?
+
+04 Prepare - 1 1/2 hours
+04 Teach - 1 hour
+04 Prove - 2 1/2 hours
+04 Ponder - 2 hours
+----------------------------
+Total Hours - 7 hours

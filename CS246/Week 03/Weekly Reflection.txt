@@ -1,0 +1,47 @@
+# 03 Ponder : Weekly Reflection
+
+1. Describe one challenge your team experienced working on the JSON parsing activity.
+
+The biggest challenge faced was just learning how to work with the new library. It wasn't too difficult, but it did take up a little extra time between googling everything and pulling up the java docs to find the methods that we needed.
+
+2. For the Twitter API assignment, what did you learn about how APIs work?
+
+API's allow you access to a programs database, through exposed endpoints. Most of them require some level of authentication, and also will return JSON. Having standards such as JSON makes things really a lot easier, especially with library such as Gson that will read it directly into a class for you.
+
+3. Did you complete the Stretch Challenge for the Twitter API Assignment? If so, briefly describe which method you used.
+
+I did. I used the Comparator method. I struggled for a while with this one because I thought we were supposed to sort our map instead of creating a new list. Once I figured out that it didn't need to stay a map, then I was able to use the information that I'd found online and finished it pretty quickly after that. It definitely reminded me of why it was so important for us to learn the data structures available and what they are used for.
+
+4. What did you learn from comparing your code to the teacher's solution?
+
+I learned how I could have compressed my code quite a bit by using a lamda function
+
+5. After completing the assignments this week, what questions do you still have?
+
+Most of my questions revolve around the usage of 3rd party API's, and if it's generally better to use a library that exists, even if it isn't developed by that third party then using the HttpClient
+
+6. Aside from just searching for tweets with a given hashtag, what is another use you could see for the twitter API?
+
+Data Analysis and computer learning. You can learn a lot about someone from what they post online, and with machine learning you could analyze this data and perhaps gleam things like market trends, net hit songs, etc. Or if you wanted to make it a little more personal you could create a profile on a person as to how likely it was that their next twitter post would be a negative or positive comment.
+
+7. A common Java interview question is "Describe what an API is and how it's used". (Sometimes people refer to these types of APIs as "REST APIs") How would you answer that question?
+
+API stands for Application Programing Interface. And that's exactly what it does, it allows your program to interface with the data stored in the database (or other storage device) in a way that doesn't require you to have an extensive database background. It returns it's results in a standard way, which allows you to quickly and easily use as many API's as needed. Some examples of this would include most modern web applications with a customer built API that their program interfaces with, or an API that allows third parties to interface with your data in the way you want them to.
+
+8. Of all of the resources in this week's reading, which was the _most_ helpful to you and why?
+
+using and understand maven
+
+9. Of all of the resources in this week's reading, which was the _least_ helpful to you and why?
+
+How to get a twitter developer account. It would be useful, but it's just not up to date.
+
+10. How many hours did you spend on this class this week?
+
+01 Prepare - 1 h
+01 Teach - 2 h
+01 Prove 1st Attempt - 4 g
+01 Prove 2nd Attempt -
+01 Ponder - 1 h
+----------------------------
+Total Hours - 8 h

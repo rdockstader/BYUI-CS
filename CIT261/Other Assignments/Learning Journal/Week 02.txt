@@ -1,0 +1,75 @@
+JavaScript Objects:
+USEFUL WEBSITES:
+https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript
+https://medium.com/dailyjs/instantiation-patterns-in-javascript-8fdcf69e8f9b
+
+Object Creation Functions
+
+function Hero(name, level) {
+  this.name = name;
+  this.level = level;
+}
+
+Hero.prototype.greet = function () {
+  return `${this.name} says hello.`;
+}
+
+Inheritance 
+Based on Prototypes. Object.getPrototypeOf() is a function that will return the prototype of the object you called it on.
+
+// Initialize constructor functions
+function Hero(name, level) {
+  this.name = name;
+  this.level = level;
+}
+
+function Warrior(name, level, weapon) {
+  Hero.call(this, name, level);
+
+  this.weapon = weapon;
+}
+
+function Healer(name, level, spell) {
+  Hero.call(this, name, level);
+
+  this.spell = spell;
+}
+
+// Link prototypes and add prototype methods
+Warrior.prototype = Object.create(Hero.prototype);
+Healer.prototype = Object.create(Hero.prototype);
+
+Hero.prototype.greet = function () {
+  return `${this.name} says hello.`;
+}
+
+Warrior.prototype.attack = function () {
+  return `${this.name} attacks with the ${this.weapon}.`;
+}
+
+Healer.prototype.heal = function () {
+  return `${this.name} casts ${this.spell}.`;
+}
+
+// Initialize individual character instances
+const hero1 = new Warrior('Bjorn', 1, 'axe');
+const hero2 = new Healer('Kanin', 1, 'cure');
+
+Properties
+
+
+Methods
+
+Instantiation
+
+
+
+
+
+
+
+
+
+
+
+

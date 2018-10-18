@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Prove05</string>
+    <string name="book_hint">Book</string>
+    <string name="book_text">John</string>
+    <string name="chapter_hint">Chapter</string>
+    <string name="chapter_text">1</string>
+    <string name="verse_hint">Chapter</string>
+    <string name="verse_text">1</string>
+    <string name="button_text">Submit</string>
+    <string name="save_btn_text">Save Scripture</string>
+    <string name="load_btn_text">Load Scripture</string>
+    <string name="saved_book">book</string>
+    <string name="saved_chap">chapter</string>
+    <string name="saved_verse">verse</string>
+</resources>

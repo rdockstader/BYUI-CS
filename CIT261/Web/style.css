@@ -29,7 +29,7 @@ table {
     color: white;
 }
 
-input[type=text] {
+input[type=text], select {
     border-radius: 5px;
     box-shadow: none;
     border: 1px solid grey;
@@ -44,7 +44,7 @@ label{
     clear: left;
     width: 10%;
 }
-input {
+input, select {
   display: inline-block;
   float: left;
 }
@@ -56,3 +56,35 @@ p.clear {
 .mt-3 {
     margin-top: 30px;
 }
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.error {
+    background-color: #F8D7DA;
+    border: solid 1px #F5C6CB;
+    padding: 10px;
+    color: #721C24;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

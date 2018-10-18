@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript Objects</title>
+        <meta name="description" content="A JavaScript based mortgage payment Calculator to show Loops, Conditional Statements, Functions, Variables, Parameters, Arrays and Associative Arrays">
+        <meta name="keywords" content="JavaScript,mortgage payment calculator, motgage, payment, calculator, loops, conditional statements, functions, variabbles, parameters, arrays, associateive arrays">
+        <meta name="author" content="John Doe">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <div>
+            <h1>Boar Battlers!</h1>
+            <p>
+            Add Hero's to your group and attack a horde of wild boars!
+            </p>
+        </div>
+        <div>
+            <p id="hero-add-error-message" class="error hidden"></p>
+        </div>
+        <div>
+            <label for="hero-name">Hero Name</label>
+            <input type="text" placeholder="James" id="hero-name" name="hero-name"> 
+               <label for="hero-type">Hero Type</label>
+            <select name="hero-type" id="hero-type">
+                <option value="w">Warrior</option>
+                <option value="m">Mage</option>
+                <option value="h">Healer</option>
+            </select>
+            <p class="clear"></p>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary" onclick="onAddHero()" id="start-game-btn">Add Hero</button>
+            <button class="btn btn-primary" onclick="onAddHero()">Start Game</button>
+        </div>
+        <div>
+            <table id="hero-table">
+            </table>
+        </div>
+        <div>
+            <table id="villian-table"></table>
+        </div>
+        <div>
+            <table id="battle-log-table">
+            </table>
+        </div>
+        <script src="script.js" type="text/javascript"></script>
+    </body>
+</html>
