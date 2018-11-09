@@ -1,0 +1,31 @@
+-- CREATE TABLES
+CREATE TABLE tblUsers (
+	UserID SERIAL PRIMARY KEY,
+	UserName VARCHAR(50),
+	Password VARCHAR(50)
+);
+
+CREATE TABLE tblTaskGroups (
+	TaskGroupID SERIAL PRIMARY KEY,
+	GroupName VARCHAR(200),
+	ParentGroupID INT REFERENCES tblTaskGroups(TaskGroupID),
+	UserID INT REFERENCES tblUsers(UserID),
+	Priority INT
+);
+
+CREATE TABLE tblTasks (
+	TaskID SERIAL PRIMARY KEY,
+	TaskName VARCHAR(200),
+	TaskDesc TEXT,
+	TaskGroupID INT REFERENCES tblTaskGroups(TaskGroupID),
+	UserID INT REFERENCES tblUsers(UserID),
+	DateCreated DATE,
+	CompletedDate DATE
+);
+
+
+-- DROP TABLES
+
+DROP TABLE tblTasks;
+DROP TABLE tblTaskGroups;
+DROP TABLE tblUsers;

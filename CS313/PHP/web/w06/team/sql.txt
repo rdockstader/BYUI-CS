@@ -1,0 +1,11 @@
+CREATE TABLE tblTopics (
+	TopicID SERIAL PRIMARY KEY,
+	name VARCHAR(255)
+);
+
+CREATE TABLE tblScriptures_topics (
+	ScriptureID INT references tScriptures(ScriptureID),
+	topicID INT references tblTopics(TopicID)
+);
+
+INSERT INTO tblTopics (name) VALUES ('Faith'), ('Sacrifice'), ('Charity');
