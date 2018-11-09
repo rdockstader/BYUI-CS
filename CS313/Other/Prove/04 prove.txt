@@ -1,0 +1,27 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Describe something from your database that you think came together very nicely.
+
+I feel like the task group and tasks came together very well. With the ParentGroupID stored in the TaskGroup table, I'm able to nest task groups as many times as the user might want.
+
+2. Describe something from your database that you think could be improved or extended in the future.
+
+Currently, there isn't a way to share tasks. I could make it so you could have a many-to-many association between tasks, and than a one to many on tasks to task groups so that two people could share a task, but organize it differently.
+
+3. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+That you could foreign key a table back to its self.
+
+4. Briefly describe two principles of good database design
+
+Primary Keys - Primary keys are a unique identify on your table. You can link to this table from other tables using the primary key. I feel that this is best done through number based ID's so you're not doing any string comparison 
+
+Eliminating Data Redundancy - If there is a field that will be entered the same way multiple times, especially if there is a limited amount of options that could be in the field.
+
+5. Please select the category you feel best describes your assignment:
+E - Shows creativity and excels above and beyond requirements
+
+
+6. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I was able to setup three tables to accomplish what I wanted to do. For going above and beyond, I added a table that keyed back to itself.

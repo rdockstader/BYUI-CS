@@ -1,0 +1,204 @@
+**********************
+--- VISUAL OUTLINE ---
+**********************
+
+ctblMonths
+- Abbreviation: varchar(50)
+- Name: varchar(50) PK
+
+ctblSessionDays
+- Day: varchar(20) PK
+
+ctblSessionTypes 
+- Code:		VARCHAR(5) PK,
+- Value:	VARCHAR(50)
+
+tblSpeakers
+- SpeakerID: 	INT
+- FirstName: 	VARCHAR(50)
+- LastName: 	VARCHAR(50)
+- Title: 		VARCHAR(50)
+- Position: 	VARCHAR(50)
+
+tblSessions
+- SessionID: 	INT
+- Year: 		INT
+- Month: 		VARCHAR(50) Fk ctblMonths(Name)
+- Day: 			VARCHAR(20) Fk ctblSessionDays(Day)
+- isMorning: 	BOOLEAN
+
+tblUsers
+- UserID: 		INT
+- FirstName: 	VARCHAR(50)
+- LastName: 	VARCHAR(50)
+
+tblNotes
+- SpeakerID: 	INT Fk tblSpeakers(SpeakerID)
+- SessionID: 	INT Fk tblSessions(SessionID)
+- UserID: 		INT Fk tblUsers(UserID)
+- Notes: 		TEXT
+
+
+
+
+
+
+***********************
+--- SQL Commands---
+***********************
+
+CREATE TABLE ctblMonths  (
+	Abbreviation VARCHAR(50),
+	Name VARCHAR(50) primary key
+);
+CREATE TABLE ctblSessionDays (
+	Day VARCHAR(20) primary key
+);
+CREATE TABLE ctblSessionTypes (
+	Code VARCHAR(5) primary key,
+	Value VARCHAR(50)
+);
+CREATE TABLE tblSpeakers (
+	SpeakerID SERIAL primary key,
+	FirstName VARCHAR(50),
+	MiddleName VARCHAR(50),
+	LastName VARCHAR(50),
+	Title VARCHAR(50),
+	Position VARCHAR(50)
+);
+CREATE TABLE tblSessions (
+	SessionID SERIAL primary key,
+	Year INT,
+	Month VARCHAR(50) REFERENCES ctblMonths(Name),
+	sessionType VARCHAR(5) REFERENCES ctblSessionTypes(code)
+);
+CREATE TABLE tblUsers (
+	UserID SERIAL primary key,
+	FirstName VARCHAR(50),
+	LastName VARCHAR(50)
+);
+CREATE TABLE tblNotes (
+	NoteID SERIAL primary key,
+	SpeakerID INT REFERENCES tblSpeakers(SpeakerID),
+	SessionID INT REFERENCES tblSessions(SessionID),
+	UserID INT REFERENCES tblUsers(UserID),
+	Notes TEXT
+);
+
+
+INSERT INTO ctblMonths VALUES ('Apr', 'April');
+INSERT INTO ctblMonths VALUES ('Oct', 'October');
+INSERT INTO ctblSessionDays VALUES ('Saturday');
+INSERT INTO ctblSessionDays VALUES ('Sunday');
+INSERT INTO ctblSessionTypes VALUES ('SATAM', 'Saturday Morning');
+INSERT INTO ctblSessionTypes VALUES ('SATPM', 'Saturday Afternoon');
+INSERT INTO ctblSessionTypes VALUES ('SUNAM', 'Sunday Morning');
+INSERT INTO ctblSessionTypes VALUES ('SATPM', 'Sunday Afternoon');
+INSERT INTO ctblSessionTypes VALUES ('WOMEN', 'Womens');
+INSERT INTO ctblSessionTypes VALUES ('PRIES', 'Priesthood');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Russel', 'M', 'Nelson', 'President', 'Church President');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Dallin', 'H', 'Oaks', 'President', 'First Counselor in the First Presidency');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Henry', 'B', 'Eyring', 'President', 'Second Counselor in the First Presidency');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'M', 'Russel', 'Ballard', 'President', 'Acting President of the Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Jeffery', 'R', 'Holland', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Dieter', 'F', 'Uchtdorf', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'David', 'A', 'Bednar', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Quentin', 'L', 'Cook', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'D', 'Todd', 'Christofferson', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Neil', 'L', 'Anderson', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Ronald', 'A', 'Rasband', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Gary', 'E', 'Stevenson', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Dale', 'G', 'Renlund', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Gerrit', 'W', 'Gong', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSpeakers VALUES (DEFAULT, 'Ulisses', null, 'Soares', 'Elder', 'Quorum of the Twelve Apostles');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'April', 'SATAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'April', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'April', 'SUNAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'April', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'April', 'WOMEN');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'April', 'PRIES');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'October', 'SATAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'October', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'October', 'SUNAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'October', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'October', 'WOMEN');
+INSERT INTO tblSessions VALUES (DEFAULT, 2016, 'October', 'PRIES');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'April', 'SATAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'April', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'April', 'SUNAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'April', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'April', 'WOMEN');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'April', 'PRIES');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'October', 'SATAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'October', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'October', 'SUNAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'October', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'October', 'WOMEN');
+INSERT INTO tblSessions VALUES (DEFAULT, 2017, 'October', 'PRIES');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'April', 'SATAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'April', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'April', 'SUNAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'April', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'April', 'WOMEN');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'April', 'PRIES');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'October', 'SATAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'October', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'October', 'SUNAM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'October', 'SATPM');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'October', 'WOMEN');
+INSERT INTO tblSessions VALUES (DEFAULT, 2018, 'October', 'PRIES');
+INSERT INTO tblUsers VALUES (DEFAULT, 'John', 'Doe');
+INSERT INTO tblUsers VALUES (DEFAULT, 'Jane', 'Doe');
+INSERT INTO tblUsers VALUES (DEFAULT, 'Jimmy', 'Doe');
+INSERT INTO tblUsers VALUES (DEFAULT, 'Alice', 'Doe');
+INSERT INTO tblNotes VALUES (DEFAULT, 1, 2, 1, 'Church is becoming more family centered');
+INSERT INTO tblNotes VALUES (DEFAULT, 8, 2, 1, 'Church is now ONLY 2 HOURS LONG!!!!!');
+
+*********************
+--- QUERY COMMANDS ---
+*********************
+
+*** query tables ***
+SELECT * FROM ctblMonths;
+SELECT * FROM ctblSessionDays;
+SELECT * FROM ctblSessionTypes;
+SELECT * FROM tblSpeakers;
+SELECT * FROM tblSessions;
+SELECT * FROM tblUsers;
+SELECT * FROM tblNotes;
+
+SELECT 
+	tblNotes.Notes,
+	tblUsers.FirstName || ' ' || tblUsers.LastName AS UserName,
+	tblSpeakers.Title || ' ' || tblSpeakers.FirstName || ' ' || tblSpeakers.MiddleName || ' ' || tblSpeakers.LastName AS speaker,
+	tblSessions.Year || ' ' || tblSessions.Month || ' - ' || ctblSessionTypes.Value AS session
+FROM 
+	tblNotes 
+	JOIN tblUsers ON (tblNotes.UserID = tblUsers.UserID)
+	JOIN tblSessions ON (tblNotes.SessionID = tblSessions.SessionID)
+	JOIN tblSpeakers ON (tblNotes.SpeakerID = tblSpeakers.SpeakerID)
+	JOIN ctblSessionTypes ON (tblSessions.sessionType = ctblSessionTypes.code);
+
+*********************
+--- DROP COMMANDS ---
+*********************
+
+DROP TABLE tblNotes;
+DROP TABLE tblUsers;
+DROP TABLE tblSessions;
+DROP TABLE tblSpeakers;
+DROP TABLE ctblSessionTypes;
+DROP TABLE ctblSessionDays;
+DROP TABLE ctblMonths;
+
+
+******************************
+--- OTHER USERFUL COMMANDS ---
+******************************
+
+SHOW ALL TABLES: \dt
+
+
+
+
+

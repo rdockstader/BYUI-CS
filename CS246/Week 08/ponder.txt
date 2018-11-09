@@ -1,0 +1,57 @@
+# 08 Ponder : Weekly Reflection
+
+1. What is the purpose of a unit test?
+
+to make sure individual methods/code chunks are working as they would be expected to in one or more scenarios. 
+
+2. What are the pros and cons of Test Driven Development?
+
+Pros:
+	There should be less bugs, since you're creating test scenarios before creating code
+	there is a clearly defined way to do it
+	There is a clearly defined end goal (your code is complete when you pass all test)
+Cons:
+	More up front work to get code up and running
+	There isn't always a way to test code easily, making the functions quite cumbersome
+	
+
+3. How are assert statements used by JUnit for unit testing?
+
+they determine the pass/fail of the unit test.
+
+4. A common design-pattern interview question is "Describe a situation where you would use the Observer pattern.". How would you answer that question?
+
+Any time that you have something that needs to react to a state change, an Observer pattern is worth considering.
+
+5. Of all of the resources and tutorials in this week's assignments, which was the _most_ helpful to you and why?
+
+I found the time I spent doing the team work the most helpful this week.
+
+6. Of all of the resources and tutorials in this week's assignments, which was the _least_ helpful to you and why?
+
+There wasn't anything that really stood out as overly unhelpful this week.
+
+7. How would you say your team project is proceeding so far?
+
+So far I think it's coming along well. I feel like there may be some roadblocks that are coming up, but I still feel like we'll be able to hit our deadlines.
+
+8. Did anyone on your team have any violations/infractions of the Team Agreement this week? If so, were the punishments enforced?
+
+No one had any violations.
+
+9. Are there any concerns regarding your project or your team that you want the teacher to know about?
+
+There aren't.
+
+10. How many hours did you spend on this class this week?
+
+
+
+08 Prepare - 2
+08 Teach - 1
+08 Prove - 1
+08 Ponder - 1
+08 Team Project - 2 
+----------------------------
+Total Hours - 8
+

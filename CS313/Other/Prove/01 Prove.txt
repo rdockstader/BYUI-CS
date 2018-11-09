@@ -1,0 +1,32 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your Heroku web application:
+
+Heroku: https://rdockstader-cs313.herokuapp.com/
+Friendly: http://cs313.ryandockstader.com/
+
+2. Copy and paste the URL for your GitHub source code repository:
+
+https://github.com/rdockstader/cs313
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+The primary php info page is up at index.php, and the hello world page is up at http://cs313.ryandockstader.com/hello.html
+
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+Everything should be functional.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+Learning how to run PHP on my local machine, as well as composer to manage php dependancies.
+
+6. Please select the category you feel best describes your assignment: [A-E]
+
+E - Shows creativity and excels above and beyond requirements
+
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I completed the assignment by getting the php page setup, as well as the hello.html page setup. I went above and beyond by mapping a subdomain of cs313.ryandockstader.com to my heroku app, for a more user friendly URL

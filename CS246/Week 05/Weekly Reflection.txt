@@ -1,0 +1,43 @@
+# 05 Ponder : Weekly Reflection
+
+1. Describe one challenge your team experienced working on the Android activity.
+
+Fully understanding what an intent is.
+
+2. What is the difference between an Activity and an Intent?
+
+an Activity is the screens/controls, while an intent sends data between activities. 
+
+3. Describe how the onCreate() callback works.
+
+onCreate is called every time the activity is 'created'. This allows you to pull the needed info from the intent, or initialize variables.
+
+4. What's the biggest challenge you've experienced regarding Android development compared to pure Java development?
+
+Understanding UI.
+
+5. After completing the assignments this week, what questions do you still have?
+
+intents are still a little unclear, but they seem to mostly work liek promises in JS.
+
+6. A common Android-related interview question is "What's the difference between onPause() and onDestroy() and what kinds of things might you do in those functions?". How would you answer that question?
+
+onPause happens when you leave the app while in an activity, onDestory happens when you leave the activity or when you hard close the app.
+
+7. Of all of the resources and tutorials in this week's assignments, which was the _most_ helpful to you and why?
+
+the android guide to setting it up
+
+8. Of all of the resources and tutorials in this week's assignments, which was the _least_ helpful to you and why?
+
+The video wasn't super helpful
+
+9. How many hours did you spend on this class this week?
+
+05 Prepare - 2
+05 Teach - 2
+05 Prove - 4
+05 Ponder - 1
+----------------------------
+Total Hours - 9
+

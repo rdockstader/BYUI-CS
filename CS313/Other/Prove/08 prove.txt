@@ -1,0 +1,27 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+0. Don't forget to also upload your javascript file to the assignment dropbox in I-Learn.
+
+1. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+Everything should be working fine
+
+2. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+I started with Express, so this helped me realize how much it's doing behind the scene to make life easier.
+
+3. Describe anything you did to go above and beyond with this assignment.
+
+Added endpoint of http://localhost:8888/toJson? which will convert the params to a JSON object, using the querystring library. So, you can get the same results of /getData if you put in:
+
+http://localhost:8888/toJson?name=Dr.%20Burton&class=cs313
+
+but it isn't locked into anything other then the /toJson?key=value$key2=value2... syntax.
+
+4. Please select the category you feel best describes your assignment:
+E - Shows creativity and excels above and beyond requirements
+
+
+5. Provide a brief justification (1-2 sentences) for selecting that category.
+I think that adding in a JSON converter endpoint is pretty creative. While JS does this for you, it's cool to see how the different libraries can work so easily, and the awesome JS functions that are so easy to call.
+

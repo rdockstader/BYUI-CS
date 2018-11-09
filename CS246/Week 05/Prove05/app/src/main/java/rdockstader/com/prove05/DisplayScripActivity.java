@@ -29,9 +29,7 @@ public class DisplayScripActivity extends AppCompatActivity {
             Log.d(this.TAG, "Displaying new scripture");
             this.scripture = intent.getParcelableExtra(MainActivity.EXTRA_MESSAGE);
         }
-
-
-
+        
         TextView textView = findViewById(R.id.textView);
         textView.setText(scripture.toString());
     }

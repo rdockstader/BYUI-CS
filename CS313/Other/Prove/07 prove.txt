@@ -1,0 +1,92 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence description:
+
+Task Killer!
+Organize, and eliminate your tasks
+
+
+2. The Heroku URL for your web application:
+
+http://cs313.ryandockstader.com/proj/v2/
+-- or --
+https://rdockstader-cs313.herokuapp.com/proj/v2
+
+3. The GitHub URL for your source code repository:
+
+https://github.com/rdockstader/CS313/tree/master/web/proj/v2
+
+4. Please provide a brief description of what your project does and how to use the application. Make sure to include any required information like a username and password.
+
+I tried to keep the UI reasonably simple. I wanted it to be easy to see your tasks in their order of importance for the groups, and the oldest for the task list. I used bootstrap for styling so it should feel fairly familiar to most web users. 
+
+USERNAME: instructor
+PASSWORD: password
+(but if you want to create a new user, you can test that as well)
+
+First page (index.php) 
+-- you can create new task groups.
+--  You can also edit and delete them here after you've created them. 
+-- Task groups allow you to categorize you tasks. 
+-- Clicking the task group name will allow you to see the tasks in that task group
+
+Task page (tasks.php)
+-- Shows all of the tasks that you have yet to complete
+-- Allows you to delete or complete each of your tasks
+-- Allows you to add new tasks
+
+
+5. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+All pieces should be working correctly.
+
+6. Provide evidence of your database design by including the SQL file with the commands used to create your tables, etc. (This is ideally the exact file you used to create them. But if you don't have that, you could dump the SQL that describes your database from Heroku to a file "output.sql" using the following command: heroku run 'pg_dump $DATABASE_URL' > output.sql
+
+Submit this SQL file in addition to the submission file for this assignment.
+
+
+--------------------------------
+Project Self-assessment
+--------------------------------
+
+For each of the following requirements, please replace the "(YES/NO)" with either "YES" or "NO" as to whether or not your work met this requirement.
+
+Requirements
+------------
+(YES) 1. Your web application is running in Heroku.
+(YES) 2. Your latest source code is in GitHub.
+(YES) 3. Your web application uses data stored in the session.
+(YES) 4. Your web application uses a PostgreSQL database in Heroku.
+(YES) 5. Your database schema includes foreign key references.
+(YES) 6. Your web application includes an SQL SELECT query that joins multiple tables.
+(YES) 7. Your web application includes an SQL UPDATE statement.
+
+For each of the following criteria, please replace the "(A-E)" with either the "A", "B", "C", "D", or "E" category you feel best describes your work. Include a 1-2 sentence justification.
+
+Categories
+----------
+A - Some attempt was made.
+B - Developing, but significantly deficient.
+C - Slightly deficient, but still mostly adequate.
+D - Meets requirements.
+E - Shows creativity and excels above and beyond requirements.
+
+Criteria
+----------
+(E) 1. Professional look and feel.
+
+(E) 2. Accomplishes a meaningful/interesting task.
+
+(E) 3. Demonstrates skill with HTML, CSS, and JavaScript.
+
+(E) 4. Demonstrates skill with PHP.
+
+(E) 5. Demonstrates good database design principles.
+
+(E) 6. Demonstrates skill in database retrieval.
+
+(E) 7. Demonstrates skill in database modification.
+
+(E) 8. Demonstrates mastery of client-side/server-side coordination and communication.
+
+(E) 9. Overall project evaluation.

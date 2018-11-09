@@ -1,0 +1,44 @@
+# 07 Ponder : Weekly Reflection
+
+1. Did you fulfill all aspects of your team agreement this week, or if there was an infraction, did you fulfill the appropriate accountability measure? (If not, please explain.)
+
+Yes, all aspects of the team agreement were fulfilled this week.
+
+2. Did you hold your teammates accountable for upholding their commitments this week? (If not, please explain.)
+
+Yes, I did.
+
+3. What is the purpose of a UML class diagram?
+
+To lay out each of the classes, variables, functions, etc. that will be needed to provide the best solution possible
+
+4. What are some benefits of the MVC pattern?
+
+Separation of tasks. The model controls what can be stored, the view determines how it will be displayed, and the controller goes between the model and the view to create/read/update/delete things.
+
+5. What are some drawbacks to the MVC pattern?
+
+It doesn't work in every situation, and for smaller projects it can create a lot of jumping between files.
+
+6. A common design-pattern interview question is "Describe the difference between the MVC pattern and the MVP variant.". How would you answer that question?
+
+MVP trades the controller for the presenter, so that it handles the controller and all the UI logic for the view. Then, the view is a lot more like a 'skin' then anything else. This is useful in Android projects, because then the Presenter can handle all the things that modify the UI in the background, while the view only maintains what is shown on the screen. This is helpful in fulfilling the requirement the the UI thread is never blocked.
+
+7. How would you explain to a new developer why they should go through the trouble of using the MVC pattern?
+
+It's useful to know what each piece does/is supposed to do. MVC is used in a lot of different places, or at least some variant of it and knowing the ins and outs will help you to better understand and navigate code projects.
+
+8. Give an example of when the MVC pattern would be overkill for a project.
+
+A resume website.
+
+9. How many hours did you spend on this class this week?
+
+07 Prepare - 1
+07 Teach - 1
+07 Prove - 2
+07 Ponder - 1
+07 Team Project - 2
+----------------------------
+Total Hours - 7
+

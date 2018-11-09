@@ -1,0 +1,47 @@
+# 06 Ponder : Weekly Reflection
+
+1. Describe how multithreading works.
+
+Multithreading allows you to use different processes to run different tasks at the same time. I.E. you can run tasks to get or display information, while leaving your UI thread alone.
+
+2. What is the difference between subclassing Thread and implementing Runnable?
+
+You can implement Runnable, while stil subclassing a different object. If you directly subclass Thread, you can't do this in Java.
+
+3. What was one of the most difficult challenges your team faced working on the multithreading assignment?
+
+still getting familiar with android.
+
+4. After completing the assignments this week, what questions do you still have?
+
+I didn't quite understand all the moving parts of the list view.
+
+5. A common Android-related interview question is "If you need to update the GUI from a background thread, how can you accomplish this?". How would you answer that question?
+
+You can do that by passing in a UI element to an AsyncTask subclass, and running the onProgressUpdate method and updating said UI element.
+
+6. How would you explain to a new developer what a software design pattern is?
+
+It is a set pattern to help solve common problems, and make it easier to understand what specific methods are doing.
+
+7. Give an example of when you would use the Strategy pattern other than the examples given in the reading.
+
+
+
+8. Of all of the resources and tutorials in this week's assignments, which was the _most_ helpful to you and why?
+
+I appreciated the instructors walkthrough videos, and Q&A post.
+
+9. Of all of the resources and tutorials in this week's assignments, which was the _least_ helpful to you and why?
+
+I found the team assignment this week to be pretty confusing. It made it seem like we were supposed to get the progress bar to actually display, but looking back that probably wasn't the case.
+
+10. How many hours did you spend on this class this week?
+
+06 Prepare - 2
+06 Teach - 2
+06 Prove - 3
+06 Ponder -	1
+----------------------------
+Total Hours - 8
+

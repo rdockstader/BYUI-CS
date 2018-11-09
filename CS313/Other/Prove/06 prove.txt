@@ -1,0 +1,90 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+http://cs313.ryandockstader.com/proj/v2/
+(username: instructor, password: password)
+
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rdockstader/CS313/tree/master/web/proj/v2
+
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+login.php
+- login page -- Username = instructor password == password
+
+completeTask.php
+- Contains the code to update (complete) a task with a completed date
+- Called from tasks.php
+
+db.php
+- contains the database connection information. used in most (if not all) pages.
+
+deleteTask.php
+- contains the code to delete a task
+- called from tasks.php
+
+deleteTaskGroup.php
+- contains the code to delete a task group
+- called from index.php
+
+editTaskGroup.php
+- contains the form to edit a task group
+- called from index.php
+
+index.php
+- base page of the application
+- displays task groups
+- contains add task group form
+
+insertTask.php
+- contains code to insert a task
+- called from tasks.php
+
+insertTaskGroup.php
+- contains code to insert a task group
+- called from index.php
+
+login.php
+- if not logged in, this is where you'll get redirected
+- contains username/password prompts
+- password prompt isn't taken into account so all passwords will work for the two users in the database (instructor, ryan)
+
+session.php
+- contains the php code to active the session, or redirct to login page
+- used on most pages
+
+tasks.php
+- displays the tasks for a given task group
+- called from index.php
+- requires a taskgroupid
+
+updatetaskGroup.php
+- php code to update a task group
+- called from editTaskGroup.php
+
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+I wouldn't say they aren't working correctly, but two parts I could add is a proper update form for a task to change the name/description. Anotehr part is that task group priority isn't used anywhere, and isn't in the edit form.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+While using PHP to run SQL scripts is pretty interesting, it's also pretty risky. I definintly prefer the API method to the method we're using in this project.
+
+6. What is a benefit of having a foreign key constraint?
+
+It doesn't allow you to insert data that doesn't exist in the other table, meaning it's very easy to join on that column to the keyed table.
+
+7. Please select the category you feel best describes your assignment:
+E - Shows creativity and excels above and beyond requirements
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I feel that my app was well built out under the constraints of time, and the requirements of the assignment. Outside of the password prompt not working (which will be fixed next week I'm guessing, with proper encryption) it could be a fully functioning, PHP based web app.
+
+

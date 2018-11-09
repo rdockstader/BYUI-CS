@@ -1,0 +1,41 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+http://cs313.ryandockstader.com/w03/prove/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rdockstader/CS313/tree/master/web/w03/prove
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+Index.php
+	the Browses feature of the page. Shows a list of Pokemon that you can add to your cart. This is done via a post request to the same page that you're on, and adds it to a session variable. The right hand side of the app is the primary navigation and will stay mostly the same from page to page. On this page, it shows the link to your cart, and the link to checkout. View Cart takes you to your cart. Checkout takes you directly to checkout.
+cart.php
+	displays the contents of your cart, along with the total cost at the bottom
+checkout.php
+	Takes input from the user for their name, email and address. Also displays the total price.
+confirmation.php
+	Takes the post request from checkout.php and displays it in a confirmation style. Includes an order confirmation message as well as the information displayed. Navigating to this page will clear the contents of your cart.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+All places of the assignment should be working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+The power of PHP, and of web styles. I showed my wife this web page and when we got to the confirmation it looked real enough that she was convinced that I just placed an order for something, even though I told her it was a test page prior to showing her the site. It's amazing what proper styling of web pages can produce from people!
+
+6. List one strength and one limitation of using cookies.
+
+Strength: You're able to pull things from a cookie that are set on various pages of your site, no matter where you are.
+Limitation: There is full access to the cookies used on your web page on the client side, which isn't the most secure way to do things (not that it isn't secure when done right, it just HAS to be done right).
+
+7. Please select the category you feel best describes your assignment:
+E - Shows creativity and excels above and beyond requirements
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I feel that I went above and beyond with the styling of this page, and the usage of various php functions. I created an array in a seperate php file that I was then able to pull in where needed. I also used the stdClass to create various objects, and then used the array search function to find the stdClass objects later. I also styled the page well enough to seem pretty real, other then the length of the list of objects. With a paginator, this could have been improved.

@@ -1,0 +1,41 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+http://cs313.ryandockstader.com/proj/v1/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rdockstader/CS313/tree/master/web/proj/v1
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+Login page
+- This accepts a login. The password currently only has to be filled out. The usernames available are ryan and instructor.
+Index.php
+- This shows all the task groups assigned to the current logged in user. Each task group is a link. The add task group does NOT work.
+tasks.php
+- this shows all the tasks in a task group, including their title, their description, when they were added, and a complete task button. The add task and complete task buttons do NOT work.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+The add task and add task group, and complete task button as well as the password portion of the login aren't hooked up, but those weren't part of this assignment.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+How to convert a database date to php "on the fly".
+
+6. Why should you create a separate user account for your application to access the database?
+
+So that you can more easily control the permissions of the user accessing the database instead of having full access to everything, and this keeps the primary users username and password more secure.
+
+7. Please select the category you feel best describes your assignment:
+
+E - Shows creativity and excels above and beyond requirements
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I feel that my styling, as well as the functionality surrounding the display was well designed. It is a reasonably intuitive experience from a users standpoint and maintaines a very clean feeling UI. It also tells you how long it's been since you added the task.
+
+

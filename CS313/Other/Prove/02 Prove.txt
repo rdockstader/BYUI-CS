@@ -1,0 +1,40 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+http://cs313.ryandockstader.com/index.php
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rdockstader/CS313/blob/master/web/
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+Index.php
+	Home page of the app. Includes a page header and footer, an about me section, a class description and a table displaying all of the completed assignments
+partials/header.php
+	Includes the navbar that is shared across the site
+partials/footer.php
+	includes the footer that is shared across the site.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+All places of the assignment should be working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+It was more of a refresher, but I love that you can include headers/footers into your file. So you can have nav bars that are consistent across your entire app, easily.
+
+6. What is the difference between an HTTP Get and Post? When should each be used?
+
+Get displays information in the URL. Post does not. Get is fine when passing conditional logic to a page, or when it isn't sensative data and there isn't a lot of it.
+
+Post is used when there IS sensitive data, or there is a lot of data.
+
+7. Please select the category you feel best describes your assignment:
+E - Shows creativity and excels above and beyond requirements
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I feel that I went above and beyond with the styling of this page, in the styling. This page really sets the tone for the rest of my pages, and with the standard header and footer created for this page, it makes it very easy to keep this consistent style and navigation across the site.
