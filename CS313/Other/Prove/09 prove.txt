@@ -1,0 +1,35 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+http://cs313node.ryandockstader.com/09/prove
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rdockstader/cs313-node
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+A form to enter in weight and package type, and an API end point to make a POST request to.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+Everything should be working.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+Most of this was a review, but I do wish I could have figured out a more elegant way of getting the cost from the data...
+
+6. In your own words, briefly describe the concept of a callback function and why it is useful.
+
+A callback allows you to run a function with the data returned from a call (generally an async call) after it has returned.
+
+7. Please select the category you feel best describes your assignment:
+E - Shows creativity and excels above and beyond requirements
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I used an API end point to make an AJAX call to show the rate on the same page.
+
+

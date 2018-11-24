@@ -6,7 +6,7 @@
     $taskGroups = [];
     if(isset($_SESSION['userid'])) {
         
-        $getTaskGroups = $db->prepare('SELECT tg.groupname, tg.priority, tgc.label AS category FROM ttaskgroups tg JOIN ttaskgroupcategories tgc ON TG.category = TGC.code WHERE userid=:userid ORDER BY priority');
+        $getTaskGroups = $db->prepare('SELECT tg.taskgroupid, tg.groupname, tg.priority, tgc.label AS category FROM ttaskgroups tg JOIN ttaskgroupcategories tgc ON TG.category = TGC.code WHERE userid=:userid ORDER BY priority');
         $getTaskGroups->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_INT);
         $getTaskGroups->execute();
         $taskGroups = $getTaskGroups->fetchAll(PDO::FETCH_ASSOC);

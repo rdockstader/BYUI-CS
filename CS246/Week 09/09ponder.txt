@@ -1,0 +1,25 @@
+# 09 Ponder : Status Report
+
+1. What features were completed in your project this week?
+
+The basic end points of the API, and all screen and navigation items
+
+2. What bugs were fixed in your project this week?
+
+We had several issues with matching git repositories, merging, etc. that we resolved together. No major bugs were discovered/fixed though
+
+3. Did anyone on your team have an infraction this week?
+
+No one had an infraction this week.
+
+4. If someone did have an infraction, was the penalty paid?
+
+See above.
+
+5. How many hours did you spend on your team project this week?
+
+2 hours
+
+6. Are there any issues related to your team or project you want to tell your instructor about?
+
+There aren't any issues currently. It is a little stressful though, I think we didn't realize the true scope of every small thing that has to be completed to get this project running as expected. But, we're on track to make it happen so I'm not overly concerned about it. If it gets down to the end, there are some features we can cut if needed.

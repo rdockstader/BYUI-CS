@@ -1,0 +1,32 @@
+<% include ../../partials/header %>
+    <section class="container">
+        <div class="row">
+            <div class="col-12">
+                <form>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input type="text" class="form-control" id="id" name="id">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="getPersons()">Get Persons</button>
+                    <button type="button" class="btn btn-success" onclick="getParents()">Get Person Parents</button>
+                    <button type="button" class="btn btn-warning" onclick="getChildren()">Get Person Children</button>
+                </form>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col-12">
+                <h4 id="output-id"></h4>
+            </div>
+        </div>
+        <hr>
+        <div class="row pt-5">
+            <div class="col-12">
+                <h4 id="output-realation"></h4>
+            </div>
+        </div>
+    </section>
+<% include ../../partials/footer %>

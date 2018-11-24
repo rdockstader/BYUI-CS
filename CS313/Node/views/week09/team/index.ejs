@@ -1,0 +1,34 @@
+<% include ../../partials/header %>
+    <section class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="/09/team/maths" method="POST">
+                    <div class="form-group">
+                        <label for="numberOne">First Number</label>
+                        <input type="number" class="form-control" id="numberOne" name="numberOne" placeholder="70">
+                    </div>
+                    <div class="form-group">
+                        <label for="operator">Operator</label>
+                        <select class="form-control" id="operator" name="operator">
+                            <option value="*">*</option>
+                            <option value="/">/</option>
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="numberTwo">Second Number</label>
+                        <input type="number" class="form-control" id="numberTwo" name="numberTwo" placeholder="5">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-success" onclick="doMathsAJAX()">AJAX Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col-12">
+                <h4 id="output"></h4>
+            </div>
+        </div>
+    </section>
+<% include ../../partials/footer %>

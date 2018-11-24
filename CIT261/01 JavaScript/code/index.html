@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript</title>
+        <meta name="description" content="A JavaScript based mortgage payment Calculator to show Loops, Conditional Statements, Functions, Variables, Parameters, Arrays and Associative Arrays">
+        <meta name="keywords" content="JavaScript,mortgage payment calculator, motgage, payment, calculator, loops, conditional statements, functions, variabbles, parameters, arrays, associateive arrays">
+        <meta name="author" content="John Doe">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <div>
+          <h1>Loan Payment Schedule Calculator</h1>
+          <p>
+              Input the principal interest rate and years on your loan, and return either a payment amount or a payment schedule. The output includes the amount paid towards principal, and the amount paid towards interest for each payment.
+          </p>
+      </div>
+       <div>
+           <input type="text" placeholder="Principal" id="principal">
+           <input type="text" placeholder="Interest Rate" id="interest-rate">
+           <input type="text" placeholder="years" id="years">
+       </div>
+       <div>
+           <button onclick="onCalculateClick()">Calculate Payment</button>
+           <button onclick="onGetPaymentScheduleClick()">Get Payment Schedule</button>
+       </div>
+       <div>
+              <p id="payment-amount"></p>
+           <table id="payment-schedule-table">
+               
+           </table>
+       </div>
+        
+        
+        <script src="script.js" type="text/javascript"></script>
+    </body>
+</html>

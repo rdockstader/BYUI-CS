@@ -1,0 +1,8 @@
+{
+    "env": {
+        "MONGO_URL": "ds033865.mlab.com:33865/cs313",
+        "MONGO_UN": "cs313",
+        "MONGO_PW": "cs313password",
+        "JWT_KEY": "this_is_our_secret_web_token_secret_keep_it_secret_okay"
+    }
+}
