@@ -6,27 +6,46 @@ TrackSimple
 
 2. Copy and paste the URL for one of your Web service endpoints at Heroku:
 
-
+http://tracksimpleapi.ryandockstader.com/api/user/5bf763dbf5749e3e4c9414c5
 
 3. Copy and paste the URL for your source code repository (e.g., GitHub):
 
+https://github.com/rdockstader/BYUI-CS/tree/master/CS313/projTwo/backend
 
 4. List the name of each of the Web service endpoints that are working:
+
+User:
+	Create User | POST | http://tracksimpleapi.ryandockstader.com/api/user
+	Get User | GET | http://tracksimpleapi.ryandockstader.com/api/user/:UserID
+	Update User | PUT | http://tracksimpleapi.ryandockstader.com/api/user/:UserID
+	Delete User | DELETE | http://tracksimpleapi.ryandockstader.com/api/user/:UserID
+	Login | POST | localhost:3000/api/user/login
+User Goal:
+	Create User Goal | POST | http://tracksimpleapi.ryandockstader.com/api/userGoal
+	Get User Goal | GET | http://tracksimpleapi.ryandockstader.com/api/userGoal/:UserGoalID
+	Update User Goal | PUT | http://tracksimpleapi.ryandockstader.com/api/userGoal/:UserGoalID
+	Delete User Goal | DELETE | http://tracksimpleapi.ryandockstader.com/api/userGoal/:UserGoalID
+Food Entry:
+	Create Food Entry | POST | http://tracksimpleapi.ryandockstader.com/api/foodEntry
+	Get Food Entry | GET | http://tracksimpleapi.ryandockstader.com/api/foodEntry/:FoodEntryID
+	Get Food Entries by User | GET | http://tracksimpleapi.ryandockstader.com/api/foodEntry/user/:UserID
+	Update Food Entry | PUT | http://tracksimpleapi.ryandockstader.com/api/foodEntry/:FoodEntryID
+	Delete Food Entry | DELETE | | http://tracksimpleapi.ryandockstader.com/api/foodEntry/:FoodEntryID
 
 
 5. List any Web service endpoints that are not yet functioning:
 
 
 6. Please select the category you feel best describes your assignment:
-A - Some attempt was made
-B - Developing, but significantly deficient
-C - Slightly deficient, but still mostly adequate
-D - Meets requirements
 E - Shows creativity and excels above and beyond requirements
 
 
 7. Provide a brief justification (1-2 sentences) for selecting that category.
 
+All endpoints were completed, and followed a standard API route configuration.
+
 
 8. Please list any questions you have for the instructor regarding this assignment or this week's topic.
+
+No questions.
 

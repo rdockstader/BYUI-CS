@@ -1,0 +1,436 @@
+{
+	"info": {
+		"_postman_id": "6e950fa4-2524-4aeb-a949-21695244b225",
+		"name": "TrackSimple",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"password\",\n    \"firstName\": \"Testy\",\n    \"lastName\": \"McTester\",\n    \"middleName\": \"T\",\n    \"heightInInches\": \"72\",\n    \"weightInPounds\": \"260\",\n    \"goalWeightInPounds\": \"200\",\n    \"age\": \"25\"\n}"
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/user",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/user/5bf763dbf5749e3e4c9414c5",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"5bf763dbf5749e3e4c9414c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"password\",\n    \"firstName\": \"Testy\",\n    \"lastName\": \"McTester\",\n    \"middleName\": \"T\",\n    \"heightInInches\": \"72\",\n    \"weightInPounds\": \"260\",\n    \"goalWeightInPounds\": \"200\",\n    \"age\": \"25\"\n}"
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/user/5bf763dbf5749e3e4c9414c5",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"5bf763dbf5749e3e4c9414c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/user/5bf763dbf5749e3e4c9414c5",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"5bf763dbf5749e3e4c9414c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"testuser\",\n\t\"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Goal",
+			"item": [
+				{
+					"name": "Create User Goal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"5bf763dbf5749e3e4c9414c5\",\r\n    \"dailyCalories\": \"2000\",\r\n    \"dailyProtein\": \"110\",\r\n    \"dailyCarbs\": \"60\",\r\n    \"dailyFats\": \"30\" \r\n}"
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/userGoal",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"userGoal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Goal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/userGoal/5bf76ac4c472911770551bd2",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"userGoal",
+								"5bf76ac4c472911770551bd2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Goal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dailyCalories\": \"2500\",\r\n    \"dailyProtein\": \"110\",\r\n    \"dailyCarbs\": \"60\",\r\n    \"dailyFats\": \"30\" \r\n}"
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/userGoal/5bf76ac4c472911770551bd2",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"userGoal",
+								"5bf76ac4c472911770551bd2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Goal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/userGoal/5bf76ac4c472911770551bd2",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"userGoal",
+								"5bf76ac4c472911770551bd2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Food Entry",
+			"item": [
+				{
+					"name": "Create Food Entry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"UserID\":\"5bf763dbf5749e3e4c9414c5\",\n    \"meal\": \"Lunch\",\n    \"name\": \"Ham Sandwich\",\n    \"calories\": \"500\",\n    \"protein\": \"24\",\n    \"carbs\": \"16\",\n    \"fats\": \"10\"\n}"
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/foodEntry",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"foodEntry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Food Entry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/foodEntry/5bf7733ef0b3d204383b3e32",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"foodEntry",
+								"5bf7733ef0b3d204383b3e32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Food Entries by User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/foodEntry/user/5bf763dbf5749e3e4c9414c5",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"foodEntry",
+								"user",
+								"5bf763dbf5749e3e4c9414c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Food Entry",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"meal\": \"Breakfast\",\n    \"name\": \"Eggs and Bacon\",\n    \"calories\": \"362\",\n    \"protein\": \"12\",\n    \"carbs\": \"8\",\n    \"fats\": \"5\"\n}"
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/foodEntry/5bf7733ef0b3d204383b3e32",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"foodEntry",
+								"5bf7733ef0b3d204383b3e32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Food Entry",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://tracksimpleapi.ryandockstader.com/api/foodEntry/5bf7755a2f75051454a6f223",
+							"protocol": "http",
+							"host": [
+								"tracksimpleapi",
+								"ryandockstader",
+								"com"
+							],
+							"path": [
+								"api",
+								"foodEntry",
+								"5bf7755a2f75051454a6f223"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

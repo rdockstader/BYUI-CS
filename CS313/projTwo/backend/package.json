@@ -4,15 +4,20 @@
   "description": "An easy way to track your daily calories",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./backend/server.js"
   },
   "author": "Ryan Dockstader",
   "license": "ISC",
   "dependencies": {
+    "@angular/animations": "^7.1.0",
+    "@angular/cdk": "^7.1.0",
+    "@angular/material": "^7.1.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.3.13"
+    "mongoose": "^5.3.13",
+    "nodemon": "^1.18.6"
   }
 }
