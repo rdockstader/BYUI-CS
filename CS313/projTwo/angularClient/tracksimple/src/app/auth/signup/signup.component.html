@@ -1,0 +1,50 @@
+<section class="signup-form">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" (ngSubmit)="onSubmit()" [formGroup]="sigunupForm">
+    <mat-form-field>
+      <input type="email" matInput placeholder="Your Email" formControlName="email" email>
+      <mat-error *ngIf="sigunupForm.controls['email'].hasError('email')">E-mail is invalid.</mat-error>
+      <mat-error *ngIf="sigunupForm.controls['email'].hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Your Password" formControlName="password">
+      <mat-hint > Should be at least {{ PASSWORD_MIN_LENGTH }} characters long. </mat-hint>
+      <mat-hint align="end"> {{ sigunupForm.value['password']?.length }} / {{ PASSWORD_MIN_LENGTH }} </mat-hint>
+      <mat-error *ngIf="sigunupForm.controls['password'].hasError('minLength')">Must be at least {{ PASSWORD_MIN_LENGTH }} characters long.</mat-error>
+      <mat-error *ngIf="sigunupForm.controls['password'].hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="First Name" formControlName="firstName">
+      <mat-error *ngIf="sigunupForm.controls['firstName'].hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Middle Name" formControlName="middleName">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Last Name" formControlName="lastName">
+      <mat-error *ngIf="sigunupForm.controls['lastName'].hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Height in Inches" formControlName="heightInInches">
+      <mat-error *ngIf="sigunupForm.controls['heightInInches'].hasError('required')">Field must not be empty.</mat-error>
+      <mat-error *ngIf="sigunupForm.controls['heightInInches'].hasError('min')">Number must be Positive.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Weight in Pounds" formControlName="weightInPounds">
+      <mat-error *ngIf="sigunupForm.controls['weightInPounds'].hasError('required')">Field must not be empty.</mat-error>
+      <mat-error *ngIf="sigunupForm.controls['weightInPounds'].hasError('min')">Number must be Positive.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Goal Weight in Pounds" formControlName="goalWeightInPounds">
+      <mat-error *ngIf="sigunupForm.controls['goalWeightInPounds'].hasError('required')">Field must not be empty.</mat-error>
+      <mat-error *ngIf="sigunupForm.controls['goalWeightInPounds'].hasError('min')">Number must be Positive.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dateOfBirth" [max]="MAX_DATE">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="sigunupForm.controls['dateOfBirth'].hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <mat-checkbox formControlName="agree" color="primary">Agree to Terms and Conditions.</mat-checkbox>
+    <button type="submit" mat-raised-button color="primary" [disabled]="sigunupForm.invalid">Submit</button>
+  </form>
+</section>
