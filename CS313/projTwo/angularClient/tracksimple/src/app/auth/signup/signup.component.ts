@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,7 @@ export class SignupComponent implements OnInit {
   PASSWORD_MIN_LENGTH = 8;
   MAX_DATE: Date;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.MAX_DATE = new Date();
@@ -21,7 +22,10 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if (!this.sigunupForm.invalid) {
-      console.log(this.sigunupForm.value);
+      this.authService.registerUser({
+        email: this.sigunupForm.value.email,
+        password: this.sigunupForm.value.password
+      });
     }
   }
 

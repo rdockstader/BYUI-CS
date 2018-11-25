@@ -16,6 +16,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { EntryListComponent } from './food-entry/entry-list/entry-list.component';
+import { AuthService } from './shared/services/auth.service';
 
 
 
@@ -40,7 +41,9 @@ import { EntryListComponent } from './food-entry/entry-list/entry-list.component
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
