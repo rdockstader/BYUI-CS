@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-entry.component.css']
 })
 export class NewEntryComponent implements OnInit {
+  mealOptions = ['Breakfast', 'Lunch', 'Dinner', 'Snack'];
 
   constructor() { }
 
