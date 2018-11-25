@@ -1,2 +1,4 @@
 # Ignore node modules folder in cs313/proj2
-CS313/projTwo/node_modules
+CS313/projTwo/backend/node_modules
+# Ignore node modules folder in cs313/proj2
+CS313/projTwo/angularClient/tracksimple/node_modules
