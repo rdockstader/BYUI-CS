@@ -8,7 +8,7 @@ exports.createUser = (req, res, next) => {
     console.log("Creating user!");
     bcrypt.hash(req.body.password, 10).then(hash => {
         const user = new User({
-            username: req.body.username,
+            email: req.body.email,
             password: hash,
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -16,7 +16,7 @@ exports.createUser = (req, res, next) => {
             heightInInches: req.body.heightInInches,
             weightInPounds: req.body.weightInPounds,
             goalWeightInPounds: req.body.goalWeightInPounds,
-            age: req.body.age
+            dateOfBirth: req.body.dateOfBirth
         })
         user.save().then(result => {
             if(result) {
@@ -36,20 +36,20 @@ exports.getUser = (req, res, next) => {
         } else {
             res.status(200).json({message: 'User found', user: {
                                                                     id: result._id,
-                                                                    username: result.username,
+                                                                    email: result.email,
                                                                     firstName: result.firstName,
                                                                     lastName: result.lastName,
                                                                     middleName: result.middleName,
                                                                     heightInInches: result.heightInInches,
                                                                     weightInPounds: result.weightInPounds,
                                                                     goalWeightInPounds: result.goalWeightInPounds,
-                                                                    age: result.age
+                                                                    dateOfBirth: result.dateOfBirth
                                                                 }});
         }
     })
 }
 exports.updateUser = (req, res, next) => {
-    // update one user by ID, set all but username and password
+    // update one user by ID, set all but email and password
     User.findByIdAndUpdate(req.params.UserID,
                             {$set: {
                                 firstName: req.body.firstName,
@@ -58,12 +58,12 @@ exports.updateUser = (req, res, next) => {
                                 heightInInches: req.body.heightInInches,
                                 weightInPounds: req.body.weightInPounds,
                                 goalWeightInPounds: req.body.goalWeightInPounds,
-                                age: req.body.age
+                                dateOfBirth: req.body.dateOfBirth
                             }}).then(result => {
         if(result) {
             let vers = new UserVersion({
                                             userId: result._id,
-                                            username: result.username,
+                                            email: result.email,
                                             password: result.password,
                                             firstName: result.firstName,
                                             lastName: result.lastName,
@@ -71,7 +71,7 @@ exports.updateUser = (req, res, next) => {
                                             heightInInches: result.heightInInches,
                                             weightInPounds: result.weightInPounds,
                                             goalWeightInPounds: result.goalWeightInPounds,
-                                            age: result.age
+                                            dateOfBirth: result.dateOfBirth
                                         });
             vers.save();
             res.status(200).json({ message: "Update successful"});
@@ -106,7 +106,7 @@ exports.deleteUser = (req, res, next) => {
 
 exports.login = (req, res, next) => {
     let fetchedUser;
-    User.findOne({ username: req.body.username})
+    User.findOne({ email: req.body.email})
         .then(user => {
         if(!user) {
             return res.status(404).json({
@@ -128,9 +128,20 @@ exports.login = (req, res, next) => {
         const token = jwt.sign({ email: fetchedUser.email, userId: fetchedUser._id }, process.env.JWT_KEY, {expiresIn: "1h"});
         res.status(200).json({
             token: token,
-            expiresIn: 3600
+            expiresIn: 3600,
+            user: {
+                id: fetchedUser._id,
+                email: fetchedUser.email,
+                password: null,
+                firstName: fetchedUser.firstName,
+                lastName: fetchedUser.lastName,
+                middleName: fetchedUser.middleName,
+                heightInInches: fetchedUser.heightInInches,
+                weightInPounds: fetchedUser.weightInPounds,
+                goalWeightInPounds: fetchedUser.goalWeightInPounds,
+                dateOfBirth: fetchedUser.dateOfBirth
+            }
         })
-
         })
         .catch(err => {
         return res.status(401).json({

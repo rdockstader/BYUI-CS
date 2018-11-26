@@ -17,6 +17,7 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { EntryListComponent } from './food-entry/entry-list/entry-list.component';
 import { AuthService } from './shared/services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -39,7 +40,8 @@ import { AuthService } from './shared/services/auth.service';
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     AuthService

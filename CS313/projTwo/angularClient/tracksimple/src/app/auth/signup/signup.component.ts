@@ -23,8 +23,16 @@ export class SignupComponent implements OnInit {
   onSubmit() {
     if (!this.sigunupForm.invalid) {
       this.authService.registerUser({
+        userId: null,
         email: this.sigunupForm.value.email,
-        password: this.sigunupForm.value.password
+        password: this.sigunupForm.value.password,
+        firstName: this.sigunupForm.value.firstName,
+        lastName: this.sigunupForm.value.lastName,
+        middleName: this.sigunupForm.value.middleName,
+        heightInInches: this.sigunupForm.value.heightInInches,
+        weightInPounds: this.sigunupForm.value.weightInPounds,
+        goalWeightInPounds: this.sigunupForm.value.goalWeightInPounds,
+        dateOfBirth: this.sigunupForm.value.dateOfBirth
       });
     }
   }
