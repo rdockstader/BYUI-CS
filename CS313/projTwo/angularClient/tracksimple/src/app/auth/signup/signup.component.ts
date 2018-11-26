@@ -32,6 +32,7 @@ export class SignupComponent implements OnInit {
         heightInInches: this.sigunupForm.value.heightInInches,
         weightInPounds: this.sigunupForm.value.weightInPounds,
         goalWeightInPounds: this.sigunupForm.value.goalWeightInPounds,
+        genderAtBirth: this.sigunupForm.value.gender,
         dateOfBirth: this.sigunupForm.value.dateOfBirth
       });
     }
@@ -47,6 +48,7 @@ export class SignupComponent implements OnInit {
     const heightInInches = '';
     const weightInPounds = '';
     const goalWeightInPounds = '';
+    const gender = '';
     const dateOfBirth = '';
     const agree = '';
 
@@ -59,6 +61,7 @@ export class SignupComponent implements OnInit {
       'heightInInches': new FormControl(heightInInches, Validators.compose([Validators.required, Validators.min(1)])),
       'weightInPounds': new FormControl(weightInPounds, Validators.compose([Validators.required, Validators.min(1)])),
       'goalWeightInPounds': new FormControl(goalWeightInPounds, Validators.compose([Validators.required, Validators.min(1)])),
+      'gender': new FormControl(gender, Validators.compose([Validators.required])),
       'dateOfBirth': new FormControl(dateOfBirth, Validators.compose([Validators.required])),
       'agree' : new FormControl(agree, Validators.required)
     });

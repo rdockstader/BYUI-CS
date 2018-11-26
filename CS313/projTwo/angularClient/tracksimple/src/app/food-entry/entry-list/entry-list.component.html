@@ -21,19 +21,131 @@
     </mat-card-content>
     <mat-card-title fxLayoutAlign="center">Breakfast</mat-card-title>
     <mat-card-content>
-      <p>Food entries go here</p>
+      <mat-table [dataSource]="breakfastDataSource">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="calories">
+          <mat-header-cell *matHeaderCellDef>Calories</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.calories | number }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="protein">
+          <mat-header-cell *matHeaderCellDef>Protein</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.protein | number }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="carbs">
+          <mat-header-cell *matHeaderCellDef>Carbs</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.carbs | number }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fats">
+          <mat-header-cell *matHeaderCellDef>Fat</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.fats | number }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
     </mat-card-content>
     <mat-card-title fxLayoutAlign="center">Lunch</mat-card-title>
     <mat-card-content>
-      <p>Food entries go here</p>
+        <mat-table [dataSource]="lunchDataSource">
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="calories">
+            <mat-header-cell *matHeaderCellDef>Calories</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.calories | number }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="protein">
+            <mat-header-cell *matHeaderCellDef>Protein</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.protein | number }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="carbs">
+            <mat-header-cell *matHeaderCellDef>Carbs</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.carbs | number }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="fats">
+            <mat-header-cell *matHeaderCellDef>Fat</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.fats | number }}</mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
     </mat-card-content>
     <mat-card-title fxLayoutAlign="center">Dinner</mat-card-title>
     <mat-card-content>
-      <p>Food entries go here</p>
+        <mat-table [dataSource]="dinnerDataSource">
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="calories">
+            <mat-header-cell *matHeaderCellDef>Calories</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.calories | number }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="protein">
+            <mat-header-cell *matHeaderCellDef>Protein</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.protein | number }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="carbs">
+            <mat-header-cell *matHeaderCellDef>Carbs</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.carbs | number }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="fats">
+            <mat-header-cell *matHeaderCellDef>Fat</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.fats | number }}</mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
     </mat-card-content>
     <mat-card-title fxLayoutAlign="center">Snacks</mat-card-title>
     <mat-card-content>
-      <p>Food entries go here</p>
+        <mat-table [dataSource]="snackDataSource">
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="calories">
+              <mat-header-cell *matHeaderCellDef>Calories</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.calories | number }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="protein">
+              <mat-header-cell *matHeaderCellDef>Protein</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.protein | number }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="carbs">
+              <mat-header-cell *matHeaderCellDef>Carbs</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.carbs | number }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="fats">
+              <mat-header-cell *matHeaderCellDef>Fat</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.fats | number }}</mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
     </mat-card-content>
   </mat-card>
 </section>

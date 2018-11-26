@@ -1,17 +1,43 @@
 <section class="new-training" fxLayout fxLayoutAlign="center">
+  <form (ngSubmit)="onSubmit()" [formGroup]="foodEntryForm">
     <mat-card fxFlex.xs="100%" fxFlex="400px">
       <mat-card-title fxLayoutAlign="center">New Food Entry</mat-card-title>
-      <mat-card-content fxLayoutAlign="center">
+      <mat-card-content fxLayout="column" fxLayoutAlign="center center">
         <mat-form-field>
-          <mat-select placeholder="Select meal">
+          <mat-select placeholder="Select meal" formControlName="meal">
             <mat-option *ngFor="let meal of mealOptions" [value]="meal">
               {{ meal }}
             </mat-option>
           </mat-select>
         </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Food Name" formControlName="foodName">
+          <mat-error *ngIf="foodEntryForm.controls['foodName'].hasError('required')">Field must not be empty.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="number" matInput placeholder="Calories" formControlName="calories">
+          <mat-error *ngIf="foodEntryForm.controls['calories'].hasError('required')">Field must not be empty.</mat-error>
+          <mat-error *ngIf="foodEntryForm.controls['calories'].hasError('min')">Number must be Positive.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="number" matInput placeholder="Protein" formControlName="protein">
+          <span matSuffix>Grams</span>
+          <mat-error *ngIf="foodEntryForm.controls['protein'].hasError('min')">Number must be Positive.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="number" matInput placeholder="Carbs" formControlName="carbs">
+          <span matSuffix>Grams</span>
+          <mat-error *ngIf="foodEntryForm.controls['carbs'].hasError('min')">Number must be Positive.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <span matSuffix>Grams</span>
+          <input type="number" matInput placeholder="Fat" formControlName="fats">
+          <mat-error *ngIf="foodEntryForm.controls['fats'].hasError('min')">Number must be Positive.</mat-error>
+        </mat-form-field>
       </mat-card-content>
       <mat-card-actions fxLayoutAlign="center">
-        <button type="submit" mat-raised-button color="primary">Start</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="foodEntryForm.invalid">Add</button>
       </mat-card-actions>
     </mat-card>
+  </form>
 </section>

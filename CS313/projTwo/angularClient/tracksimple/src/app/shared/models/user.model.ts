@@ -8,5 +8,6 @@ export interface User {
   heightInInches: number;
   weightInPounds: number;
   goalWeightInPounds: number;
+  genderAtBirth: string;
   dateOfBirth: Date;
 }

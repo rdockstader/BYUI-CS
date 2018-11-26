@@ -3,7 +3,7 @@ const FoodEntry = require('../models/FoodEntryModel');
 exports.createFoodEntry = (req, res, next) => {
     console.log('creating food entry');
     const foodEntry = new FoodEntry({
-        user: req.body.UserID,
+        user: req.body.user,
         meal: req.body.meal,
         name: req.body.name,
         calories: req.body.calories,
