@@ -7,10 +7,11 @@ const router = express.Router();
 // CREATE USER
 router.post("/", foodEntryController.createFoodEntry);
 
-// READ SINGLE USER BY ID
-router.get('/:FoodEntryID', foodEntryController.getFoodEntry);
+// Read food entires by query params
+router.get('/', foodEntryController.getFoodEntries);
 
-router.get('/user/:UserID', foodEntryController.getFoodEntriesByUser);
+// READ SINGLE Food Entry BY ID
+router.get('/:FoodEntryID', foodEntryController.getFoodEntryById);
 
 // UPDATE USER
 router.put("/:FoodEntryID", foodEntryController.updateFoodEntry);

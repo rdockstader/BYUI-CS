@@ -9,7 +9,7 @@ exports.createUserGoal = (req, res, next) => {
         dailyProtein: req.body.dailyProtein,
         dailyCarbs: req.body.dailyCarbs,
         dailyFats: req.body.dailyFats,
-        dateAdded: new Date()
+        dateAdded: new Date().setHours(0,0,0,0)
     })
     userGoal.save().then(result => {
         if(result) {

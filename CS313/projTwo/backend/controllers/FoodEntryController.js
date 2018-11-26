@@ -10,7 +10,7 @@ exports.createFoodEntry = (req, res, next) => {
         protein: req.body.protein,
         carbs: req.body.carbs,
         fats: req.body.fats,
-        dateAdded: new Date()
+        dateAdded: new Date().setUTCHours(0,0,0,0)
     })
     foodEntry.save().then(result => {
         if(result) {
@@ -23,7 +23,7 @@ exports.createFoodEntry = (req, res, next) => {
     })
 }
 
-exports.getFoodEntry = (req, res, next) => {
+exports.getFoodEntryById = (req, res, next) => {
     FoodEntry.findById(req.params.FoodEntryID).then(result => {
         if(result) {
             res.status(200).json({message: 'Food Entry found.', foodEntry: result});
@@ -35,8 +35,10 @@ exports.getFoodEntry = (req, res, next) => {
     })
 }
 
-exports.getFoodEntriesByUser = (req, res, next) => {
-    FoodEntry.find({user: req.params.UserID}).then(result => {
+exports.getFoodEntries = (req, res, next) => {
+    req.query.dateAdded = new Date(req.query.dateAdded);
+    console.log(req.query);
+    FoodEntry.find(req.query).then(result => {
         if(result.length > 0) {
             res.status(200).json({message: 'Food entries found.', foodEntries: result});
         } else {
