@@ -32,6 +32,7 @@ export class NewEntryComponent implements OnInit {
   }
 
   onSubmit() {
+    let today = new Date();
     if (!this.foodEntryForm.invalid) {
       this.foodEntryService.addFoodEntry({
         FoodEntryID: null,
@@ -42,7 +43,7 @@ export class NewEntryComponent implements OnInit {
         protein: this.foodEntryForm.value.protein,
         carbs: this.foodEntryForm.value.carbs,
         fats: this.foodEntryForm.value.fats,
-        dateAdded: new Date()
+        dateAdded: today
       });
       this.foodEntryForm.reset();
     }

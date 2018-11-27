@@ -1,5 +1,15 @@
 <section class="new-training" fxLayout fxLayoutAlign="center">
   <mat-card fxFlex.xs="100%" fxFlex="400px">
+    <mat-card-content fxLayout="column" fxlayoutAligh="center">
+        <mat-form-field>
+          <input matInput [matDatepicker]="entryDatePicker" placeholder="Entry Date" [(ngModel)]="entryDate.value" disabled>
+          <mat-datepicker-toggle matSuffix [for]="entryDatePicker"></mat-datepicker-toggle> 
+          <mat-datepicker #entryDatePicker disabled="false"></mat-datepicker>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+        <button type="button" mat-raised-button color="primary" (click)="onUpdateDate()">Update</button>
+    </mat-card-actions>
     <mat-card-title fxLayoutAlign="center">Goal progress</mat-card-title>
     <mat-card-content fxLayout="column" fxLayouteAlign="center">
       <label for="calories-bar">Calories</label>

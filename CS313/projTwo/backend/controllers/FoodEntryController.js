@@ -2,6 +2,10 @@ const FoodEntry = require('../models/FoodEntryModel');
 
 exports.createFoodEntry = (req, res, next) => {
     console.log('creating food entry');
+    today = new Date();
+    console.log(today);
+    today.setUTCHours(0,0,0,0);
+    console.log(today);
     const foodEntry = new FoodEntry({
         user: req.body.user,
         meal: req.body.meal,
@@ -10,7 +14,7 @@ exports.createFoodEntry = (req, res, next) => {
         protein: req.body.protein,
         carbs: req.body.carbs,
         fats: req.body.fats,
-        dateAdded: new Date().setUTCHours(0,0,0,0)
+        dateAdded: today
     })
     foodEntry.save().then(result => {
         if(result) {
