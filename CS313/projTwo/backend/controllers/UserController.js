@@ -16,6 +16,7 @@ exports.createUser = (req, res, next) => {
             heightInInches: req.body.heightInInches,
             weightInPounds: req.body.weightInPounds,
             goalWeightInPounds: req.body.goalWeightInPounds,
+            genderAtBirth: req.body.genderAtBirth,
             dateOfBirth: req.body.dateOfBirth
         })
         user.save().then(result => {
@@ -35,7 +36,7 @@ exports.getUser = (req, res, next) => {
             res.status(404).json({message: 'User not found!'});
         } else {
             res.status(200).json({message: 'User found', user: {
-                                                                    id: result._id,
+                                                                    userId: result._id,
                                                                     email: result.email,
                                                                     firstName: result.firstName,
                                                                     lastName: result.lastName,
@@ -43,6 +44,7 @@ exports.getUser = (req, res, next) => {
                                                                     heightInInches: result.heightInInches,
                                                                     weightInPounds: result.weightInPounds,
                                                                     goalWeightInPounds: result.goalWeightInPounds,
+                                                                    genderAtBirth: req.body.gender,
                                                                     dateOfBirth: result.dateOfBirth
                                                                 }});
         }
@@ -58,6 +60,7 @@ exports.updateUser = (req, res, next) => {
                                 heightInInches: req.body.heightInInches,
                                 weightInPounds: req.body.weightInPounds,
                                 goalWeightInPounds: req.body.goalWeightInPounds,
+                                genderAtBirth: req.body.gender,
                                 dateOfBirth: req.body.dateOfBirth
                             }}).then(result => {
         if(result) {
@@ -71,6 +74,7 @@ exports.updateUser = (req, res, next) => {
                                             heightInInches: result.heightInInches,
                                             weightInPounds: result.weightInPounds,
                                             goalWeightInPounds: result.goalWeightInPounds,
+                                            genderAtBirth: req.body.gender,
                                             dateOfBirth: result.dateOfBirth
                                         });
             vers.save();
@@ -130,7 +134,7 @@ exports.login = (req, res, next) => {
             token: token,
             expiresIn: 3600,
             user: {
-                id: fetchedUser._id,
+                userId: fetchedUser._id,
                 email: fetchedUser.email,
                 password: null,
                 firstName: fetchedUser.firstName,
@@ -139,6 +143,7 @@ exports.login = (req, res, next) => {
                 heightInInches: fetchedUser.heightInInches,
                 weightInPounds: fetchedUser.weightInPounds,
                 goalWeightInPounds: fetchedUser.goalWeightInPounds,
+                genderAtBirth: req.body.gender,
                 dateOfBirth: fetchedUser.dateOfBirth
             }
         })

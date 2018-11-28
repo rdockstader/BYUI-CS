@@ -10,6 +10,7 @@ const vUserSchema = mongoose.Schema({
     heightInInches: { type: Number, required: true},
     weightInPounds: { type: Number, required: true},
     goalWeightInPounds: { type: Number, required: true},
+    genderAtBirth: { type: String, enum: ['Male', 'Female']},
     dateOfBirth: { type: Date, required: true}
 });
 

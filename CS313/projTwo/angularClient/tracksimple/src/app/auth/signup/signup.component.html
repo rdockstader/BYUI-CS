@@ -39,6 +39,10 @@
       <mat-error *ngIf="sigunupForm.controls['goalWeightInPounds'].hasError('min')">Number must be Positive.</mat-error>
     </mat-form-field>
     <mat-form-field>
+      <input type="text" matInput placeholder="Gender" formControlName="gender">
+      <mat-error *ngIf="sigunupForm.controls['gender'].hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
       <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dateOfBirth" [max]="MAX_DATE">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>

@@ -4,3 +4,5 @@ CS313/projTwo/backend/node_modules
 CS313/projTwo/angularClient/tracksimple/node_modules
 # ignore all ds store files
 .DS_Store
+#ignore node modules folder in cs313/halftwo
+CS313\Node\halfTwo\node_modules

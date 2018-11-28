@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./food-entry.component.css']
 })
 export class FoodEntryComponent implements OnInit {
+  selectedTab = 0;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleTab(tabNum: number) {
+    this.selectedTab = tabNum;
   }
 
 }
