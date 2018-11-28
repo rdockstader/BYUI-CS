@@ -28,8 +28,12 @@ export class FoodEntryService {
     });
   }
 
-  getFoodEntires() {
-    this.http.get<{message: string, foodEntries: FoodEntry[]}>(environment.apiUrl + '/foodEntry/user/' + this.authService.getUser().userId)
+  getFoodEntires(date?: Date) {
+    if(!date) {
+      date = new Date();
+    }
+    date.setUTCHours(0,0,0,0);
+    this.http.get<{message: string, foodEntries: FoodEntry[]}>(environment.apiUrl + '/foodEntry?user=' + this.authService.getUser().userId + '&dateAdded=' + date.toISOString())
     .subscribe(response => {
       this.foodEntries = response.foodEntries;
       this.foodEntriesChanged.next(this.foodEntries.slice());

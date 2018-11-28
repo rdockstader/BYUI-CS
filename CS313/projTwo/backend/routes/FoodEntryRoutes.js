@@ -2,15 +2,18 @@ const express = require("express");
 
 const foodEntryController = require("../controllers/FoodEntryController");
 
+const CheckAuth = require('../middleware/check-auth');
+
 const router = express.Router();
 
-// CREATE USER
+// CREATE FOOD ENTRY
 router.post("/", foodEntryController.createFoodEntry);
 
-// READ SINGLE USER BY ID
-router.get('/:FoodEntryID', foodEntryController.getFoodEntry);
+// READ FOOD ENTRIES BY QUERY PARAMETERS
+router.get('/', CheckAuth, foodEntryController.getFoodEntries);
 
-router.get('/user/:UserID', foodEntryController.getFoodEntriesByUser);
+// READ SINGLE FOOD ENTRY BY ID
+router.get('/:FoodEntryID', foodEntryController.getFoodEntryById);
 
 // UPDATE USER
 router.put("/:FoodEntryID", foodEntryController.updateFoodEntry);

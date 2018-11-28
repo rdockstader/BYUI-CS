@@ -19,6 +19,11 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { EntryListComponent } from './food-entry/entry-list/entry-list.component';
 
 import { AuthService } from './shared/services/auth.service';
+<<<<<<< HEAD
+=======
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './shared/auth-interceptor';
+>>>>>>> 9bf1cd415a16230a9469968ad413a286853fccc8
 import { FoodEntryService } from './shared/services/foodEntry.service';
 
 
@@ -47,7 +52,8 @@ import { FoodEntryService } from './shared/services/foodEntry.service';
   ],
   providers: [
     AuthService,
-    FoodEntryService
+    FoodEntryService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
