@@ -52,6 +52,10 @@ export class AuthService {
     return this.user != null;
   }
 
+  getToken() {
+    return this.token;
+  }
+
   private setAuthTime(durationInSeconds: number) {
     this.tokenTimer = setTimeout(() => {
       this.logout();
