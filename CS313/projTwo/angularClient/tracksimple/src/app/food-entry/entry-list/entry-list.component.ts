@@ -3,10 +3,7 @@ import { MatTableDataSource } from '@angular/material';
 import { FoodEntry } from '../../shared/models/food-entry.model';
 import { FoodEntryService } from 'src/app/shared/services/foodEntry.service';
 import { Subscription } from 'rxjs';
-<<<<<<< HEAD
-=======
 import { FormControl } from '@angular/forms';
->>>>>>> 9bf1cd415a16230a9469968ad413a286853fccc8
 
 @Component({
   selector: 'app-entry-list',
