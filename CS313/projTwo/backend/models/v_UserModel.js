@@ -6,7 +6,7 @@ const vUserSchema = mongoose.Schema({
     password: { type: String, required: true},
     firstName: { type: String, required: true},
     lastName: { type: String, required: true},
-    middleName: { type: String, required: true},
+    middleName: { type: String},
     heightInInches: { type: Number, required: true},
     weightInPounds: { type: Number, required: true},
     goalWeightInPounds: { type: Number, required: true},

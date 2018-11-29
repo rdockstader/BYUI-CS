@@ -21,6 +21,7 @@ import { AuthService } from './shared/services/auth.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth-interceptor';
 import { FoodEntryService } from './shared/services/foodEntry.service';
+import { SettingsComponent } from './user/settings/settings.component';
 
 
 
@@ -34,7 +35,8 @@ import { FoodEntryService } from './shared/services/foodEntry.service';
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
-    EntryListComponent
+    EntryListComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

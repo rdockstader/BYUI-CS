@@ -15,6 +15,7 @@ export class AuthService {
   private userID: string;
 
   authChange = new Subject<boolean>();
+  userChanged = new Subject<void>();
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -25,6 +26,20 @@ export class AuthService {
     });
 
     this.router.navigate(['/login']);
+  }
+
+  updateUser(updateduser: User) {
+    console.log(updateduser);
+    this.http.put<{message: string, user: User}>(environment.apiUrl + '/user/' + this.userID, updateduser).subscribe(response => {
+      this.user.firstName = updateduser.firstName;
+      this.user.lastName = updateduser.lastName;
+      this.user.middleName = updateduser.middleName;
+      this.user.heightInInches = updateduser.heightInInches;
+      this.user.weightInPounds = updateduser.weightInPounds;
+      this.user.goalWeightInPounds = updateduser.goalWeightInPounds;
+      this.user.genderAtBirth = updateduser.genderAtBirth;
+      this.user.dateOfBirth = updateduser.dateOfBirth;
+    });
   }
 
   login(authData: AuthData) {
@@ -78,6 +93,7 @@ export class AuthService {
       this.authChange.next(true);
       this.http.get<{message: String, user: User}>(environment.apiUrl + '/user/' + authInfo.userId).subscribe(result => {
         this.user = result.user;
+        this.userChanged.next();
       });
     }
   }
