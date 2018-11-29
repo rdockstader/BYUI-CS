@@ -1,11 +1,17 @@
 const FoodEntry = require('../models/FoodEntryModel');
 
+
+normalizeDate = (date) => {
+    date.setHours(0,0,0,0);
+    date.setUTCHours(0,0,0,0);
+
+    return date;
+}
+
 exports.createFoodEntry = (req, res, next) => {
     console.log('creating food entry');
     today = new Date();
-    console.log(today);
-    today.setUTCHours(0,0,0,0);
-    console.log(today);
+    normalizeDate(today);
     const foodEntry = new FoodEntry({
         user: req.body.user,
         meal: req.body.meal,
@@ -40,13 +46,15 @@ exports.getFoodEntryById = (req, res, next) => {
 }
 
 exports.getFoodEntries = (req, res, next) => {
-    req.query.dateAdded = new Date(req.query.dateAdded);
-    console.log(req.query);
+    const start = normalizeDate(new Date(req.query.dateAdded));
+    const end = normalizeDate(new Date(req.query.dateAdded));
+    end.setDate(end.getDate()+1);
+    req.query.dateAdded = {"$gte": start, "$lt": end};
     FoodEntry.find(req.query).then(result => {
         if(result.length > 0) {
             res.status(200).json({message: 'Food entries found.', foodEntries: result});
         } else {
-            res.status(404).json({message: 'No Food entries found'});
+            res.status(200).json({message: 'No Food entries found', foodEntries: []});
         }
     }).catch(err => {
         res.status(500).json({message: 'Something went wrong!', error: err});

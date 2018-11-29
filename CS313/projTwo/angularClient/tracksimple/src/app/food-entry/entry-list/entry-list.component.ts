@@ -1,9 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { FoodEntry } from '../../shared/models/food-entry.model';
 import { FoodEntryService } from 'src/app/shared/services/foodEntry.service';
 import { Subscription } from 'rxjs';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-entry-list',
@@ -11,7 +10,8 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./entry-list.component.css']
 })
 export class EntryListComponent implements OnInit, OnDestroy {
-  entryDate = new FormControl(new Date());
+  @ViewChild('date') dateInput: ElementRef;
+  entryDate = new Date();
   displayedColumns = ['name', 'calories', 'protein', 'carbs', 'fats'];
   breakfastDataSource = new MatTableDataSource<FoodEntry>();
   lunchDataSource = new MatTableDataSource<FoodEntry>();
@@ -36,9 +36,22 @@ export class EntryListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.foodEntrySub.unsubscribe();
   }
+  onNextDate() {
+    console.log();
+    this.entryDate.setDate(this.entryDate.getDate() + 1);
+    this.onDateChanged();
+  }
 
-  onUpdateDate() {
-    this.foodEntryService.getFoodEntires(this.entryDate.value);
+  onPreviousDate() {
+    this.entryDate.setDate(this.entryDate.getDate() - 1);
+    this.onDateChanged();
+  }
+
+  onDateChanged() {
+    this.dateInput.nativeElement.value = (this.entryDate.getMonth() + 1) +
+                                          '/' + this.entryDate.getDate() +
+                                          '/' + this.entryDate.getFullYear();
+    this.foodEntryService.getFoodEntires(this.entryDate);
   }
 
   private buildDataSource(entries: FoodEntry[], dataSource: MatTableDataSource<FoodEntry>) {

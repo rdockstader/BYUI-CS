@@ -32,7 +32,7 @@ export class NewEntryComponent implements OnInit {
   }
 
   onSubmit() {
-    let today = new Date();
+    const today = new Date();
     if (!this.foodEntryForm.invalid) {
       this.foodEntryService.addFoodEntry({
         FoodEntryID: null,

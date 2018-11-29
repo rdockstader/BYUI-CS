@@ -21,6 +21,8 @@ export class FoodEntryService {
   }
 
   addFoodEntry(entry: FoodEntry) {
+    entry.dateAdded.setHours(0, 0, 0, 0);
+
     this.http.post<{message: string, id: string}>(environment.apiUrl + '/foodEntry', entry).subscribe(response => {
       entry.FoodEntryID = response.id;
       this.foodEntries.push(entry);
@@ -32,11 +34,10 @@ export class FoodEntryService {
     if (!date) {
       date = new Date();
     }
-    date.setUTCHours(0, 0, 0, 0);
     this.http.get<{message: string,
                   foodEntries: FoodEntry[]}>(environment.apiUrl +
                                                 '/foodEntry?user=' +
-                                                this.authService.getUser().userId +
+                                                this.authService.getUserID() +
                                                 '&dateAdded=' +
                                                 date.toISOString())
     .subscribe(response => {

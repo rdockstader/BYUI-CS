@@ -1,15 +1,12 @@
 <section class="new-training" fxLayout fxLayoutAlign="center">
   <mat-card fxFlex.xs="100%" fxFlex="400px">
-    <mat-card-content fxLayout="column" fxlayoutAligh="center">
-        <mat-form-field>
-          <input matInput [matDatepicker]="entryDatePicker" placeholder="Entry Date" [(ngModel)]="entryDate.value" disabled>
-          <mat-datepicker-toggle matSuffix [for]="entryDatePicker"></mat-datepicker-toggle> 
-          <mat-datepicker #entryDatePicker disabled="false"></mat-datepicker>
-        </mat-form-field>
+    <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+      <button mat-icon-button (click)="onPreviousDate()"><mat-icon>arrow_back_ios</mat-icon></button>
+      <input #date matInput [matDatepicker]="entryDatePicker" placeholder="Entry Date" [(ngModel)]="entryDate" (dateChange)="onDateChanged()" disabled>
+      <mat-datepicker-toggle matSuffix [for]="entryDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #entryDatePicker disabled="false"></mat-datepicker>
+      <button mat-icon-button (click)="onNextDate()"><mat-icon>arrow_forward_ios</mat-icon></button>
     </mat-card-content>
-    <mat-card-actions>
-        <button type="button" mat-raised-button color="primary" (click)="onUpdateDate()">Update</button>
-    </mat-card-actions>
     <mat-card-title fxLayoutAlign="center">Goal progress</mat-card-title>
     <mat-card-content fxLayout="column" fxLayouteAlign="center">
       <label for="calories-bar">Calories</label>
