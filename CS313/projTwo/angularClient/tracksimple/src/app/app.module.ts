@@ -22,6 +22,10 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth-interceptor';
 import { FoodEntryService } from './shared/services/foodEntry.service';
 import { SettingsComponent } from './user/settings/settings.component';
+import { GoalsComponent } from './user/goals/goals.component';
+import { CurrentGoalsComponent } from './user/goals/current-goals/current-goals.component';
+import { NewGoalsComponent } from './user/goals/new-goals/new-goals.component';
+import { UserGoalService } from './shared/services/userGoal.service';
 
 
 
@@ -36,7 +40,10 @@ import { SettingsComponent } from './user/settings/settings.component';
     HeaderComponent,
     SidenavListComponent,
     EntryListComponent,
-    SettingsComponent
+    SettingsComponent,
+    GoalsComponent,
+    CurrentGoalsComponent,
+    NewGoalsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +58,7 @@ import { SettingsComponent } from './user/settings/settings.component';
   providers: [
     AuthService,
     FoodEntryService,
+    UserGoalService,
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]

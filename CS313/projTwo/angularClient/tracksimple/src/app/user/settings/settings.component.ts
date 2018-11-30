@@ -13,10 +13,13 @@ export class SettingsComponent implements OnInit, OnDestroy {
   userSettingForm: FormGroup;
   user: User;
   userChangedSub: Subscription;
+  MAX_DATE: Date;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.MAX_DATE = new Date();
+    this.MAX_DATE.setFullYear(this.MAX_DATE.getFullYear() - 18);
     this.user = this.authService.getUser();
     this.initForm();
     this.userChangedSub = this.authService.userChanged.subscribe(result => {

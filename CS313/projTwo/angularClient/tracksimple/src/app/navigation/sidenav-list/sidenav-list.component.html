@@ -11,9 +11,13 @@
     <mat-icon>fastfood</mat-icon>
     <span class="nav-caption">Dashboard</span>
   </a>
+  <a mat-list-item routerLink="/goals" (click)="onClose()" *ngIf="isAuth">
+    <mat-icon>stars</mat-icon>
+    <span class="nav-caption">Goals</span>
+  </a>
   <a mat-list-item routerLink="/settings" (click)="onClose()" *ngIf="isAuth">
     <mat-icon>settings</mat-icon>
-    <span class="nav-caption">settings</span>
+    <span class="nav-caption">Settings</span>
   </a>
   <mat-list-item  *ngIf="isAuth">
     <button mat-icon-button>

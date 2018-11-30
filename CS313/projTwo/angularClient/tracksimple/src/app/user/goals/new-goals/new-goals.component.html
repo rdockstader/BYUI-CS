@@ -1,0 +1,37 @@
+<section class="new-training" fxLayout fxLayoutAlign="center">
+    <form (ngSubmit)="onSubmit()" [formGroup]="goalForm">
+      <mat-card fxFlex.xs="100%" fxFlex="400px">
+        <mat-card-title fxLayoutAlign="center">Adjust Goals</mat-card-title>
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+          <mat-form-field>
+            <input type="number" matInput placeholder="Calories" formControlName="calories">
+            <span matSuffix>Cals</span>
+            <mat-hint align="end"> {{ dailyCalorieTotalByGram }} / {{ goalForm.value['calories'] }} </mat-hint>
+            <mat-error *ngIf="goalForm.controls['calories'].hasError('required')">Field must not be empty.</mat-error>
+            <mat-error *ngIf="goalForm.controls['calories'].hasError('min')">Number must be Positive.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Protein" formControlName="protein" (blur)="updateCalorieTotal()">
+            <span matSuffix>Grams</span>
+            <mat-hint> 4 Calories per gram </mat-hint>
+            <mat-error *ngIf="goalForm.controls['protein'].hasError('min')">Number must be Positive.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Carbs" formControlName="carbs"  (blur)="updateCalorieTotal()">
+            <span matSuffix>Grams</span>
+            <mat-hint> 4 Calories per gram </mat-hint>
+            <mat-error *ngIf="goalForm.controls['carbs'].hasError('min')">Number must be Positive.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <span matSuffix>Grams</span>
+            <input type="number" matInput placeholder="Fat" formControlName="fats"  (blur)="updateCalorieTotal()">
+            <mat-hint> 9 Calories per gram </mat-hint>
+            <mat-error *ngIf="goalForm.controls['fats'].hasError('min')">Number must be Positive.</mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="center">
+          <button type="submit" mat-raised-button color="primary" [disabled]="formIsInvalid()">Update</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </section>

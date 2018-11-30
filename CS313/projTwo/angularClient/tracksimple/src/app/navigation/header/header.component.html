@@ -4,7 +4,7 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <div><a routerLink="/">TrackSimple</a></div>
+  <div><a routerLink="/">GoTrackSimple</a> <mat-icon>directions_run</mat-icon></div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="nav-bar">
       <li *ngIf="!isAuth">
@@ -15,6 +15,9 @@
       </li>
       <li *ngIf="isAuth">
         <a routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li *ngIf="isAuth">
+        <a routerLink="/goals">Goals</a>
       </li>
       <li *ngIf="isAuth">
           <a routerLink="/settings">Settings</a>

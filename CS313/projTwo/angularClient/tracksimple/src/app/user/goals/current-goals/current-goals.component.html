@@ -1,0 +1,23 @@
+<section class="new-training" fxLayout fxLayoutAlign="center">
+  <mat-card fxFlex.xs="100%" fxFlex="400px">
+    <mat-card-title fxLayoutAlign="center">Current Goals</mat-card-title>
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+      <canvas #chart></canvas>
+      <div>
+        <p>Daily Calories: {{ goal.dailyCalories }} </p>
+      </div>
+      <div>
+        <p>Daily Calories by Gram: {{ dailyCalorieTotalByGram }} </p>
+      </div>
+      <div>
+        <p>Daily Protein: {{ goal.dailyProtein }} </p>
+      </div>
+      <div>
+        <p>Daily Carbs: {{ goal.dailyCarbs }} </p>
+      </div>
+      <div>
+        <p>Daily Fats: {{ goal.dailyFats }} </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>
