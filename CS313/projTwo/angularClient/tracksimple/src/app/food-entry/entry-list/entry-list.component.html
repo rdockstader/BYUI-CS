@@ -10,19 +10,19 @@
     <mat-card-title fxLayoutAlign="center">Goal progress</mat-card-title>
     <mat-card-content fxLayout="column" fxLayouteAlign="center">
       <label for="calories-bar">Calories</label>
-      <mat-progress-bar mode="determinate" value="40" id="calories-bar"></mat-progress-bar>
+      <mat-progress-bar mode="determinate" [value]="calValue" id="calories-bar"></mat-progress-bar>
       <div fxLayout="row">
         <div fxLayout="column">
           <label for="protein-spinner">Protein</label>
-          <mat-progress-spinner mode="determinate" value="30" id="protein-spinner"></mat-progress-spinner>
+          <mat-progress-spinner mode="determinate" [value]="protValue" id="protein-spinner"></mat-progress-spinner>
         </div>
         <div fxLayout="column">
           <label for="carb-spinner">Carbs</label>
-          <mat-progress-spinner mode="determinate" value="30" id="carb-spinner" color="accent"></mat-progress-spinner>
+          <mat-progress-spinner mode="determinate" [value]="carbValue" id="carb-spinner" color="accent"></mat-progress-spinner>
         </div>
         <div fxLayout="column">
           <label for="fat-spinner">Fat</label>
-          <mat-progress-spinner mode="determinate" value="30" id="fat-spinner" color="warn"></mat-progress-spinner>
+          <mat-progress-spinner mode="determinate" [value]="fatValue" id="fat-spinner" color="warn"></mat-progress-spinner>
         </div>
       </div>
     </mat-card-content>

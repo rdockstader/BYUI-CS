@@ -3,6 +3,8 @@ import { MatTableDataSource } from '@angular/material';
 import { FoodEntry } from '../../shared/models/food-entry.model';
 import { FoodEntryService } from 'src/app/shared/services/foodEntry.service';
 import { Subscription } from 'rxjs';
+import { UserGoalService } from 'src/app/shared/services/userGoal.service';
+import { UserGoal } from 'src/app/shared/models/user-goal.model';
 
 @Component({
   selector: 'app-entry-list',
@@ -18,9 +20,22 @@ export class EntryListComponent implements OnInit, OnDestroy {
   dinnerDataSource = new MatTableDataSource<FoodEntry>();
   snackDataSource = new MatTableDataSource<FoodEntry>();
 
-  foodEntrySub = new Subscription();
+  totalCalories: number;
+  totalProtein: number;
+  totalCarbs: number;
+  totalFats: number;
+  goal: UserGoal;
 
-  constructor(private foodEntryService: FoodEntryService) { }
+  calValue = 0;
+  protValue = 0;
+  carbValue = 0;
+  fatValue = 0;
+  // TODO: set values...
+
+  foodEntrySub = new Subscription();
+  userGoalSub = new Subscription();
+
+  constructor(private foodEntryService: FoodEntryService, private userGoalService: UserGoalService) { }
 
   ngOnInit() {
     this.foodEntryService.getFoodEntires();
@@ -29,8 +44,14 @@ export class EntryListComponent implements OnInit, OnDestroy {
       this.buildDataSource(entries.filter(ent => ent.meal === 'Lunch'), this.lunchDataSource);
       this.buildDataSource(entries.filter(ent => ent.meal === 'Dinner'), this.dinnerDataSource);
       this.buildDataSource(entries.filter(ent => ent.meal === 'Snack'), this.snackDataSource);
+      this.getDailyTotals(entries);
     });
-    // TODO: figure out how to make it update date without the button
+
+    this.userGoalService.retrieveCurrentGoal();
+    this.goal = this.userGoalService.getCurrentUserGoal();
+    this.userGoalSub = this.userGoalService.currentUserGoalChanged.subscribe(result => {
+      this.goal = this.userGoalService.getCurrentUserGoal();
+    });
   }
 
   ngOnDestroy() {
@@ -80,6 +101,24 @@ export class EntryListComponent implements OnInit, OnDestroy {
                         carbs: totalCarb,
                         fats: totalFat,
                         dateAdded: null};
+  }
+
+  private getDailyTotals(entries: FoodEntry[]) {
+    let totalCals = 0;
+    let totalProt = 0;
+    let totalCarb = 0;
+    let totalFat = 0;
+    entries.forEach(entry => {
+      totalCals += entry.calories;
+      totalProt += entry.protein;
+      totalCarb += entry.carbs;
+      totalFat += entry.fats;
+    });
+
+    this.totalCalories = totalCals;
+    this.totalProtein = totalProt;
+    this.totalCarbs = totalCarb;
+    this.totalFats = totalFat;
   }
 
 }
