@@ -1,5 +1,5 @@
 <section class="new-training" fxLayout fxLayoutAlign="center">
-  <mat-card fxFlex.xs="100%" fxFlex="400px">
+  <mat-card fxFlex.xs="100%" fxFlex="600px">
     <mat-card-content fxLayout="row" fxLayoutAlign="center center">
       <button mat-icon-button (click)="onPreviousDate()"><mat-icon>arrow_back_ios</mat-icon></button>
       <input #date matInput [matDatepicker]="entryDatePicker" placeholder="Entry Date" [(ngModel)]="entryDate" (dateChange)="onDateChanged()" disabled>
