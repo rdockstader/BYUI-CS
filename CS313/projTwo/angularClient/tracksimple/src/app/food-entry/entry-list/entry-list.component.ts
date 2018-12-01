@@ -45,12 +45,15 @@ export class EntryListComponent implements OnInit, OnDestroy {
       this.buildDataSource(entries.filter(ent => ent.meal === 'Dinner'), this.dinnerDataSource);
       this.buildDataSource(entries.filter(ent => ent.meal === 'Snack'), this.snackDataSource);
       this.getDailyTotals(entries);
+      this.setValues();
     });
 
     this.userGoalService.retrieveCurrentGoal();
     this.goal = this.userGoalService.getCurrentUserGoal();
+    this.setValues();
     this.userGoalSub = this.userGoalService.currentUserGoalChanged.subscribe(result => {
       this.goal = this.userGoalService.getCurrentUserGoal();
+      this.setValues();
     });
   }
 
@@ -73,6 +76,13 @@ export class EntryListComponent implements OnInit, OnDestroy {
                                           '/' + this.entryDate.getDate() +
                                           '/' + this.entryDate.getFullYear();
     this.foodEntryService.getFoodEntires(this.entryDate);
+  }
+
+  private setValues() {
+    this.calValue = this.totalCalories / this.goal.dailyCalories * 100 ;
+    this.protValue = this.totalProtein / this.goal.dailyProtein * 100;
+    this.carbValue = this.totalCarbs / this.goal.dailyCarbs * 100;
+    this.fatValue = this.totalFats / this.goal.dailyFats * 100;
   }
 
   private buildDataSource(entries: FoodEntry[], dataSource: MatTableDataSource<FoodEntry>) {
