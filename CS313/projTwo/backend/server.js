@@ -2,7 +2,7 @@ const app = require("./app");
 const debug = require("debug")("cs313-node");
 const http = require("http");
 
-// Push backend folder to heroku
+// Push backend folder to heroku 
 // git subtree push --prefix CS313/projTwo/backend/ heroku master
 
 const normalizePort = val => {
