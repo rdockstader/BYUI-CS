@@ -1,0 +1,42 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence description:
+
+GoTrackSimple / a simple calorie tracker, for people to get simply fit.
+
+2. Copy and paste the URL for your web application (if applicable):
+
+http://gotracksimple.com
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rdockstader/BYUI-CS/tree/master/CS313/projTwo
+
+4. Describe the functionality that is currently working, along with any special instructions of how to use your web application:
+
+Sign up -> Sign up by putting in your user information
+Login -> Login after you sign up.
+Dashboard -> Food Entries -> Shows your food entries (defaults to the current day, you can use the calendar icon to pick a specific day, or the arrows to cycle through days)
+						  -> Also shows your current "progress" towards your calorie, protein, carbohydrate, and fat limits.
+		  -> New Entry screen -> Allows you to add a new food entry to the current day.
+Goals -> Current Goals -> Shows you a breakdown of your current goals. Your daily calories, and a chart (using chart.js) to show you the breakdown of where your calories should be spent
+      -> Adjust Goals -> Allows you to adjust your goals when necessary
+Settings -> Adjust the information you entered on the login screen.
+Logout -> Destroys your JWT, clears user variables from the session, and the local storage.
+
+5. Describe the features that are not yet working correctly.
+
+The welcome page could use some improvement. Right now it just says "Welcome works!", and the amount of calories you've used / your goal calories should be displayed on the food entries screen.
+
+
+6. Please select the category you feel best describes your assignment:
+E - Shows creativity and excels above and beyond requirements
+
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+
+Built a fully functioning application, using angular and angular materials. Utilized the API end points built last week, as well as DNS entries to change the Heroku URL to api.gotracksimple.com. Utilized an AWS s3 bucket to serve a "static" angular app, with a DNS entry to change the URL to www.gotracksimple.com, with a domain redirect from gotracksimple.com to www.gotracksimple.com.
+
+8. Please list any questions you have for the instructor regarding this assignment or this week's topic.
+
+No questions at this time.

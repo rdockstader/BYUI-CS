@@ -1,0 +1,5 @@
+{
+    "env": {
+        "JWT_KEY": "CS313_IS_THE_BEST_CLASS"
+    }
+}
