@@ -1,3 +1,6 @@
+<section fxLayout="column" fxLayoutAlign="center center" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</section>
 <section class="new-training" fxLayout fxLayoutAlign="center">
   <form (ngSubmit)="onSubmit()" [formGroup]="foodEntryForm">
     <mat-card fxFlex.xs="100%" fxFlex="400px">

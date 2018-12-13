@@ -8,15 +8,19 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  isLoading = false;
   loginForm: FormGroup;
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.initForm();
+    this.isLoading = false;
   }
 
   onSubmit() {
     if (!this.loginForm.invalid) {
+      this.isLoading = true;
       this.authService.login({
         email: this.loginForm.value.email,
         password: this.loginForm.value.password

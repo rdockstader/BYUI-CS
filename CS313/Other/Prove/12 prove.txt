@@ -1,0 +1,35 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence description:
+
+GoTrackSimple
+
+2. Copy and paste the URL for your web application (if applicable):
+
+http://www.gotracksimple.com/
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rdockstader/BYUI-CS/tree/master/CS313/projTwo/angularClient/tracksimple
+
+4. Describe the functionality that is currently working, along with any special instructions of how to use your web application:
+
+sign up - a sign up form that you can add yourself as a user of the app with
+Login - a login form that can be used after signing up
+Logout - a button to clear your Token from your browser cache
+
+5. Describe the features that are not yet working correctly.
+
+Loading screens (I.E. a indefinite loader circle to let you know things are happening
+
+6. Please select the category you feel best describes your assignment:
+E - Shows creativity and excels above and beyond requirements
+
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+
+Used the angular client to build a fully functional web app, on it's own domain.
+
+8. Please list any questions you have for the instructor regarding this assignment or this week's topic.
+
+No questions at this time.
