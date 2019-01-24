@@ -57,6 +57,8 @@ I was able to build a back end express based application that exposed authentica
 
 7. (Optional) Any other comments about the project?
 
+The next step of this project for me would be error handling. Right now it only logs the error to the console, and doesn't inform the user that something went wrong.
+
 *****************************************************************
 * If you completed this project as a team, please rate yourself
 * and then each member of the team using the scale above. If you

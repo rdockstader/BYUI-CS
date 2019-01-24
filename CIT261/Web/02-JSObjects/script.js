@@ -26,7 +26,7 @@ function Hero(name, health, type) {
 }
 
 // Villian (calls creature)
-function Villian(name, health) {
+function Villian(name, health, type) {
     Creature.call(this, name, health, type);
 }
 
@@ -66,6 +66,8 @@ Warrior.prototype = Object.create(Hero.prototype);
 Mage.prototype = Object.create(Hero.prototype);
 // Healer inherits from Hero
 Healer.prototype = Object.create(Hero.prototype);
+// Wild Boar inherits from Villian
+WildBoar.prototype = Object.create(Villian.prototype);
 
 /***********************/
 /****CLASS FUNCTIONS****/
@@ -74,8 +76,8 @@ Healer.prototype = Object.create(Hero.prototype);
 // Creature
 Creature.prototype.takeDamage = function (damage) {
     this.currentHealth -= damage;
-    if(this.currentHealth >= 0) {
-        this.currentHealth = 0;
+    if(this.currentHealth <= 0) {
+        this.currentHealth = 0
         this.isAlive = false;
     }
 }
@@ -215,12 +217,61 @@ startGame = function() {
     refreshVillianTable();
     gameStarted = true;
     document.getElementById("start-game-btn").classList.add("hidden");
-    
+    document.getElementById("add-hero-btn").classList.add("hidden");
+    document.getElementById("play-round-btn").classList.remove("hidden");
 }
 
 
 playRound = function() {
+    var heroIndex = 0;
+    var villianIndex = 0;
+    var heroToAttack = heros[heroIndex];
+    var villianToAttack = villians[villianIndex];
+
+    heros.forEach(function(element) {
+        if(element.isAlive) {
+            while(villianToAttack.currentHealth <= 0 && villianIndex < villians.length-1) {
+                villianIndex = villianIndex + 1;
+                villianToAttack = villians[villianIndex];
+            }
+            if(villianToAttack.currentHealth > 0) {
+                if(element.type === "Warrior") {
+                    element.attack(villianToAttack);
+                } else if (element.type === "Mage") {
+                    element.cast(villianToAttack);
+                }
+                
+            }
+        }
+    });
+
+    villians.forEach(function(element) {
+        if(element.isAlive) {
+            while(heroToAttack.currentHealth <= 0 && heroIndex < heros.length-1) {
+                heroIndex = heroIndex + 1;
+                heroToAttack = heros[heroIndex];
+            }
+            if(heroToAttack.currentHealth > 0) {
+                if(element.type === "Wild Boar") {
+                    element.charge(heroToAttack);
+                } 
+            }
+        }
+    });
     
+    if(heroIndex == heros.length-1 && !heroToAttack.isAlive) {
+        alert("you lose!!!");
+        document.getElementById("play-round-btn").classList.add("hidden");
+    }
+
+    if(villianIndex == villians.length-1 && !villianToAttack.isAlive) {
+        alert("Winna Winna Chicken Dinna!!");
+            document.getElementById("play-round-btn").classList.add("hidden");
+    }
+
+
+    refreshHeroTable();
+    refreshVillianTable();
 }
 
 
