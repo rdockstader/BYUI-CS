@@ -11,6 +11,12 @@
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
+        <div class="overlay hidden" id="main-overlay">
+            <div id="overlay-output"></div>
+            <button class="btn btn-primary" onclick="onParty()" id="on-party-btn">Let's Party!</button>
+            <button class="btn btn-primary" onclick="onRestart()" id="on-restart-btn">Another Round, Please!</button>
+            <button class="btn btn-primary" onclick="onOverlayClose()" id="on-close-btn">Close</button>
+        </div>
         <div>
             <h1>Boar Battlers!</h1>
             <p>
@@ -24,7 +30,7 @@
             <label for="hero-name">Hero Name</label>
             <input type="text" placeholder="James" id="hero-name" name="hero-name"> 
                <label for="hero-type">Hero Type</label>
-            <select name="hero-type" id="hero-type">
+                <select name="hero-type" id="hero-type">
                 <option value="w">Warrior</option>
                 <option value="m">Mage</option>
                 <!--<option value="h">Healer</option>-->

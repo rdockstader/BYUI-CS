@@ -172,7 +172,11 @@ refreshHeroTable = function() {
     var rowNum = 0;
     heros.forEach((ele) => {
         tableHtml += '<tr>';
-        tableHtml += '<td>' + ele.name + '</td>';
+        tableHtml += '<td';
+        if(!ele.isAlive) {
+            tableHtml += ' class="dead" ';
+        }
+        tableHtml +='>' + ele.name + '</td>';
         tableHtml += '<td>' + ele.type + '</td>';
         tableHtml += '<td>' + ele.currentHealth + '</td>';
         tableHtml += '<td>' + ele.maxHealth + '</td>';
@@ -197,7 +201,11 @@ refreshVillianTable = function() {
     var rowNum = 0;
     villians.forEach((ele) => {
         tableHtml += '<tr>';
-        tableHtml += '<td>' + ele.name + '</td>';
+        tableHtml += '<td';
+        if(!ele.isAlive) {
+            tableHtml += ' class="dead" ';
+        }
+        tableHtml +='>' + ele.name + '</td>';
         tableHtml += '<td>' + ele.type + '</td>';
         tableHtml += '<td>' + ele.currentHealth + '</td>';
         tableHtml += '<td>' + ele.maxHealth + '</td>';
@@ -219,6 +227,7 @@ startGame = function() {
     document.getElementById("start-game-btn").classList.add("hidden");
     document.getElementById("add-hero-btn").classList.add("hidden");
     document.getElementById("play-round-btn").classList.remove("hidden");
+    console.log('started');
 }
 
 
@@ -260,13 +269,26 @@ playRound = function() {
     });
     
     if(heroIndex == heros.length-1 && !heroToAttack.isAlive) {
-        alert("you lose!!!");
+        var overlay = document.getElementById('main-overlay');
+        overlay.classList.remove('hidden');
+
+        var overlayOutput = document.getElementById('overlay-output');
+        overlayOutput.innerHTML = '<p> YOU LOSE! </p>';
+        document.getElementById('on-party-btn').classList.add('hidden');
+
         document.getElementById("play-round-btn").classList.add("hidden");
     }
 
     if(villianIndex == villians.length-1 && !villianToAttack.isAlive) {
-        alert("Winna Winna Chicken Dinna!!");
-            document.getElementById("play-round-btn").classList.add("hidden");
+        var overlay = document.getElementById('main-overlay');
+        overlay.classList.remove('hidden');
+
+        var overlayOutput = document.getElementById('overlay-output');
+        
+        overlayOutput.innerHTML = '<p> Winner Winner Chicken Dinner! </p>';
+
+
+        document.getElementById("play-round-btn").classList.add("hidden");
     }
 
 
@@ -278,7 +300,67 @@ playRound = function() {
 
 
 
+onParty = function() {
+    var overlay = document.getElementById('main-overlay');
+    var overlayOutput = document.getElementById('overlay-output');
+    if(document.getElementById('party-0') == null) {
+        var html = overlayOutput.innerHTML;
+        for(var i = 0; i < 8; i++) {
+            html += '<p id="party-' + i + '" class="party">PARTY PARTY PARTY PARTY PARTY</p>';
+        }
+        overlayOutput.innerHTML = html;
+    }
+    
+    for(var i = 0; i <8; i++) {
+        var partyRow = document.getElementById('party-' + i);
+        switch(Math.floor(Math.random() * 9)) {
+            case 0:
+                partyRow.style.color = 'blue';
+                break;
+            case 1:
+                partyRow.classList.add('flash');
+                break;
+            case 2:
+                partyRow.classList.add('rainbow');
+                break;
+            case 3:
+                partyRow.style.textDecoration ='underline overline';
+                partyRow.style.textDecorationColor ='red';
+                break;
+            case 4:
+                partyRow.style.transform = 'rotate(45deg)';
+                break;
+            case 5:
+                partyRow.style.fontSize = '300%';
+                break;
+            case 6:
+                partyRow.style.fontWeight = 'bold';
+                break;
+            case 7:
+                partyRow.style.border = '1px solid black';
+                break;
+            case 8:
+                partyRow.removeAttribute('style');
+                partyRow.removeAttribute('class');
+                break;
+            default:
+                break;
+        }
+        //document.getElementById('on-party-btn').classList.add('hidden');
+    }
 
+
+
+    
+}
+onRestart = function() {
+    location.reload();
+}
+onOverlayClose = function() {
+    var overlay = document.getElementById('main-overlay');
+
+    overlay.classList.add('hidden');
+}
 
 
 
