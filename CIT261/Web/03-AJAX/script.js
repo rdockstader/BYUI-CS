@@ -7,7 +7,7 @@ function getJSON(url, method, isAsync, callback)
         console.error('URL CANNOT BE NULL');
         return;
     }
-    // Verify ther eis a callback, if not exit the function
+    // Verify there is a callback, if not exit the function
     if(callback == null) {
         console.error('CALLBACK CANNOT BE NULL');
         return;
