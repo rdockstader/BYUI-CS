@@ -184,5 +184,41 @@ setDefaults = function() {
     document.body.style = null;
 }
 
+addCar = function() {
+    // setup variables
+    var carTable = document.getElementById('cars');
+    var car = document.getElementById('car');
+    var carVal = car.value;
+    // null car ele value
+    car.value = null;
+    // setup row number ele
+    var carRowNumEle = document.createElement('td');
+    carRowNumEle.innerHTML = carTable.children.length+1;
+    // setup data ele
+    var carDataEle = document.createElement('td');
+    carDataEle.innerHTML = carVal;
+    // Setup delete Button
+    var deleteButtonEle = document.createElement('button');
+    deleteButtonEle.id = carRowNumEle.innerHTML;
+    deleteButtonEle.onclick = deleteRow;
+    deleteButtonEle.classList.add('btn');
+    deleteButtonEle.classList.add('btn-danger');
+    deleteButtonEle.innerHTML = 'Delete Car';
+    var carDeleteEle = document.createElement('td');
+    carDeleteEle.appendChild(deleteButtonEle);
+    // create table row, add table data to row, add row to table
+    var carEle = document.createElement('tr');
+    carEle.appendChild(carRowNumEle);
+    carEle.appendChild(carDataEle);
+    carEle.appendChild(carDeleteEle);
+    carTable.appendChild(carEle);
+}
+
+deleteRow = function(event) {
+    var carRow = event.toElement.parentNode.parentNode;
+    var carTable = document.getElementById('cars');
+    carTable.removeChild(carRow);
+}
+
 
 onLoad();

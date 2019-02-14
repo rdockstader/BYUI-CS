@@ -68,7 +68,21 @@
                     <option value="honeydew">Honeydew</option>
                     <option value="blueviolet">Blueviolet</option>
                 </select>
+                <label for="car">Favorite Cars</label>
+                <input type="text" id="car" name="car">
+                <button class="btn btn-success" onclick="addCar()">+</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Row</th>
+                            <th>Car</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id='cars'>
 
+                    </tbody>
+                </table>
             </div>
             <p class="clear"></p>
             <div>

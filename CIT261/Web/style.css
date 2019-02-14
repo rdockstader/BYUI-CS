@@ -34,6 +34,16 @@ table {
     color: white;
 }
 
+.btn-success {
+    background-color: #53A451;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #CC444A;
+    color: white;
+}
+
 input[type=text], input[type=number], select {
     border-radius: 5px;
     box-shadow: none;
