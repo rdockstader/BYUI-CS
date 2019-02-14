@@ -1,0 +1,762 @@
+{
+	"regions": [
+        {
+            "name:":"Kanto",
+            "pokemon": [
+                {
+                    "number": "001",
+                    "name": "Bulbasaur",
+                    "imgPath": "/img/001.jpg"
+                },
+                {
+                    "number": "002",
+                    "name": "Ivysaur",
+                    "imgPath": "/img/002.jpg"
+                },
+                {
+                    "number": "003",
+                    "name": "Venusaur",
+                    "imgPath": "/img/003.jpg"
+                },
+                {
+                    "number": "004",
+                    "name": "Charmander",
+                    "imgPath": "/img/004.jpg"
+                },
+                {
+                    "number": "005",
+                    "name": "Charmeleon",
+                    "imgPath": "/img/005.jpg"
+                },
+                {
+                    "number": "006",
+                    "name": "Charizard",
+                    "imgPath": "/img/006.jpg"
+                },
+                {
+                    "number": "007",
+                    "name": "Squirtle",
+                    "imgPath": "/img/007.jpg"
+                },
+                {
+                    "number": "008",
+                    "name": "Wartortle",
+                    "imgPath": "/img/008.jpg"
+                },
+                {
+                    "number": "009",
+                    "name": "Blastoise",
+                    "imgPath": "/img/009.jpg"
+                },
+                {
+                    "number": "010",
+                    "name": "Caterpie",
+                    "imgPath": "/img/010.jpg"
+                },
+                {
+                    "number": "011",
+                    "name": "Metapod",
+                    "imgPath": "/img/011.jpg"
+                },
+                {
+                    "number": "012",
+                    "name": "Butterfree",
+                    "imgPath": "/img/012.jpg"
+                },
+                {
+                    "number": "013",
+                    "name": "Weedle",
+                    "imgPath": "/img/013.jpg"
+                },
+                {
+                    "number": "014",
+                    "name": "Kakuna",
+                    "imgPath": "/img/014.jpg"
+                },
+                {
+                    "number": "015",
+                    "name": "Beedrill",
+                    "imgPath": "/img/015.jpg"
+                },
+                {
+                    "number": "016",
+                    "name": "Pidgey",
+                    "imgPath": "/img/016.jpg"
+                },
+                {
+                    "number": "017",
+                    "name": "Pidgeotto",
+                    "imgPath": "/img/017.jpg"
+                },
+                {
+                    "number": "018",
+                    "name": "Pidgeot",
+                    "imgPath": "/img/018.jpg"
+                },
+                {
+                    "number": "019",
+                    "name": "Rattata",
+                    "imgPath": "/img/019.jpg"
+                },
+                {
+                    "number": "020",
+                    "name": "Raticate",
+                    "imgPath": "/img/020.jpg"
+                },
+                {
+                    "number": "021",
+                    "name": "Spearow",
+                    "imgPath": "/img/021.jpg"
+                },
+                {
+                    "number": "022",
+                    "name": "Fearow",
+                    "imgPath": "/img/022.jpg"
+                },
+                {
+                    "number": "023",
+                    "name": "Ekans",
+                    "imgPath": "/img/023.jpg"
+                },
+                {
+                    "number": "024",
+                    "name": "Arbok",
+                    "imgPath": "/img/024.jpg"
+                },
+                {
+                    "number": "025",
+                    "name": "Pikachu",
+                    "imgPath": "/img/025.jpg"
+                },
+                {
+                    "number": "026",
+                    "name": "Raichu",
+                    "imgPath": "/img/026.jpg"
+                },
+                {
+                    "number": "027",
+                    "name": "Sandshrew",
+                    "imgPath": "/img/027.jpg"
+                },
+                {
+                    "number": "028",
+                    "name": "Sandslash",
+                    "imgPath": "/img/028.jpg"
+                },
+                {
+                    "number": "029",
+                    "name": "Nidoran(f)",
+                    "imgPath": "/img/029.jpg"
+                },
+                {
+                    "number": "030",
+                    "name": "Nidorina",
+                    "imgPath": "/img/030.jpg"
+                },
+                {
+                    "number": "031",
+                    "name": "Nidoqueen",
+                    "imgPath": "/img/031.jpg"
+                },
+                {
+                    "number": "032",
+                    "name": "Nidoran(m)",
+                    "imgPath": "/img/032.jpg"
+                },
+                {
+                    "number": "033",
+                    "name": "Nidorino",
+                    "imgPath": "/img/033.jpg"
+                },{
+                    "number": "034",
+                    "name": "Nidoking",
+                    "imgPath": "/img/034.jpg"
+                },{
+                    "number": "035",
+                    "name": "Clefairy",
+                    "imgPath": "/img/035.jpg"
+                },
+                {
+                    "number": "036",
+                    "name": "Clefable",
+                    "imgPath": "/img/036.jpg"
+                },
+                {
+                    "number": "037",
+                    "name": "Vulpix",
+                    "imgPath": "/img/037.jpg"
+                },
+                {
+                    "number": "038",
+                    "name": "Ninetales",
+                    "imgPath": "/img/038.jpg"
+                },
+                {
+                    "number": "039",
+                    "name": "Jigglypuff",
+                    "imgPath": "/img/039.jpg"
+                },
+                {
+                    "number": "040",
+                    "name": "Wigglytuff",
+                    "imgPath": "/img/040.jpg"
+                },
+                {
+                    "number": "041",
+                    "name": "Zubat",
+                    "imgPath": "/img/041.jpg"
+                },
+                {
+                    "number": "042",
+                    "name": "Golbat",
+                    "imgPath": "/img/042.jpg"
+                },
+                {
+                    "number": "043",
+                    "name": "Oddish",
+                    "imgPath": "/img/043.jpg"
+                },
+                {
+                    "number": "044",
+                    "name": "Gloom",
+                    "imgPath": "/img/044.jpg"
+                },
+                {
+                    "number": "045",
+                    "name": "Vileplume",
+                    "imgPath": "/img/045.jpg"
+                },
+                {
+                    "number": "046",
+                    "name": "Paras",
+                    "imgPath": "/img/046.jpg"
+                },
+                {
+                    "number": "047",
+                    "name": "Parasect",
+                    "imgPath": "/img/047.jpg"
+                },
+                {
+                    "number": "048",
+                    "name": "Venonat",
+                    "imgPath": "/img/048.jpg"
+                },
+                {
+                    "number": "049",
+                    "name": "Venomoth",
+                    "imgPath": "/img/049.jpg"
+                },
+                {
+                    "number": "050",
+                    "name": "Diglett",
+                    "imgPath": "/img/050.jpg"
+                },
+                {
+                    "number": "051",
+                    "name": "Dugtrio",
+                    "imgPath": "/img/051.jpg"
+                },
+                {
+                    "number": "052",
+                    "name": "Meowth",
+                    "imgPath": "/img/052.jpg"
+                },
+                {
+                    "number": "053",
+                    "name": "Persian",
+                    "imgPath": "/img/053.jpg"
+                },
+                {
+                    "number": "054",
+                    "name": "Psyduck",
+                    "imgPath": "/img/054.jpg"
+                },
+                {
+                    "number": "055",
+                    "name": "Golduck",
+                    "imgPath": "/img/055.jpg"
+                },
+                {
+                    "number": "056",
+                    "name": "Mankey",
+                    "imgPath": "/img/056.jpg"
+                },
+                {
+                    "number": "057",
+                    "name": "Primeape",
+                    "imgPath": "/img/057.jpg"
+                },
+                {
+                    "number": "058",
+                    "name": "Growlithe",
+                    "imgPath": "/img/058.jpg"
+                },
+                {
+                    "number": "059",
+                    "name": "Arcanine",
+                    "imgPath": "/img/059.jpg"
+                },
+                {
+                    "number": "060",
+                    "name": "Poliwag",
+                    "imgPath": "/img/060.jpg"
+                },
+                {
+                    "number": "061",
+                    "name": "Poliwhirl",
+                    "imgPath": "/img/061.jpg"
+                },
+                {
+                    "number": "062",
+                    "name": "Poliwrath",
+                    "imgPath": "/img/062.jpg"
+                },
+                {
+                    "number": "063",
+                    "name": "Abra",
+                    "imgPath": "/img/063.jpg"
+                },
+                {
+                    "number": "064",
+                    "name": "Kadabra",
+                    "imgPath": "/img/064.jpg"
+                },
+                {
+                    "number": "065",
+                    "name": "Alakazam",
+                    "imgPath": "/img/065.jpg"
+                },
+                {
+                    "number": "066",
+                    "name": "Machop",
+                    "imgPath": "/img/066.jpg"
+                },
+                {
+                    "number": "067",
+                    "name": "Machoke",
+                    "imgPath": "/img/067.jpg"
+                },
+                {
+                    "number": "068",
+                    "name": "Machamp",
+                    "imgPath": "/img/068.jpg"
+                },
+                {
+                    "number": "069",
+                    "name": "Bellsprout",
+                    "imgPath": "/img/069.jpg"
+                },
+                {
+                    "number": "070",
+                    "name": "Weepinbell",
+                    "imgPath": "/img/070.jpg"
+                },
+                {
+                    "number": "071",
+                    "name": "Victreebel",
+                    "imgPath": "/img/071.jpg"
+                },
+                {
+                    "number": "072",
+                    "name": "Tentacool",
+                    "imgPath": "/img/072.jpg"
+                },
+                {
+                    "number": "073",
+                    "name": "Tentacruel",
+                    "imgPath": "/img/073.jpg"
+                },
+                {
+                    "number": "074",
+                    "name": "Geodude",
+                    "imgPath": "/img/074.jpg"
+                },
+                {
+                    "number": "075",
+                    "name": "Graveler",
+                    "imgPath": "/img/075.jpg"
+                },
+                {
+                    "number": "076",
+                    "name": "Golem",
+                    "imgPath": "/img/076.jpg"
+                },
+                {
+                    "number": "077",
+                    "name": "Ponyta",
+                    "imgPath": "/img/077.jpg"
+                },
+                {
+                    "number": "078",
+                    "name": "Rapidash",
+                    "imgPath": "/img/078.jpg"
+                },
+                {
+                    "number": "079",
+                    "name": "Slowpoke",
+                    "imgPath": "/img/079.jpg"
+                },
+                {
+                    "number": "080",
+                    "name": "Slowbro",
+                    "imgPath": "/img/080.jpg"
+                },
+                {
+                    "number": "081",
+                    "name": "Magnemite",
+                    "imgPath": "/img/081.jpg"
+                },
+                {
+                    "number": "082",
+                    "name": "Magneton",
+                    "imgPath": "/img/082.jpg"
+                },
+                {
+                    "number": "083",
+                    "name": "Farfetchd",
+                    "imgPath": "/img/083.jpg"
+                },
+                {
+                    "number": "084",
+                    "name": "Doduo",
+                    "imgPath": "/img/084.jpg"
+                },
+                {
+                    "number": "085",
+                    "name": "Dodrio",
+                    "imgPath": "/img/085.jpg"
+                },
+                {
+                    "number": "086",
+                    "name": "Seel",
+                    "imgPath": "/img/086.jpg"
+                },
+                {
+                    "number": "087",
+                    "name": "Dewgong",
+                    "imgPath": "/img/087.jpg"
+                },
+                {
+                    "number": "088",
+                    "name": "Grimer",
+                    "imgPath": "/img/088.jpg"
+                },
+                {
+                    "number": "089",
+                    "name": "Muk",
+                    "imgPath": "/img/089.jpg"
+                },
+                {
+                    "number": "090",
+                    "name": "Shellder",
+                    "imgPath": "/img/090.jpg"
+                },
+                {
+                    "number": "091",
+                    "name": "Cloyster",
+                    "imgPath": "/img/091.jpg"
+                },
+                {
+                    "number": "092",
+                    "name": "Gastly",
+                    "imgPath": "/img/092.jpg"
+                },
+                {
+                    "number": "093",
+                    "name": "Haunter",
+                    "imgPath": "/img/093.jpg"
+                },
+                {
+                    "number": "094",
+                    "name": "Gengar",
+                    "imgPath": "/img/094.jpg"
+                },
+                {
+                    "number": "095",
+                    "name": "Onix",
+                    "imgPath": "/img/095.jpg"
+                },
+                {
+                    "number": "096",
+                    "name": "Drowzee",
+                    "imgPath": "/img/096.jpg"
+                },
+                {
+                    "number": "097",
+                    "name": "Hypno",
+                    "imgPath": "/img/097.jpg"
+                },
+                {
+                    "number": "098",
+                    "name": "Krabby",
+                    "imgPath": "/img/098.jpg"
+                },
+                {
+                    "number": "099",
+                    "name": "Kingler",
+                    "imgPath": "/img/099.jpg"
+                },
+                {
+                    "number": "100",
+                    "name": "Voltorb",
+                    "imgPath": "/img/100.jpg"
+                },
+                {
+                    "number": "101",
+                    "name": "Electrode",
+                    "imgPath": "/img/101.jpg"
+                },
+                {
+                    "number": "102",
+                    "name": "Exeggcute",
+                    "imgPath": "/img/102.jpg"
+                },
+                {
+                    "number": "103",
+                    "name": "Exeggutor",
+                    "imgPath": "/img/103.jpg"
+                },
+                {
+                    "number": "104",
+                    "name": "Cubone",
+                    "imgPath": "/img/104.jpg"
+                },
+                {
+                    "number": "105",
+                    "name": "Marowak",
+                    "imgPath": "/img/105.jpg"
+                },
+                {
+                    "number": "106",
+                    "name": "Hitmonlee",
+                    "imgPath": "/img/106.jpg"
+                },
+                {
+                    "number": "107",
+                    "name": "Hitmonchan",
+                    "imgPath": "/img/107.jpg"
+                },
+                {
+                    "number": "108",
+                    "name": "Lickitung",
+                    "imgPath": "/img/108.jpg"
+                },
+                {
+                    "number": "109",
+                    "name": "Koffing",
+                    "imgPath": "/img/109.jpg"
+                },
+                {
+                    "number": "110",
+                    "name": "Weezing",
+                    "imgPath": "/img/110.jpg"
+                },
+                {
+                    "number": "111",
+                    "name": "Rhyhorn",
+                    "imgPath": "/img/111.jpg"
+                },
+                {
+                    "number": "112",
+                    "name": "Rhydon",
+                    "imgPath": "/img/112.jpg"
+                },
+                {
+                    "number": "113",
+                    "name": "Chansey",
+                    "imgPath": "/img/113.jpg"
+                },
+                {
+                    "number": "114",
+                    "name": "Tangela",
+                    "imgPath": "/img/114.jpg"
+                },
+                {
+                    "number": "115",
+                    "name": "Kangaskhan",
+                    "imgPath": "/img/115.jpg"
+                },
+                {
+                    "number": "116",
+                    "name": "Horsea",
+                    "imgPath": "/img/116.jpg"
+                },
+                {
+                    "number": "117",
+                    "name": "Seadra",
+                    "imgPath": "/img/117.jpg"
+                },
+                {
+                    "number": "118",
+                    "name": "Goldeen",
+                    "imgPath": "/img/118.jpg"
+                },
+                {
+                    "number": "119",
+                    "name": "Seaking",
+                    "imgPath": "/img/119.jpg"
+                },
+                {
+                    "number": "120",
+                    "name": "Staryu",
+                    "imgPath": "/img/120.jpg"
+                },
+                {
+                    "number": "121",
+                    "name": "Starmie",
+                    "imgPath": "/img/121.jpg"
+                },
+                {
+                    "number": "122",
+                    "name": "MrMime",
+                    "imgPath": "/img/122.jpg"
+                },
+                {
+                    "number": "123",
+                    "name": "Scyther",
+                    "imgPath": "/img/123.jpg"
+                },
+                {
+                    "number": "124",
+                    "name": "Jynx",
+                    "imgPath": "/img/124.jpg"
+                },
+                {
+                    "number": "125",
+                    "name": "Electabuzz",
+                    "imgPath": "/img/125.jpg"
+                },
+                {
+                    "number": "126",
+                    "name": "Magmar",
+                    "imgPath": "/img/126.jpg"
+                },
+                {
+                    "number": "127",
+                    "name": "",
+                    "imgPath": "/img/127.jpg"
+                },
+                {
+                    "number": "128",
+                    "name": "Tauros",
+                    "imgPath": "/img/128.jpg"
+                },
+                {
+                    "number": "129",
+                    "name": "Magikarp",
+                    "imgPath": "/img/129.jpg"
+                },
+                {
+                    "number": "130",
+                    "name": "Gyarados",
+                    "imgPath": "/img/130.jpg"
+                },
+                {
+                    "number": "131",
+                    "name": "Lapras",
+                    "imgPath": "/img/131.jpg"
+                },
+                {
+                    "number": "132",
+                    "name": "Ditto",
+                    "imgPath": "/img/132.jpg"
+                },
+                {
+                    "number": "133",
+                    "name": "Eevee",
+                    "imgPath": "/img/133.jpg"
+                },
+                {
+                    "number": "134",
+                    "name": "Vaporeon",
+                    "imgPath": "/img/134.jpg"
+                },
+                {
+                    "number": "135",
+                    "name": "Jolteon",
+                    "imgPath": "/img/135.jpg"
+                },
+                {
+                    "number": "136",
+                    "name": "Flareon",
+                    "imgPath": "/img/136.jpg"
+                },
+                {
+                    "number": "137",
+                    "name": "Porygon",
+                    "imgPath": "/img/137.jpg"
+                },
+                {
+                    "number": "138",
+                    "name": "Omanyte",
+                    "imgPath": "/img/138.jpg"
+                },
+                {
+                    "number": "139",
+                    "name": "Omastar",
+                    "imgPath": "/img/139.jpg"
+                },
+                {
+                    "number": "140",
+                    "name": "Kabuto",
+                    "imgPath": "/img/140.jpg"
+                },
+                {
+                    "number": "141",
+                    "name": "Kabutops",
+                    "imgPath": "/img/141.jpg"
+                },
+                {
+                    "number": "142",
+                    "name": "Aerodactyl",
+                    "imgPath": "/img/142.jpg"
+                },
+                {
+                    "number": "143",
+                    "name": "Snorlax",
+                    "imgPath": "/img/143.jpg"
+                },
+                {
+                    "number": "144",
+                    "name": "Articuno",
+                    "imgPath": "/img/144.jpg"
+                },
+                {
+                    "number": "145",
+                    "name": "Zapdos",
+                    "imgPath": "/img/145.jpg"
+                },
+                {
+                    "number": "146",
+                    "name": "Moltres",
+                    "imgPath": "/img/146.jpg"
+                },
+                {
+                    "number": "147",
+                    "name": "Dratini",
+                    "imgPath": "/img/147.jpg"
+                },
+                {
+                    "number": "148",
+                    "name": "Dragonair",
+                    "imgPath": "/img/148.jpg"
+                },
+                {
+                    "number": "149",
+                    "name": "Dragonite",
+                    "imgPath": "/img/149.jpg"
+                },
+                {
+                    "number": "150",
+                    "name": "Mewtwo",
+                    "imgPath": "/img/150.jpg"
+                },
+                {
+                    "number": "151",
+                    "name": "Mew",
+                    "imgPath": "/img/151.jpg"
+                }
+            ]
+        }
+	]
+}

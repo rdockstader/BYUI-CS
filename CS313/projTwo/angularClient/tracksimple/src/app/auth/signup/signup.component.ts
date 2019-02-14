@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  isLoading = false;
   sigunupForm: FormGroup;
   PASSWORD_MIN_LENGTH = 8;
   MAX_DATE: Date;
@@ -15,12 +16,15 @@ export class SignupComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.MAX_DATE = new Date();
     this.MAX_DATE.setFullYear(this.MAX_DATE.getFullYear() - 18);
     this.initForm();
+    this.isLoading = false;
   }
 
   onSubmit() {
+    this.isLoading = true;
     if (!this.sigunupForm.invalid) {
       this.authService.registerUser({
         userId: null,

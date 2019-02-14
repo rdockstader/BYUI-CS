@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
         req.userData = {email: decodedToken.email, userId: decodedToken.userId, userType: user.type};
       next();
       } else {
-        res.status(500).json({message: "Auth user not found"})
+        res.status(401).json({message: "Auth user not found"})
       }
 
     });

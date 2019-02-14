@@ -1,0 +1,25 @@
+# 12 Ponder : Status Report
+
+1. What features were completed in your project this week?
+
+Adding some polish to the application.
+
+2. What bugs were fixed in your project this week?
+
+Resolved some navigation issues, and some issues adding tasks through the API
+
+3. Did anyone on your team have an infraction this week?
+
+no.
+
+4. If someone did have an infraction, was the penalty paid?
+
+N/A
+
+5. How many hours did you spend on your team project this week?
+
+2 hours
+
+6. Are there any issues related to your team or project you want to tell your instructor about?
+
+There are no issues

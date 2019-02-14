@@ -1,0 +1,25 @@
+# 11 Ponder : Status Report
+
+1. What features were completed in your project this week?
+
+Our application would be available for Beta at this point. Meaning that all basic functions of the app are up and running.
+
+2. What bugs were fixed in your project this week?
+
+Page ordering, magic strings.
+
+3. Did anyone on your team have an infraction this week?
+
+no
+
+4. If someone did have an infraction, was the penalty paid?
+
+N/A
+
+5. How many hours did you spend on your team project this week?
+
+3
+
+6. Are there any issues related to your team or project you want to tell your instructor about?
+
+No issues at this time.

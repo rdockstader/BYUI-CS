@@ -30,7 +30,6 @@ export class EntryListComponent implements OnInit, OnDestroy {
   protValue = 0;
   carbValue = 0;
   fatValue = 0;
-  // TODO: set values...
 
   foodEntrySub = new Subscription();
   userGoalSub = new Subscription();

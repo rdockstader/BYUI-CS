@@ -10,14 +10,17 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./new-entry.component.css']
 })
 export class NewEntryComponent implements OnInit {
+  isLoading = false;
   mealOptions: string[] = [];
   foodEntryForm: FormGroup;
 
   constructor(private foodEntryService: FoodEntryService, private authService: AuthService) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.mealOptions = this.foodEntryService.getMealOptions();
     this.initForm();
+    this.isLoading = false;
   }
 
   initForm() {
@@ -34,6 +37,7 @@ export class NewEntryComponent implements OnInit {
   onSubmit() {
     const today = new Date();
     if (!this.foodEntryForm.invalid) {
+      this.isLoading = true;
       this.foodEntryService.addFoodEntry({
         FoodEntryID: null,
         user: this.authService.getUser().userId,
@@ -46,6 +50,7 @@ export class NewEntryComponent implements OnInit {
         dateAdded: today
       });
       this.foodEntryForm.reset();
+      this.isLoading = false;
     }
   }
 

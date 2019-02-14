@@ -1,0 +1,3 @@
+This week I had an idea to create a SUPER simple game, using JavaScript objects and inheritance. It was really interesting to learn about how that works withing JavaScript, because it's very different from other languages that I've used, including TypeScript.
+
+It is for sure also a lot more difficult to manage then other languages, but having it there is super cool. It really makes you appreciate the people that go out of their way to make things like TypeScript, so you can write code that is familiar to you if you've used other languages that then compile into what I assume must be this.

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>AJAX and JSON</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <section>
+            <h1>Pokedex!</h1>
+            <button class="btn btn-primary" onclick="getRandomPokemon()">Get Random Pokemon!</button>
+            <div id="poke-display"></div>
+        </section>
+        <section>
+           <div>
+               <h1>Movie Search!</h1>
+                <h3>Type in search criteria in the fields below, and search for some awesome movies!</h3>
+           </div>
+            <div>
+                <label for="movie-title">Movie Title:</label>
+             <input type="text" id="movie-title">
+             <label for="movie-year">Movie Year:</label>
+             <input type="number" id="movie-year">
+             <label for="movie-type">Movie Type</label>
+             <select name="movie-type" id="movie-type">
+                 <option value="movie">Movie</option>
+                 <option value="series">Series</option>
+                 <option value="episode">Episode</option>
+             </select>
+            </div>
+            <p class="clear"></p>
+             <div class="mt-3">
+               <button class="btn btn-primary" onclick="searchMovie()">Search</button>  
+             </div>
+             <div id="movie-display"></div>
+        </section>
+        <script src="script.js" type="text/javascript"></script>
+    </body>
+</html>

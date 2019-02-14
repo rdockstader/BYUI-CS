@@ -1,6 +1,12 @@
-import { UserGoal } from '../models/user-goal.model';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 
+import { UserGoal } from '../models/user-goal.model';
+import { environment } from '../../../environments/environment';
+
+
+@Injectable()
 export class UserGoalService {
   // constants
   private FAT_CALS_PER_GRAM = 9;
@@ -10,7 +16,7 @@ export class UserGoalService {
   private currentUserGoal: UserGoal;
   currentUserGoalChanged = new Subject<void>();
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getCurrentUserGoal() {
     return { ...this.currentUserGoal };
@@ -28,13 +34,18 @@ export class UserGoalService {
 
 
   retrieveCurrentGoal() {
-    this.currentUserGoal = {dailyCalories: 2000, dailyProtein: 100, dailyCarbs: 100, dailyFats: 100};
-    this.currentUserGoalChanged.next();
+    this.http.get<{message: string, userGoal: UserGoal}>(environment.apiUrl + '/userGoal').subscribe(response => {
+      console.log(response.userGoal);
+      this.currentUserGoal = response.userGoal;
+      this.currentUserGoalChanged.next();
+    });
   }
 
   updateCurrentGoal(newGoal: UserGoal) {
-    this.currentUserGoal = newGoal;
-    this.currentUserGoalChanged.next();
+    this.http.post<{message: string, id: string}>(environment.apiUrl + '/userGoal', newGoal).subscribe(response => {
+      this.currentUserGoal = newGoal;
+      this.currentUserGoalChanged.next();
+    });
   }
 
 }

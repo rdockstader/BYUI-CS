@@ -1,0 +1,87 @@
+After completing the final project, please answer the questions in this text file and submit it to I-Learn.
+
+1. Name (or names of all team members, if applicable)
+
+Ryan Dockstader
+
+2. Project Title / One sentence description:
+
+Go Track Simple
+A simple calorie tracker, for people that want to be simply fit.  
+
+3. Copy and paste the URL for your web application:
+
+http://gotracksimple.com
+
+4. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/rdockstader/BYUI-CS/tree/master/CS313/projTwo
+
+------------------------------------------------------------------------
+Please evaluate each of the following criteria according to this scale:
+
+A - Some attempt was made
+B - Developing, but significantly deficient
+C - Slightly deficient, but still mostly adequate
+D - Meets requirements
+E - Shows creativity and excels above and beyond requirements
+------------------------------------------------------------------------
+
+****************************
+* The Project
+****************************
+
+1. Professional look and feel
+
+E
+
+2. Accomplishes a meaningful task / does something interesting
+
+E
+
+3. Demonstrates understanding of Node.js and Express principles
+
+E
+
+4. Demonstrates mastery of Client-side and Server-side communication
+
+E
+
+5. Overall Project
+
+E
+
+6. Please write a short explanation / justification for selecting that category for your overall project.
+
+I was able to build a back end express based application that exposed authenticated end points to the the client. I utilized JavaScript based tools such as Mongoose, MongoDB, and JSON Web Tokens (JWT) to build the backend. On the client side I built an Angular based application, using the Angular Materials library to maintain a standard of style and device compatibility that is outlined in Google's Material Specifications. 
+
+7. (Optional) Any other comments about the project?
+
+The next step of this project for me would be error handling. Right now it only logs the error to the console, and doesn't inform the user that something went wrong.
+
+*****************************************************************
+* If you completed this project as a team, please rate yourself
+* and then each member of the team using the scale above. If you
+* did this project individually, you may stop here.
+*****************************************************************
+
+**********************
+* First for yourself:
+**********************
+
+1. Name:
+
+2. Fulfilled assigned tasks and took initiative
+
+3. Helped others learn and succeed
+
+4. Attendance and team communication
+
+5. Overall contribution
+
+6. Please write a short description of this person's contribution and justify the categories chosen.
+
+**********************************************
+* After evaluating your own contribution, 
+* repeat this evaluation for each team member
+**********************************************
