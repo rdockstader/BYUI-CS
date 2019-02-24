@@ -141,10 +141,4 @@ var initGameSection = function(parent) {
         parent.appendChild(btnEle);
     }
 }
-
-var createBoxes = function(amount, parent) {
-    
-}
-
-
 initGameSection(gameEle);
