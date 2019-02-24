@@ -134,6 +134,10 @@ p.clear {
     text-align: center;
 }
 
+#game-section {
+    margin: 0 auto;
+}
+
 .box-wrapper {
     opacity: 0;
     -webkit-transition: opacity 1000ms linear;
