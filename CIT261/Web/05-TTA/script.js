@@ -22,25 +22,63 @@ var ClearGameEle = function() {
     while(gameEle.firstChild) {
         gameEle.removeChild(gameEle.firstChild);
     }
+    gameEle.style = null;
+}
+
+var resetGame = function() {
+    amount = 0;
+    luckyNumber = -1;
+    clickCount = 0;
+    scale = 1;
+    ClearGameEle();
+    initGameSection(gameEle);
+}
+
+var showWinScreen = function() {
+    ClearGameEle();
+    var wrapperDiv = document.createElement('div');
+    //setup winner alert
+    var winnerAlert = document.createElement('p');
+    winnerAlert.classList.add('alert');
+    winnerAlert.classList.add('alert-success');
+    winnerAlert.innerHTML = "<strong>YOU WIN!!!!</strong> You took " + clickCount + " turn(s) to get the right box. Click below to play again.";
+    wrapperDiv.appendChild(winnerAlert);
+    // Add reset button
+    var resetBtn = document.createElement('button');
+    resetBtn.onclick = resetGame;
+    resetBtn.classList.add('btn');
+    resetBtn.classList.add('btn-primary');
+    resetBtn.innerHTML = "Reset";
+    wrapperDiv.appendChild(resetBtn);
+    gameEle.appendChild(wrapperDiv);
+
+}
+
+var removeBoxWrapperElement = function(ele) {
+    gameEle.removeChild(ele);
+    amount = amount - 1;
+    scale = scale + (1/amount);
+    // enlarge remaining boxes
+    gameEle.style.transform = 'scale(' + scale + ', ' + scale + ')';
+    gameEle.style.transformOrigin = '0%';
 }
 
 var boxSelected = function(event) {
     clickCount = clickCount + 1;
     var boxEle = event.target;
     if(boxEle.id == luckyNumber) {
-        alert("you won in " + clickCount + " Clicks!");
+        boxEle.parentElement.classList.add('box-winner');
+        setTimeout(function(){
+            showWinScreen();
+        }, 1000);
     } else {
         // Fade out wrong box
         boxEle.parentElement.style.opacity = '0';
         setTimeout(function(){
-            gameEle.removeChild(boxEle.parentElement);
-            amount = amount - 1;
-            scale = scale + (1/amount);
-            // enlarge remaining boxes
-            gameEle.style.transform = 'scale(' + scale + ', ' + scale + ')';
-            gameEle.style.transformOrigin = '0%';
+            removeBoxWrapperElement(boxEle.parentElement);
         }, 1000);
     }
+    
 }
 
 var startGame = function() {
