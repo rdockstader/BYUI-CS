@@ -16,6 +16,11 @@ table {
     border-radius: 5px;
 }
 
+.span-1-of-4 {
+    width: 25%;
+    float: left;
+}
+
 .btn {
     margin: 5px;
     border: none;
@@ -42,6 +47,11 @@ table {
 .btn-danger {
     background-color: #CC444A;
     color: white;
+}
+
+.btn-transition {
+    transition: width 100ms linear;
+    width: 50%;
 }
 
 .alert {
@@ -150,6 +160,12 @@ p.clear {
 #game-section {
     margin: 0 auto;
 }
+
+.media-wrapper {
+    width: 75%;
+    margin: 0 auto;
+}
+    
 
 .box-wrapper {
     opacity: 0;
