@@ -100,8 +100,6 @@ var canvasClick = function(event) {
     var canvas = document.getElementById('main-canvas');
     var ctx = canvas.getContext("2d");
     ctx.beginPath();
-    ctx.arc(event.offsetX, event.offsetY, 10, 0, 2 * Math.PI);
-    ctx.stroke();
     // Fill random color
     var color = 'black';
     switch(Math.floor(Math.random() * 4)) {
@@ -124,7 +122,17 @@ var canvasClick = function(event) {
             break;
     }
     ctx.fillStyle = color;
-    ctx.fill();
+    var size = 9;
+    ctx.arc(event.offsetX, event.offsetY, size, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+    setTimeout(() => {
+        size = 12;
+        ctx.arc(event.offsetX, event.offsetY, size, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+        
+    }, 50);
 }
 
 var canvasBtnClick = function() {
@@ -145,6 +153,7 @@ var canvasBtnClick = function() {
     var canvasDiv = document.createElement('div');
     canvasDiv.style.margin = "100px 100px";
     var canvas = document.createElement('canvas');
+    canvas.classList.add('canvas');
     canvas.id = 'main-canvas';
     canvas.style.border = "1px solid black";
     canvas.style.borderRadius = '2px';
