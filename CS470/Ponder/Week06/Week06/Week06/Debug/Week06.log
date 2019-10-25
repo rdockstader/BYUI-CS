@@ -1,0 +1,5 @@
+﻿  lab06.cpp
+D:\source\BYUI-CS\CS470\Ponder\Week06\Week06\Week06\lab06.cpp(42,20): warning C4018: '<': signed/unsigned mismatch
+D:\source\BYUI-CS\CS470\Ponder\Week06\Week06\Week06\lab06.cpp(91,13): warning C4018: '>=': signed/unsigned mismatch
+D:\source\BYUI-CS\CS470\Ponder\Week06\Week06\Week06\lab06.cpp(107,13): warning C4018: '>=': signed/unsigned mismatch
+  Week06.vcxproj -> D:\source\BYUI-CS\CS470\Ponder\Week06\Week06\Debug\Week06.exe
