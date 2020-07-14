@@ -1,0 +1,275 @@
+SQL> ------------------------------------
+SQL> 
+SQL> --Write a query that returns the rows necessary to insert records into the RENTAL table.
+SQL> SELECT   DISTINCT c.contact_id
+  2  FROM     member m INNER JOIN transaction_upload tu
+  3  ON       m.account_number = tu.account_number INNER JOIN contact c
+  4  ON       m.member_id = c.member_id
+  5  WHERE    c.first_name = tu.first_name
+  6  AND      NVL(c.middle_name,'x') = NVL(tu.middle_name,'x')
+  7  AND      c.last_name = tu.last_name
+  8  ORDER BY c.contact_id;
+
+CONTACT_ID                                                                                  
+----------                                                                                  
+      1001                                                                                  
+      1002                                                                                  
+      1003                                                                                  
+      1004                                                                                  
+      1005                                                                                  
+      1006                                                                                  
+      1007                                                                                  
+      1008                                                                                  
+      1009                                                                                  
+      1010                                                                                  
+      1011                                                                                  
+      1012                                                                                  
+      1013                                                                                  
+      1014                                                                                  
+      1015                                                                                  
+
+15 rows selected.
+
+SQL> 
+SQL> SELECT   COUNT(*)
+  2  FROM     member m INNER JOIN contact c
+  3  ON       m.member_id = c.member_id;
+
+  COUNT(*)                                                                                  
+----------                                                                                  
+        15                                                                                  
+
+1 row selected.
+
+SQL> 
+SQL> SELECT   COUNT(*)
+  2  FROM     contact c INNER JOIN transaction_upload tu
+  3  ON       c.first_name = tu.first_name
+  4  AND      NVL(c.middle_name,'x') = NVL(tu.middle_name,'x')
+  5  AND      c.last_name = tu.last_name;
+
+  COUNT(*)                                                                                  
+----------                                                                                  
+     11520                                                                                  
+
+1 row selected.
+
+SQL> 
+SQL> SELECT   COUNT(*)
+  2  FROM     member m INNER JOIN contact c
+  3  ON       m.member_id = c.member_id INNER JOIN transaction_upload tu
+  4  ON       c.first_name = tu.first_name
+  5  AND      NVL(c.middle_name,'x') = NVL(tu.middle_name,'x')
+  6  AND      c.last_name = tu.last_name
+  7  AND      m.account_number = tu.account_number;
+
+  COUNT(*)                                                                                  
+----------                                                                                  
+     11520                                                                                  
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> SELECT   COUNT(*) AS "Rental before count"
+  2  FROM     rental;
+
+Rental before count                                                                         
+-------------------                                                                         
+                  8                                                                         
+
+1 row selected.
+
+SQL> 
+SQL> INSERT INTO
+  2  	     rental
+  3  SELECT
+  4  	     rental_s1.nextval,
+  5  	     contact_id,
+  6  	     check_out_date,
+  7  	     return_date,
+  8  	     1,
+  9  	     SYSDATE,
+ 10  	     1,
+ 11  	     SYSDATE
+ 12  FROM
+ 13  (
+ 14  	     SELECT DISTINCT
+ 15  		     r.rental_id,
+ 16  		     c.contact_id,
+ 17  		     tu.check_out_date,
+ 18  		     tu.return_date
+ 19  	     FROM
+ 20  		     member m
+ 21  		     INNER JOIN contact c ON m.member_id = c.member_id
+ 22  		     INNER JOIN transaction_upload tu ON
+ 23  			     tu.account_number = m.account_number
+ 24  			     AND tu.first_name = c.first_name
+ 25  			     AND NVL(tu.middle_name, 'x') = NVL(c.middle_name, 'x')
+ 26  			     AND tu.last_name = c.last_name
+ 27  		     LEFT JOIN rental r ON
+ 28  			     c.contact_id = r.customer_id
+ 29  			     AND tu.check_out_date = r.check_out_date
+ 30  			     AND tu.return_date = r.return_date
+ 31  );
+
+4681 rows created.
+
+SQL> 
+SQL> SELECT   COUNT(*) AS "Rental after count"
+  2  FROM     rental;
+
+Rental after count                                                                          
+------------------                                                                          
+              4689                                                                          
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> --Write a query that returns the rows necessary to insert records into the RENTAL_ITEM table.
+SQL> SELECT   COUNT(*) AS "Rental Item Before Count"
+  2  FROM     rental_item;
+
+Rental Item Before Count                                                                    
+------------------------                                                                    
+                      13                                                                    
+
+1 row selected.
+
+SQL> 
+SQL> INSERT INTO
+  2  	     rental_item
+  3  SELECT
+  4  	     rental_item_s1.nextval,
+  5  	     rental_id,
+  6  	     item_id,
+  7  	     1,
+  8  	     sysdate,
+  9  	     1,
+ 10  	     sysdate,
+ 11  	     common_lookup_id,
+ 12  	     rental_item_price
+ 13  FROM
+ 14  (
+ 15  	     SELECT
+ 16  		     r.rental_id,
+ 17  		     tu.item_id,
+ 18  		     TRUNC(r.return_date) - TRUNC(r.check_out_date) AS rental_item_price,
+ 19  		     cl.common_lookup_id
+ 20  	     FROM
+ 21  		     member m
+ 22  		     INNER JOIN contact c ON m.member_id = c.member_id
+ 23  		     INNER JOIN transaction_upload tu ON
+ 24  			     tu.account_number = m.account_number
+ 25  			     AND tu.first_name = c.first_name
+ 26  			     AND NVL(tu.middle_name, 'x') = NVL(c.middle_name, 'x')
+ 27  			     AND tu.last_name = c.last_name
+ 28  		     LEFT JOIN rental r ON
+ 29  			     c.contact_id = r.customer_id
+ 30  			     AND tu.check_out_date = r.check_out_date
+ 31  			     AND tu.return_date = r.return_date
+ 32  		     INNER JOIN common_lookup cl ON
+ 33  			     cl.common_lookup_table = 'RENTAL_ITEM'
+ 34  			     AND cl.common_lookup_column = 'RENTAL_ITEM_TYPE'
+ 35  			     AND cl.common_lookup_type = tu.return_item_type
+ 36  );
+
+11520 rows created.
+
+SQL> 
+SQL> SELECT   COUNT(*) AS "Rental Item After Count"
+  2  FROM     rental_item;
+
+Rental Item After Count                                                                     
+-----------------------                                                                     
+                  11533                                                                     
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --Write a query that returns the rows necessary to insert records into the TRANSACTION table.
+SQL> INSERT INTO
+  2  	     transaction
+  3  SELECT
+  4  	     transaction_s1.nextval,
+  5  	     account_number,
+  6  	     transaction_type_id,
+  7  	     transaction_date,
+  8  	     transaction_amount,
+  9  	     rental_id,
+ 10  	     payment_method_type,
+ 11  	     payment_account_number,
+ 12  	     1,
+ 13  	     sysdate,
+ 14  	     1,
+ 15  	     sysdate
+ 16  FROM
+ 17  (
+ 18  	     SELECT DISTINCT
+ 19  		     t.transaction_id,
+ 20  		     tu.account_number,
+ 21  		     cl1.common_lookup_id AS transaction_type_id,
+ 22  		     tu.transaction_date,
+ 23  		     SUM(tu.transaction_amount) AS transaction_amount,
+ 24  		     r.rental_id,
+ 25  		     cl2.common_lookup_id AS payment_method_type,
+ 26  		     tu.payment_account_number
+ 27  	     FROM
+ 28  		     member m
+ 29  		     INNER JOIN contact c ON m.member_id = c.member_id
+ 30  		     INNER JOIN transaction_upload tu ON
+ 31  			     tu.account_number = m.account_number
+ 32  			     AND tu.first_name = c.first_name
+ 33  			     AND NVL(tu.middle_name, 'x') = NVL(c.middle_name, 'x')
+ 34  			     AND tu.last_name = c.last_name
+ 35  		     INNER JOIN rental r ON
+ 36  			     c.contact_id = r.customer_id
+ 37  			     AND tu.check_out_date = r.check_out_date
+ 38  			     AND tu.return_date = r.return_date
+ 39  		     INNER JOIN common_lookup cl1 ON
+ 40  			     cl1.common_lookup_table = 'TRANSACTION'
+ 41  			     AND cl1.common_lookup_column = 'TRANSACTION_TYPE'
+ 42  			     AND cl1.common_lookup_type = tu.transaction_type
+ 43  		     INNER JOIN common_lookup cl2 ON
+ 44  			     cl2.common_lookup_table = 'TRANSACTION'
+ 45  			     AND cl2.common_lookup_column = 'PAYMENT_METHOD_TYPE'
+ 46  			     AND cl2.common_lookup_type = tu.payment_method_type
+ 47  		     LEFT JOIN transaction t ON
+ 48  			     t.transaction_account = tu.payment_account_number
+ 49  			     AND t.transaction_type = cl1.common_lookup_id
+ 50  			     AND t.payment_method_type = cl2.common_lookup_id
+ 51  			     AND t.transaction_date = tu.transaction_date
+ 52  	     GROUP BY
+ 53  		     t.transaction_id,
+ 54  		     tu.account_number,
+ 55  		     cl1.common_lookup_id, --AS transaction_type_id
+ 56  		     tu.transaction_date,
+ 57  		     r.rental_id,
+ 58  		     cl2.common_lookup_id, -- AS payment_method_type
+ 59  		     tu.payment_account_number
+ 60  );
+
+4681 rows created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> ------------------------------------
+SQL> SPOOL OFF

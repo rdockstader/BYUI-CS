@@ -1,0 +1,13 @@
+VMware Instance Documentation
+
+The VMware requires that you download and install VMware Workstation for your PC or VMware Fusion for your Apple OS. 
+    Some Microsoft Operating Systems disallow running this instance because it's 64-bit, and their motherboards don't
+	support hyper-threading (which means they're not 64-bit enabled devices).
+	
+Operating System
+  User Name: student
+  Password: cangetin
+
+Oracle Database 11G XE
+  Username: student
+  Password: student

@@ -1,0 +1,505 @@
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create system_user_lab table and sequence and seed data.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create table.
+SQL> CREATE TABLE system_user_lab
+  2  ( system_user_lab_id	     NUMBER
+  3  , system_user_name 	 VARCHAR2(20) CONSTRAINT nn_system_user_lab_1 NOT NULL
+  4  , system_user_group_id	 NUMBER       CONSTRAINT nn_system_user_lab_2 NOT NULL
+  5  , system_user_type 	 NUMBER       CONSTRAINT nn_system_user_lab_3 NOT NULL
+  6  , first_name		     VARCHAR2(20)
+  7  , middle_name		     VARCHAR2(20)
+  8  , last_name		     VARCHAR2(20)
+  9  , created_by		     NUMBER	  CONSTRAINT nn_system_user_lab_4 NOT NULL
+ 10  , creation_date		     DATE	  CONSTRAINT nn_system_user_lab_5 NOT NULL
+ 11  , last_updated_by		     NUMBER	  CONSTRAINT nn_system_user_lab_6 NOT NULL
+ 12  , last_update_date 	     DATE	  CONSTRAINT nn_system_user_lab_7 NOT NULL
+ 13  , CONSTRAINT pk_system_user_lab_1 PRIMARY KEY(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create sequence.
+SQL> CREATE SEQUENCE system_user_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- Seed initial record in the system_user_lab table.
+SQL> INSERT INTO system_user_lab
+  2  ( system_user_lab_id
+  3  , system_user_name
+  4  , system_user_group_id
+  5  , system_user_type
+  6  , created_by
+  7  , creation_date
+  8  , last_updated_by
+  9  , last_update_date)
+ 10  VALUES
+ 11  ( 1,'SYSADMIN', 1, 1, 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Alter system_user_lab table to include self-referencing foreign key constraints.
+SQL> -- ------------------------------------------------------------------
+SQL> ALTER TABLE system_user_lab
+  2  ADD CONSTRAINT fk_system_user_lab_1 FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id);
+
+Table altered.
+
+SQL> 
+SQL> ALTER TABLE system_user_lab
+  2  ADD CONSTRAINT fk_system_user_lab_2 FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id);
+
+Table altered.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create common_lookup_lab table and sequence and seed data.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create table.
+SQL> CREATE TABLE common_lookup_lab
+  2  ( common_lookup_lab_id		     NUMBER
+  3  , common_lookup_context		     VARCHAR2(30) CONSTRAINT nn_clookup_lab_1 NOT NULL
+  4  , common_lookup_type		     VARCHAR2(30) CONSTRAINT nn_clookup_lab_2 NOT NULL
+  5  , common_lookup_meaning		     VARCHAR2(30) CONSTRAINT nn_clookup_lab_3 NOT NULL
+  6  , created_by			     NUMBER	  CONSTRAINT nn_clookup_lab_4 NOT NULL
+  7  , creation_date			     DATE	  CONSTRAINT nn_clookup_lab_5 NOT NULL
+  8  , last_updated_by			     NUMBER	  CONSTRAINT nn_clookup_lab_6 NOT NULL
+  9  , last_update_date 		     DATE	  CONSTRAINT nn_clookup_lab_7 NOT NULL
+ 10  , CONSTRAINT pk_c_lookup_lab_1		     PRIMARY KEY(common_lookup_lab_id)
+ 11  , CONSTRAINT fk_c_lookup_lab_1		     FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id)
+ 12  , CONSTRAINT fk_c_lookup_lab_2		     FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create a non-unique index.
+SQL> CREATE INDEX common_lookup_lab_n1
+  2    ON common_lookup_lab(common_lookup_context);
+
+Index created.
+
+SQL> 
+SQL> -- Create a unique index.
+SQL> CREATE UNIQUE INDEX common_lookup_lab_u2
+  2    ON common_lookup_lab(common_lookup_context,common_lookup_type);
+
+Index created.
+
+SQL> 
+SQL> -- Create a sequence.
+SQL> CREATE SEQUENCE common_lookup_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- Seed the common_lookup_lab table with 18 records.
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( 1,'system_user_lab','SYSTEM_ADMIN','System Administrator', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( 2,'system_user_lab','DBA','Database Administrator', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'contact_lab','EMPLOYEE','Employee', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'contact_lab','CUSTOMER','Customer', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'member_lab','INDIVIDUAL','Individual member_labship', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'member_lab','GROUP','Group member_labship', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'member_lab','DISCOVER_CARD','Discover Card', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'member_lab','MASTER_CARD','Master Card', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'member_lab','VISA_CARD','VISA Card', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'MULTIPLE','HOME','Home', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'MULTIPLE','WORK','Work', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'item_lab','DVD_FULL_SCREEN','DVD: Full Screen', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'item_lab','DVD_WIDE_SCREEN','DVD: Wide Screen', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'item_lab','NINTENDO_GAMECUBE','Nintendo GameCube', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'item_lab','PLAYSTATION2','PlayStation2', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'item_lab','XBOX','XBOX', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab VALUES
+  2  ( common_lookup_lab_s1.nextval,'item_lab','BLU-RAY','Blu-ray', 1, SYSDATE, 1, SYSDATE);
+
+1 row created.
+
+SQL> 
+SQL> -- Add constraints to the system_user_lab table dependent on the common_lookup_lab table.
+SQL> ALTER TABLE system_user_lab
+  2  ADD CONSTRAINT fk_system_user_lab_3 FOREIGN KEY(system_user_group_id)
+  3  	 REFERENCES common_lookup_lab(common_lookup_lab_id);
+
+Table altered.
+
+SQL> 
+SQL> ALTER TABLE system_user_lab
+  2  ADD CONSTRAINT fk_system_user_lab_4 FOREIGN KEY(system_user_type)
+  3  	 REFERENCES common_lookup_lab(common_lookup_lab_id);
+
+Table altered.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create member_lab table and sequence and seed data.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create table.
+SQL> CREATE TABLE member_lab
+  2  ( member_lab_id		     NUMBER
+  3  , member_lab_type		     NUMBER
+  4  , account_number		     VARCHAR2(10) CONSTRAINT nn_member_lab_2 NOT NULL
+  5  , credit_card_number	     VARCHAR2(20) CONSTRAINT nn_member_lab_3 NOT NULL
+  6  , credit_card_type 	     NUMBER	  CONSTRAINT nn_member_lab_4 NOT NULL
+  7  , created_by		     NUMBER	  CONSTRAINT nn_member_lab_5 NOT NULL
+  8  , creation_date		     DATE	  CONSTRAINT nn_member_lab_6 NOT NULL
+  9  , last_updated_by		     NUMBER	  CONSTRAINT nn_member_lab_7 NOT NULL
+ 10  , last_update_date 	     DATE	  CONSTRAINT nn_member_lab_8 NOT NULL
+ 11  , CONSTRAINT pk_member_lab_1    PRIMARY KEY(member_lab_id)
+ 12  , CONSTRAINT fk_member_lab_1    FOREIGN KEY(member_lab_type) REFERENCES common_lookup_lab(common_lookup_lab_id)
+ 13  , CONSTRAINT fk_member_lab_2    FOREIGN KEY(credit_card_type) REFERENCES common_lookup_lab(common_lookup_lab_id)
+ 14  , CONSTRAINT fk_member_lab_3    FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id)
+ 15  , CONSTRAINT fk_member_lab_4    FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create a non-unique index.
+SQL> CREATE INDEX member_lab_n1 ON member_lab(credit_card_type);
+
+Index created.
+
+SQL> 
+SQL> -- Create a sequence.
+SQL> CREATE SEQUENCE member_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create contact_lab table and sequence and seed data.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create table.
+SQL> CREATE TABLE contact_lab
+  2  ( contact_lab_id		     NUMBER
+  3  , member_lab_id		     NUMBER	  CONSTRAINT nn_contact_lab_1 NOT NULL
+  4  , contact_type		     NUMBER	  CONSTRAINT nn_contact_lab_2 NOT NULL
+  5  , first_name		     VARCHAR2(20) CONSTRAINT nn_contact_lab_3 NOT NULL
+  6  , middle_name		     VARCHAR2(20)
+  7  , last_name		     VARCHAR2(20) CONSTRAINT nn_contact_lab_4 NOT NULL
+  8  , created_by		     NUMBER	  CONSTRAINT nn_contact_lab_5 NOT NULL
+  9  , creation_date		     DATE	  CONSTRAINT nn_contact_lab_6 NOT NULL
+ 10  , last_updated_by		     NUMBER	  CONSTRAINT nn_contact_lab_7 NOT NULL
+ 11  , last_update_date 	     DATE	  CONSTRAINT nn_contact_lab_8 NOT NULL
+ 12  , CONSTRAINT pk_contact_lab_1   PRIMARY KEY(contact_lab_id)
+ 13  , CONSTRAINT fk_contact_lab_1   FOREIGN KEY(member_lab_id) REFERENCES member_lab(member_lab_id)
+ 14  , CONSTRAINT fk_contact_lab_2   FOREIGN KEY(contact_type) REFERENCES common_lookup_lab(common_lookup_lab_id)
+ 15  , CONSTRAINT fk_contact_lab_3   FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id)
+ 16  , CONSTRAINT fk_contact_lab_4   FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create non-unique index.
+SQL> CREATE INDEX contact_lab_n1 ON contact_lab(member_lab_id);
+
+Index created.
+
+SQL> CREATE INDEX contact_lab_n2 ON contact_lab(contact_type);
+
+Index created.
+
+SQL> 
+SQL> -- Create sequence.
+SQL> CREATE SEQUENCE contact_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create address_lab table and sequence.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create table.
+SQL> CREATE TABLE address_lab
+  2  ( address_lab_id		     NUMBER
+  3  , contact_lab_id		     NUMBER	  CONSTRAINT nn_address_lab_1 NOT NULL
+  4  , address_type		     NUMBER	  CONSTRAINT nn_address_lab_2 NOT NULL
+  5  , city			     VARCHAR2(30) CONSTRAINT nn_address_lab_3 NOT NULL
+  6  , state_province		     VARCHAR2(30) CONSTRAINT nn_address_lab_4 NOT NULL
+  7  , postal_code		     VARCHAR2(20) CONSTRAINT nn_address_lab_5 NOT NULL
+  8  , created_by		     NUMBER	  CONSTRAINT nn_address_lab_6 NOT NULL
+  9  , creation_date		     DATE	  CONSTRAINT nn_address_lab_7 NOT NULL
+ 10  , last_updated_by		     NUMBER	  CONSTRAINT nn_address_lab_8 NOT NULL
+ 11  , last_update_date 	     DATE	  CONSTRAINT nn_address_lab_9 NOT NULL
+ 12  , CONSTRAINT pk_address_lab_1   PRIMARY KEY(address_lab_id)
+ 13  , CONSTRAINT fk_address_lab_1   FOREIGN KEY(contact_lab_id) REFERENCES contact_lab(contact_lab_id)
+ 14  , CONSTRAINT fk_address_lab_2   FOREIGN KEY(address_type) REFERENCES common_lookup_lab(common_lookup_lab_id)
+ 15  , CONSTRAINT fk_address_lab_3   FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id)
+ 16  , CONSTRAINT fk_address_lab_4   FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create a non-unique index.
+SQL> CREATE INDEX address_lab_n1 ON address_lab(contact_lab_id);
+
+Index created.
+
+SQL> CREATE INDEX address_lab_n2 ON address_lab(address_type);
+
+Index created.
+
+SQL> 
+SQL> -- Create a sequence.
+SQL> CREATE SEQUENCE address_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create STREET_address_lab table and sequence.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create table.
+SQL> CREATE TABLE street_address_lab
+  2  ( street_address_lab_id		     NUMBER
+  3  , address_lab_id			     NUMBER	  CONSTRAINT nn_saddress_lab_1 NOT NULL
+  4  , street_address			     VARCHAR2(30) CONSTRAINT nn_saddress_lab_2 NOT NULL
+  5  , created_by			     NUMBER	  CONSTRAINT nn_saddress_lab_3 NOT NULL
+  6  , creation_date			     DATE	  CONSTRAINT nn_saddress_lab_4 NOT NULL
+  7  , last_updated_by			     NUMBER	  CONSTRAINT nn_saddress_lab_5 NOT NULL
+  8  , last_update_date 		     DATE	  CONSTRAINT nn_saddress_lab_6 NOT NULL
+  9  , CONSTRAINT pk_s_address_lab_1	     PRIMARY KEY(street_address_lab_id)
+ 10  , CONSTRAINT fk_s_address_lab_1	     FOREIGN KEY(address_lab_id) REFERENCES address_lab(address_lab_id)
+ 11  , CONSTRAINT fk_s_address_lab_3	     FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id)
+ 12  , CONSTRAINT fk_s_address_lab_4	     FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create sequence.
+SQL> CREATE SEQUENCE street_address_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create telephone_lab table and sequence.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create table.
+SQL> CREATE TABLE telephone_lab
+  2  ( telephone_lab_id 	       NUMBER
+  3  , contact_lab_id		       NUMBER	    CONSTRAINT nn_telephone_lab_1 NOT NULL
+  4  , address_lab_id		       NUMBER
+  5  , telephone_type		   NUMBER	CONSTRAINT nn_telephone_lab_2 NOT NULL
+  6  , country_code		   VARCHAR2(3)	CONSTRAINT nn_telephone_lab_3 NOT NULL
+  7  , area_code		   VARCHAR2(6)	CONSTRAINT nn_telephone_lab_4 NOT NULL
+  8  , telephone_lab_number	       VARCHAR2(10) CONSTRAINT nn_telephone_lab_5 NOT NULL
+  9  , created_by		   NUMBER	CONSTRAINT nn_telephone_lab_6 NOT NULL
+ 10  , creation_date		   DATE 	CONSTRAINT nn_telephone_lab_7 NOT NULL
+ 11  , last_updated_by		   NUMBER	CONSTRAINT nn_telephone_lab_8 NOT NULL
+ 12  , last_update_date 	   DATE 	CONSTRAINT nn_telephone_lab_9 NOT NULL
+ 13  , CONSTRAINT pk_telephone_lab_1   PRIMARY KEY(telephone_lab_id)
+ 14  , CONSTRAINT fk_telephone_lab_1   FOREIGN KEY(contact_lab_id) REFERENCES contact_lab(contact_lab_id)
+ 15  , CONSTRAINT fk_telephone_lab_2   FOREIGN KEY(telephone_type) REFERENCES common_lookup_lab(common_lookup_lab_id)
+ 16  , CONSTRAINT fk_telephone_lab_3   FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id)
+ 17  , CONSTRAINT fk_telephone_lab_4   FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create non-unique indexes.
+SQL> CREATE INDEX telephone_lab_n1 ON telephone_lab(contact_lab_id,address_lab_id);
+
+Index created.
+
+SQL> CREATE INDEX telephone_lab_n2 ON telephone_lab(address_lab_id);
+
+Index created.
+
+SQL> CREATE INDEX telephone_lab_n3 ON telephone_lab(telephone_type);
+
+Index created.
+
+SQL> 
+SQL> -- Create sequence.
+SQL> CREATE SEQUENCE telephone_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create rental_lab table and sequence.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create table.
+SQL> CREATE TABLE rental_lab
+  2  ( rental_lab_id		       NUMBER
+  3  , customer_id		   NUMBER CONSTRAINT nn_rental_lab_1 NOT NULL
+  4  , check_out_date		   DATE   CONSTRAINT nn_rental_lab_2 NOT NULL
+  5  , return_date		   DATE   CONSTRAINT nn_rental_lab_3 NOT NULL
+  6  , created_by		   NUMBER CONSTRAINT nn_rental_lab_4 NOT NULL
+  7  , creation_date		   DATE   CONSTRAINT nn_rental_lab_5 NOT NULL
+  8  , last_updated_by		   NUMBER CONSTRAINT nn_rental_lab_6 NOT NULL
+  9  , last_update_date 	   DATE   CONSTRAINT nn_rental_lab_7 NOT NULL
+ 10  , CONSTRAINT pk_rental_lab_1      PRIMARY KEY(rental_lab_id)
+ 11  , CONSTRAINT fk_rental_lab_1      FOREIGN KEY(customer_id) REFERENCES contact_lab(contact_lab_id)
+ 12  , CONSTRAINT fk_rental_lab_2      FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id)
+ 13  , CONSTRAINT fk_rental_lab_3      FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create a sequence.
+SQL> CREATE SEQUENCE rental_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create item_lab table and sequence.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create a table.
+SQL> CREATE TABLE item_lab
+  2  ( item_lab_id		       NUMBER
+  3  , item_barcode		   VARCHAR2(14) CONSTRAINT nn_item_lab_1 NOT NULL
+  4  , item_type		   NUMBER	CONSTRAINT nn_item_lab_2 NOT NULL
+  5  , item_title		   VARCHAR2(60) CONSTRAINT nn_item_lab_3 NOT NULL
+  6  , item_subtitle		   VARCHAR2(60)
+  7  , item_rating		   VARCHAR2(8)	CONSTRAINT nn_item_lab_4 NOT NULL
+  8  , item_release_date	   DATE 	CONSTRAINT nn_item_lab_5 NOT NULL
+  9  , created_by		   NUMBER	CONSTRAINT nn_item_lab_6 NOT NULL
+ 10  , creation_date		   DATE 	CONSTRAINT nn_item_lab_7 NOT NULL
+ 11  , last_updated_by		   NUMBER	CONSTRAINT nn_item_lab_8 NOT NULL
+ 12  , last_update_date 	   DATE 	CONSTRAINT nn_item_lab_9 NOT NULL
+ 13  , CONSTRAINT pk_item_lab_1        PRIMARY KEY(item_lab_id)
+ 14  , CONSTRAINT fk_item_lab_1        FOREIGN KEY(item_type) REFERENCES common_lookup_lab(common_lookup_lab_id)
+ 15  , CONSTRAINT fk_item_lab_2        FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id)
+ 16  , CONSTRAINT fk_item_lab_3        FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create a sequence.
+SQL> CREATE SEQUENCE item_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- ------------------------------------------------------------------
+SQL> -- Create rental_lab_item_lab table and sequence.
+SQL> -- ------------------------------------------------------------------
+SQL> 
+SQL> -- Create table.
+SQL> CREATE TABLE rental_item_lab
+  2  ( rental_item_lab_id	       NUMBER
+  3  , rental_lab_id		       NUMBER CONSTRAINT nn_rental_lab_item_lab_1 NOT NULL
+  4  , item_lab_id		       NUMBER CONSTRAINT nn_rental_lab_item_lab_2 NOT NULL
+  5  , created_by		   NUMBER CONSTRAINT nn_rental_lab_item_lab_3 NOT NULL
+  6  , creation_date		   DATE   CONSTRAINT nn_rental_lab_item_lab_4 NOT NULL
+  7  , last_updated_by		   NUMBER CONSTRAINT nn_rental_lab_item_lab_5 NOT NULL
+  8  , last_update_date 	   DATE   CONSTRAINT nn_rental_lab_item_lab_6 NOT NULL
+  9  , CONSTRAINT pk_rental_lab_item_lab_1 PRIMARY KEY(rental_item_lab_id)
+ 10  , CONSTRAINT fk_rental_lab_item_lab_1 FOREIGN KEY(rental_lab_id) REFERENCES rental_lab(rental_lab_id)
+ 11  , CONSTRAINT fk_rental_lab_item_lab_2 FOREIGN KEY(item_lab_id) REFERENCES item_lab(item_lab_id)
+ 12  , CONSTRAINT fk_rental_lab_item_lab_3 FOREIGN KEY(created_by) REFERENCES system_user_lab(system_user_lab_id)
+ 13  , CONSTRAINT fk_rental_lab_item_lab_4 FOREIGN KEY(last_updated_by) REFERENCES system_user_lab(system_user_lab_id));
+
+Table created.
+
+SQL> 
+SQL> -- Create a sequence.
+SQL> CREATE SEQUENCE rental_item_lab_s1 START WITH 1001;
+
+Sequence created.
+
+SQL> 
+SQL> -- Commit inserted records.
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> 
+SQL> -- Close log file.
+SQL> SPOOL OFF

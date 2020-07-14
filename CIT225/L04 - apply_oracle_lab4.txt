@@ -1,0 +1,658 @@
+SQL> 
+SQL> -- Insert two rows into the SYSTEM_USER_LAB table.
+SQL> INSERT INTO system_user_lab
+  2  VALUES
+  3  (
+  4  	     system_user_lab_s1.NEXTVAL
+  5  	     ,'REACHERJ'
+  6  	     ,(SELECT common_lookup_id FROM common_lookup WHERE common_lookup_context = 'SYSTEM_USER' AND common_lookup_type = 'DBA')
+  7  	     ,(SELECT common_lookup_id FROM common_lookup WHERE common_lookup_context = 'MULTIPLE' AND common_lookup_type = 'HOME')
+  8  	     ,'Jack'
+  9  	     ,NULL
+ 10  	     ,'Reacher'
+ 11  	     ,1
+ 12  	     ,SYSDATE
+ 13  	     ,1
+ 14  	     ,SYSDATE
+ 15  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO system_user_lab
+  2  VALUES
+  3  (
+  4  	     system_user_lab_s1.NEXTVAL
+  5  	     ,'OWENSR'
+  6  	     ,(SELECT common_lookup_id FROM common_lookup WHERE common_lookup_context = 'SYSTEM_USER' AND common_lookup_type = 'DBA')
+  7  	     ,(SELECT common_lookup_id FROM common_lookup WHERE common_lookup_context = 'MULTIPLE' AND common_lookup_type = 'HOME')
+  8  	     ,'Ray'
+  9  	     ,NULL
+ 10  	     ,'Owens'
+ 11  	     ,1
+ 12  	     ,SYSDATE
+ 13  	     ,1
+ 14  	     ,SYSDATE
+ 15  );
+
+1 row created.
+
+SQL> 
+SQL> -- Insert two rows into the COMMON_LOOKUP_LAB table.
+SQL> INSERT INTO common_lookup_lab
+  2  VALUES
+  3  (
+  4  	     common_lookup_lab_s1.NEXTVAL
+  5  	     ,'MEMBER_LAB'
+  6  	     ,'AMERICAN_EXPRESS_CARD'
+  7  	     ,'American Express Card'
+  8  	     ,1
+  9  	     ,SYSDATE
+ 10  	     ,1
+ 11  	     ,SYSDATE
+ 12  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO common_lookup_lab
+  2  VALUES
+  3  (
+  4  	     common_lookup_lab_s1.NEXTVAL
+  5  	     ,'MEMBER_LAB'
+  6  	     ,'DINERS_CLUB_CARD'
+  7  	     ,'Diners Club Card'
+  8  	     ,1
+  9  	     ,SYSDATE
+ 10  	     ,1
+ 11  	     ,SYSDATE
+ 12  );
+
+1 row created.
+
+SQL> 
+SQL> -- Insert two rows into the MEMBER_LAB table.
+SQL> INSERT INTO member_lab
+  2  VALUES
+  3  (
+  4  	     member_lab_s1.NEXTVAL
+  5  	     ,(SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'INDIVIDUAL')
+  6  	     ,'X15-500-01'
+  7  	     ,'9876-5432-1234-5678'
+  8  	     ,(SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'AMERICAN_EXPRESS_CARD')
+  9  	     ,1
+ 10  	     ,SYSDATE
+ 11  	     ,1
+ 12  	     ,SYSDATE
+ 13  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO member_lab
+  2  VALUES
+  3  (
+  4  	     member_lab_s1.NEXTVAL
+  5  	     ,(SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'INDIVIDUAL')
+  6  	     ,'X15-500-02'
+  7  	     ,'9876-5432-1234-5679'
+  8  	     ,(SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'DINERS_CLUB_CARD')
+  9  	     ,1
+ 10  	     ,SYSDATE
+ 11  	     ,1
+ 12  	     ,SYSDATE
+ 13  );
+
+1 row created.
+
+SQL> 
+SQL> -- Insert two rows into the CONTACT_LAB table.
+SQL> INSERT INTO contact_lab
+  2  (
+  3  	     contact_lab_id
+  4  	     ,member_lab_id
+  5  	     ,contact_type
+  6  	     ,last_name
+  7  	     ,first_name
+  8  	     ,created_by
+  9  	     ,creation_date
+ 10  	     ,last_updated_by
+ 11  	     ,last_update_date
+ 12  )
+ 13  VALUES
+ 14  (
+ 15  	     contact_lab_s1.NEXTVAL
+ 16  	     ,(SELECT member_lab_id FROM member_lab WHERE account_number = 'X15-500-01')
+ 17  	     ,(SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'CUSTOMER')
+ 18  	     ,'Jones'
+ 19  	     ,'John'
+ 20  	     ,1
+ 21  	     ,SYSDATE
+ 22  	     ,1
+ 23  	     ,SYSDATE
+ 24  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO contact_lab
+  2  (
+  3  	     contact_lab_id
+  4  	     ,member_lab_id
+  5  	     ,contact_type
+  6  	     ,last_name
+  7  	     ,first_name
+  8  	     ,created_by
+  9  	     ,creation_date
+ 10  	     ,last_updated_by
+ 11  	     ,last_update_date
+ 12  )
+ 13  VALUES
+ 14  (
+ 15  	     contact_lab_s1.NEXTVAL
+ 16  	     ,(SELECT member_lab_id FROM member_lab WHERE account_number = 'X15-500-01')
+ 17  	     ,(SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'CUSTOMER')
+ 18  	     ,'Jones'
+ 19  	     ,'Jane'
+ 20  	     ,1
+ 21  	     ,SYSDATE
+ 22  	     ,1
+ 23  	     ,SYSDATE
+ 24  );
+
+1 row created.
+
+SQL> 
+SQL> -- Insert two rows into the ADDRESS_LAB table.
+SQL> INSERT INTO address_lab
+  2  VALUES
+  3  (
+  4  	     address_lab_s1.NEXTVAL
+  5  	     , (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'John' AND last_name = 'Jones')
+  6  	     , (SELECT common_lookup_lab_ID FROM common_lookup_lab WHERE common_lookup_type = 'HOME')
+  7  	     , 'Draper'
+  8  	     , 'Utah'
+  9  	     , '84020'
+ 10  	     , 1
+ 11  	     , SYSDATE
+ 12  	     , 1
+ 13  	     , SYSDATE
+ 14  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO address_lab
+  2  VALUES
+  3  (
+  4  	     address_lab_s1.NEXTVAL
+  5  	     , (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'Jane' AND last_name = 'Jones')
+  6  	     , (SELECT common_lookup_lab_ID FROM common_lookup_lab WHERE common_lookup_type = 'HOME')
+  7  	     , 'Draper'
+  8  	     , 'Utah'
+  9  	     , '84020'
+ 10  	     , 1
+ 11  	     , SYSDATE
+ 12  	     , 1
+ 13  	     , SYSDATE
+ 14  );
+
+1 row created.
+
+SQL> 
+SQL> -- Insert two rows into the STREET_ADDRESS_LAB table.
+SQL> INSERT INTO street_address_lab
+  2  VALUES
+  3  (
+  4  	     street_address_lab_s1.NEXTVAL
+  5  	     , (SELECT address_lab_id FROM address_lab WHERE contact_lab_id = (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'John' AND last_name = 'Jones'))
+  6  	     , '372 East 12300 South'
+  7  	     , 1
+  8  	     , SYSDATE
+  9  	     , 1
+ 10  	     , SYSDATE
+ 11  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO street_address_lab
+  2  VALUES
+  3  (
+  4  	     street_address_lab_s1.NEXTVAL
+  5  	     , (SELECT address_lab_id FROM address_lab WHERE contact_lab_id = (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'Jane' AND last_name = 'Jones'))
+  6  	     , '1872 West 5400 South'
+  7  	     , 1
+  8  	     , SYSDATE
+  9  	     , 1
+ 10  	     , SYSDATE
+ 11  );
+
+1 row created.
+
+SQL> 
+SQL> -- Insert two rows into the TELEPHONE_LAB table.
+SQL> INSERT INTO telephone_lab
+  2  VALUES
+  3  (
+  4  	     telephone_lab_s1.NEXTVAL
+  5  	     , (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'John' AND last_name = 'Jones')
+  6  	     , (SELECT address_lab_id FROM address_lab WHERE contact_lab_id = (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'John' AND last_name = 'Jones'))
+  7  	     , (SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'HOME')
+  8  	     , '001'
+  9  	     , '801'
+ 10  	     , '435-7654'
+ 11  	     , 1
+ 12  	     , SYSDATE
+ 13  	     , 1
+ 14  	     , SYSDATE
+ 15  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO telephone_lab
+  2  VALUES
+  3  (
+  4  	     telephone_lab_s1.NEXTVAL
+  5  	     , (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'Jane' AND last_name = 'Jones')
+  6  	     , (SELECT address_lab_id FROM address_lab WHERE contact_lab_id = (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'Jane' AND last_name = 'Jones'))
+  7  	     , (SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'HOME')
+  8  	     , '001'
+  9  	     , '801'
+ 10  	     , '435-7655'
+ 11  	     , 1
+ 12  	     , SYSDATE
+ 13  	     , 1
+ 14  	     , SYSDATE
+ 15  );
+
+1 row created.
+
+SQL> 
+SQL> -- Insert two rows into the ITEM_LAB table.
+SQL> INSERT INTO item_lab
+  2  VALUES
+  3  (
+  4  	     item_lab_s1.NEXTVAL
+  5  	     , 'B00N1JQ2UO'
+  6  	     , (SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'DVD_WIDE_SCREEN')
+  7  	     , 'Guardians of the Galaxy'
+  8  	     , NULL
+  9  	     , 'PG-13'
+ 10  	     , '09-DEC-2014'
+ 11  	     , 1
+ 12  	     , SYSDATE
+ 13  	     , 1
+ 14  	     , SYSDATE
+ 15  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO item_lab
+  2  VALUES
+  3  (
+  4  	     item_lab_s1.NEXTVAL
+  5  	     , 'B00OY7YPGK'
+  6  	     , (SELECT common_lookup_lab_id FROM common_lookup_lab WHERE common_lookup_type = 'BLU-RAY')
+  7  	     , 'The Maze Runner'
+  8  	     , NULL
+  9  	     , 'PG-13'
+ 10  	     , '16-DEC-2014'
+ 11  	     , 1
+ 12  	     , SYSDATE
+ 13  	     , 1
+ 14  	     , SYSDATE
+ 15  );
+
+1 row created.
+
+SQL> 
+SQL> -- Insert first row into the RENTAL_LAB table.
+SQL> -- Insert first row into the RENTAL_ITEM_LAB table.
+SQL> INSERT INTO rental_lab
+  2  VALUES
+  3  (
+  4  	     rental_lab_s1.NEXTVAL
+  5  	     , (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'John' AND last_name = 'Jones')
+  6  	     , '02-JAN-2015'
+  7  	     , '06-JAN-2015'
+  8  	     , 1
+  9  	     , SYSDATE
+ 10  	     , 1
+ 11  	     , SYSDATE
+ 12  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO rental_item_lab
+  2  VALUES
+  3  (
+  4  	     rental_item_lab_s1.NEXTVAL
+  5  	     , rental_lab_s1.CURRVAL
+  6  	     , (SELECT item_lab_id FROM item_lab WHERE item_title = 'Guardians of the Galaxy')
+  7  	     , 1
+  8  	     , SYSDATE
+  9  	     , 1
+ 10  	     , SYSDATE
+ 11  );
+
+1 row created.
+
+SQL> 
+SQL> -- Insert second row into the RENTAL_LAB table.
+SQL> -- Insert second row into the RENTAL_ITEM_LAB table.
+SQL> INSERT INTO rental_lab
+  2  VALUES
+  3  (
+  4  	     rental_lab_s1.NEXTVAL
+  5  	     , (SELECT contact_lab_id FROM contact_lab WHERE first_name = 'Jane' AND last_name = 'Jones')
+  6  	     , '03-JAN-2015'
+  7  	     , '05-JAN-2015'
+  8  	     , 1
+  9  	     , SYSDATE
+ 10  	     , 1
+ 11  	     , SYSDATE
+ 12  );
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO rental_item_lab
+  2  VALUES
+  3  (
+  4  	     rental_item_lab_s1.NEXTVAL
+  5  	     , rental_lab_s1.CURRVAL
+  6  	     , (SELECT item_lab_id FROM item_lab WHERE item_title = 'The Maze Runner')
+  7  	     , 1
+  8  	     , SYSDATE
+  9  	     , 1
+ 10  	     , SYSDATE
+ 11  );
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> -- Verification queries
+SQL> SELECT * FROM system_user_lab;
+
+SYSTEM_USER_LAB_ID SYSTEM_USER_NAME     SYSTEM_USER_GROUP_ID SYSTEM_USER_TYPE   
+------------------ -------------------- -------------------- ----------------   
+FIRST_NAME           MIDDLE_NAME          LAST_NAME            CREATED_BY       
+-------------------- -------------------- -------------------- ----------       
+CREATION_DATE      LAST_UPDATED_BY LAST_UPDATE_DATE                             
+------------------ --------------- ------------------                           
+                 1 SYSADMIN                                1                1   
+<Null>               <Null>               <Null>                        1       
+20-JAN-18                        1 20-JAN-18                                    
+                                                                                
+              1001 REACHERJ                                2             1008   
+Jack                 <Null>               Reacher                       1       
+20-JAN-18                        1 20-JAN-18                                    
+                                                                                
+              1002 OWENSR                                  2             1008   
+Ray                  <Null>               Owens                         1       
+20-JAN-18                        1 20-JAN-18                                    
+                                                                                
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT   *
+  2  FROM     common_lookup_lab
+  3  WHERE    common_lookup_context = 'MEMBER_LAB'
+  4  AND      common_lookup_type IN ('AMERICAN_EXPRESS_CARD','DINERS_CLUB_CARD');
+
+                                                    COMMON                      
+                                                    LOOKUP                      
+COMMON_LOOKUP_LAB_ID COMMON_LOOKUP_CONTEXT          TYPE                        
+-------------------- ------------------------------ ------------                
+COMMON_LOOKUP_MEANING          CREATED_BY CREATION_DATE      LAST_UPDATED_BY    
+------------------------------ ---------- ------------------ ---------------    
+LAST_UPDATE_DATE                                                                
+------------------                                                              
+                1016 MEMBER_LAB                     AMERICAN_EXP                
+                                                    RESS_CARD                   
+American Express Card                   1 20-JAN-18                        1    
+20-JAN-18                                                                       
+                                                                                
+                1017 MEMBER_LAB                     DINERS_CLUB_                
+                                                    CARD                        
+Diners Club Card                        1 20-JAN-18                        1    
+20-JAN-18                                                                       
+                                                                                
+
+2 rows selected.
+
+SQL> 
+SQL> CLEAR COLUMNS
+SQL> SELECT   m.member_lab_id
+  2  ,	      m.member_type
+  3  ,	      m.account_number
+  4  ,	      m.credit_card_number
+  5  ,	      cl.common_lookup_meaning AS credit_card_type
+  6  FROM     member_lab m INNER JOIN common_lookup_lab cl
+  7  ON       m.credit_card_type = cl.common_lookup_lab_id
+  8  WHERE    common_lookup_context = 'MEMBER_LAB'
+  9  AND      common_lookup_type IN ('AMERICAN_EXPRESS_CARD','DINERS_CLUB_CARD');
+
+MEMBER_LAB_ID MEMBER_TYPE ACCOUNT_NU CREDIT_CARD_NUMBER                         
+------------- ----------- ---------- --------------------                       
+CREDIT_CARD_TYPE                                                                
+------------------------------                                                  
+         1001        1003 X15-500-01 9876-5432-1234-5678                        
+American Express Card                                                           
+                                                                                
+         1002        1003 X15-500-02 9876-5432-1234-5679                        
+Diners Club Card                                                                
+                                                                                
+
+2 rows selected.
+
+SQL> 
+SQL> CLEAR COLUMNS
+SQL> SELECT   c.contact_lab_id
+  2  ,	      m.credit_card_type
+  3  ,	      c.member_lab_id
+  4  ,	      c.contact_type
+  5  ,	      c.last_name
+  6  ,	      c.first_name
+  7  FROM
+  8  	     member_lab m
+  9  	     INNER JOIN contact_lab c ON m.member_lab_id = c.member_lab_id
+ 10  	     INNER JOIN common_lookup_lab cl1 ON m.credit_card_type = cl1.common_lookup_lab_id
+ 11  	     INNER JOIN common_lookup_lab cl2 ON c.contact_type = cl2.common_lookup_lab_id
+ 12  WHERE
+ 13  	     cl1.common_lookup_context = 'MEMBER_LAB'
+ 14  	     AND cl1.common_lookup_type IN ('AMERICAN_EXPRESS_CARD','DINERS_CLUB_CARD')
+ 15  	     AND cl2.common_lookup_context = 'CONTACT_LAB'
+ 16  	     AND cl2.common_lookup_type = 'CUSTOMER';
+
+CONTACT_LAB_ID CREDIT_CARD_TYPE MEMBER_LAB_ID CONTACT_TYPE LAST_NAME            
+-------------- ---------------- ------------- ------------ -------------------- 
+FIRST_NAME                                                                      
+--------------------                                                            
+          1001             1016          1001         1002 Jones                
+John                                                                            
+                                                                                
+          1002             1016          1001         1002 Jones                
+Jane                                                                            
+                                                                                
+
+2 rows selected.
+
+SQL> 
+SQL> CLEAR COLUMNS
+SQL> SELECT   c.contact_lab_id
+  2  ,	      a.address_type
+  3  ,	      c.first_name
+  4  ,	      c.last_name
+  5  ,	      a.city
+  6  ,	      a.state_province
+  7  ,	      a.postal_code
+  8  FROM     contact_lab c INNER JOIN common_lookup_lab cl1
+  9  ON       c.contact_type = cl1.common_lookup_lab_id INNER JOIN address_lab a
+ 10  ON       c.contact_lab_id = a.contact_lab_id INNER JOIN common_lookup_lab cl2
+ 11  ON       a.address_type = cl2.common_lookup_lab_id
+ 12  WHERE    cl1.common_lookup_context = 'CONTACT_LAB'
+ 13  AND      cl1.common_lookup_type = 'CUSTOMER'
+ 14  AND      cl2.common_lookup_context = 'MULTIPLE'
+ 15  AND      cl2.common_lookup_type = 'HOME';
+
+CONTACT_LAB_ID ADDRESS_TYPE FIRST_NAME           LAST_NAME                      
+-------------- ------------ -------------------- --------------------           
+CITY                           STATE_PROVINCE                                   
+------------------------------ ------------------------------                   
+POSTAL_CODE                                                                     
+--------------------                                                            
+          1001         1008 John                 Jones                          
+Draper                         Utah                                             
+84020                                                                           
+                                                                                
+          1002         1008 Jane                 Jones                          
+Draper                         Utah                                             
+84020                                                                           
+                                                                                
+
+2 rows selected.
+
+SQL> 
+SQL> CLEAR COLUMNS
+SQL> SELECT   c.contact_lab_id
+  2  ,	      a.address_lab_id
+  3  ,	      a.address_type
+  4  ,	      c.first_name
+  5  ,	      c.last_name
+  6  ,	      sa.street_address
+  7  ,	      a.city
+  8  ,	      a.state_province
+  9  ,	      a.postal_code
+ 10  FROM     contact_lab c INNER JOIN common_lookup_lab cl1
+ 11  ON       c.contact_type = cl1.common_lookup_lab_id INNER JOIN address_lab a
+ 12  ON       c.contact_lab_id = a.contact_lab_id INNER JOIN street_address_lab sa
+ 13  ON       a.address_lab_id = sa.address_lab_id INNER JOIN common_lookup_lab cl2
+ 14  ON       a.address_type = cl2.common_lookup_lab_id
+ 15  WHERE    cl1.common_lookup_context = 'CONTACT_LAB'
+ 16  AND      cl1.common_lookup_type = 'CUSTOMER'
+ 17  AND      cl2.common_lookup_context = 'MULTIPLE'
+ 18  AND      cl2.common_lookup_type = 'HOME';
+
+CONTACT_LAB_ID ADDRESS_LAB_ID ADDRESS_TYPE FIRST_NAME                           
+-------------- -------------- ------------ --------------------                 
+LAST_NAME            STREET_ADDRESS                                             
+-------------------- ------------------------------                             
+CITY                           STATE_PROVINCE                                   
+------------------------------ ------------------------------                   
+POSTAL_CODE                                                                     
+--------------------                                                            
+          1001           1001         1008 John                                 
+Jones                372 East 12300 South                                       
+Draper                         Utah                                             
+84020                                                                           
+                                                                                
+          1002           1002         1008 Jane                                 
+Jones                1872 West 5400 South                                       
+Draper                         Utah                                             
+84020                                                                           
+                                                                                
+
+2 rows selected.
+
+SQL> 
+SQL> CLEAR COLUMNS
+SQL> SELECT   c.contact_lab_id
+  2  ,	      t.telephone_lab_id
+  3  ,	      t.telephone_type
+  4  ,	      c.first_name
+  5  ,	      c.last_name
+  6  ,	      t.country_code
+  7  ,	      t.area_code
+  8  ,	      t.telephone_number
+  9  FROM     contact_lab c INNER JOIN telephone_lab t
+ 10  ON       c.contact_lab_id = t.contact_lab_id
+ 11  WHERE    c.first_name IN ('John','Jane')
+ 12  AND      c.last_name = 'Jones';
+
+CONTACT_LAB_ID TELEPHONE_LAB_ID TELEPHONE_TYPE FIRST_NAME                       
+-------------- ---------------- -------------- --------------------             
+LAST_NAME            COU AREA_C TELEPHONE_                                      
+-------------------- --- ------ ----------                                      
+          1001             1001           1008 John                             
+Jones                001 801    435-7654                                        
+                                                                                
+          1002             1002           1008 Jane                             
+Jones                001 801    435-7655                                        
+                                                                                
+
+2 rows selected.
+
+SQL> 
+SQL> CLEAR COLUMNS
+SQL> SELECT   r.rental_lab_id
+  2  ,	      r.customer_id
+  3  ,	      r.check_out_date
+  4  ,	      r.return_date
+  5  FROM     rental_lab r
+  6  WHERE    r.check_out_date IN ('02-JAN-2015','03-JAN-2015');
+
+RENTAL_LAB_ID CUSTOMER_ID CHECK_OUT_DATE     RETURN_DATE                        
+------------- ----------- ------------------ ------------------                 
+         1001        1001 02-JAN-15          06-JAN-15                          
+         1002        1002 03-JAN-15          05-JAN-15                          
+
+2 rows selected.
+
+SQL> 
+SQL> CLEAR COLUMNS
+SQL> SELECT   i.item_lab_id
+  2  ,	      i.item_title
+  3  ,	      i.item_rating
+  4  ,	      i.item_release_date
+  5  FROM     item_lab i
+  6  WHERE    i.item_release_date IN ('09-DEC-2014','16-DEC-2014');
+
+ITEM_LAB_ID ITEM_TITLE                                                          
+----------- ------------------------------------------------------------        
+ITEM_RAT ITEM_RELEASE_DATE                                                      
+-------- ------------------                                                     
+       1001 Guardians of the Galaxy                                             
+PG-13    09-DEC-14                                                              
+                                                                                
+       1002 The Maze Runner                                                     
+PG-13    16-DEC-14                                                              
+                                                                                
+
+2 rows selected.
+
+SQL> 
+SQL> CLEAR COLUMNS
+SQL> SELECT   ri.rental_item_lab_id
+  2  ,	      ri.rental_lab_id
+  3  ,	      ri.item_lab_id
+  4  FROM     rental_item_lab ri INNER JOIN rental_lab r
+  5  ON       r.rental_lab_id = ri.rental_lab_id INNER JOIN item_lab i
+  6  ON       i.item_lab_id = ri.item_lab_id
+  7  WHERE    r.rental_lab_id IN (SELECT   r.rental_lab_id
+  8  				  FROM	   rental_lab r
+  9  				  WHERE    r.check_out_date IN ('02-JAN-2015','03-JAN-2015'))
+ 10  AND      i.item_lab_id IN (SELECT	 i.item_lab_id
+ 11  				FROM	 item_lab i
+ 12  				WHERE	 item_title IN ('Guardians of the Galaxy','The Maze Runner')
+ 13  				AND	 item_release_date IN ('09-DEC-2014','16-DEC-2014'));
+
+RENTAL_ITEM_LAB_ID RENTAL_LAB_ID ITEM_LAB_ID                                    
+------------------ ------------- -----------                                    
+              1001          1001        1001                                    
+              1002          1002        1002                                    
+
+2 rows selected.
+
+SQL> 
+SQL> SPOOL OFF
